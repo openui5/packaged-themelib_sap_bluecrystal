@@ -1,11 +1,11 @@
 /*!
  * SAP UI development toolkit for HTML5 (SAPUI5/OpenUI5)
- * (c) Copyright 2009-2014 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2015 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 /*!
  * SAP UI development toolkit for HTML5 (SAPUI5/OpenUI5)
- * (c) Copyright 2009-2014 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2015 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 /* Global CSS for 'base' theme */
@@ -118,6 +118,19 @@ button.sapUiUx3ActionBarLiteMoreButton:focus > span.sapUiBtnTxt {
 .sapUiUx3ActionBarUpdateAction:focus {
   background-image: url("img/update_hover.png");
   background-color: #007cc0;
+}
+.sapUiUx3ActionBarUpdateAction.Selected {
+  background-image: url("img/update_hover.png");
+  background-color: #005b8d;
+}
+.sapUiUx3ActionBarUpdateAction.Selected:hover {
+  background-color: #007cc0;
+}
+.sapUiUx3ActionBarUpdateAction.Selected:active {
+  background-color: #777777;
+}
+.sapUiUx3ActionBarUpdateAction.Selected:focus {
+  background-color: #777777;
 }
 .sapUiUx3ActionBarUpdatePopup.sapUiUx3TP {
   color: #000000;
@@ -3351,6 +3364,22 @@ button.sapUiUx3ActionBarLiteMoreButton:focus > span.sapUiBtnTxt {
   background-image: url("img/update_hover.png");
   background-color: #007cc0;
   border: 1px solid #007cc0;
+}
+.sapUiUx3ActionBarUpdateAction:active {
+  background-image: url("img/update_hover.png");
+  background-color: #007cc0;
+}
+.sapUiUx3ActionBarUpdateAction.Selected {
+  background-image: url("img/update_hover.png");
+  background-color: #007cc0;
+}
+.sapUiUx3ActionBarUpdateAction.Selected:focus,
+.sapUiUx3ActionBarUpdateAction.Selected:hover {
+  background-color: #0068a1;
+  border: 1px solid transparent;
+}
+.sapUiUx3ActionBarUpdateAction.Selected:active {
+  background-color: #007cc0;
 }
 .sapUiUx3ActionBarUpdatePopup.sapUiUx3TP {
   color: #000000;
