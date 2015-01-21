@@ -152,6 +152,7 @@
 }
 .sapMBarPH {
   display: inline-block;
+  height: 3rem;
 }
 .sapMBarMiddle {
   text-align: center;
@@ -360,7 +361,7 @@ html[data-sap-ui-browser*='ie'] .sapMBtnContentWithIcon {
   height: 100%;
   position: relative;
   white-space: nowrap;
-  text-align: left;
+  text-align: begin;
   /*  Removes  inline-block  gaps  due  to  whitespace  */
   font-size: 0;
   /*  Configure  animations  */
@@ -377,6 +378,13 @@ html[data-sap-ui-browser*='ie'] .sapMBtnContentWithIcon {
   -moz-transition-duration: 0.5s;
   -ms-transition-duration: 0.5s;
   transition-duration: 0.5s;
+}
+/* special handling for IE, as it does not support text-align: end */
+html[data-sap-ui-browser^="ie"] .sapMCrslInner {
+  text-align: left;
+}
+html[dir=rtl][data-sap-ui-browser^="ie"] .sapMCrslInner {
+  text-align: right;
 }
 .sapMCrslItemTable {
   display: table;
@@ -994,7 +1002,10 @@ html[data-sap-ui-browser="ie9"] .sapMFeedListItemTitleDiv {
   display: block;
 }
 .sapMFeedListItemTitleDiv .sapMLIBContent {
-  width: 100%;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: auto;
+  flex: auto;
   overflow: hidden;
 }
 /* phone adoption */
@@ -1220,6 +1231,10 @@ html[data-sap-ui-browser="ie9"] .sapMFeedListItemTitleDiv {
 .sapMInputBaseInner::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+/* remove user agent pseudo-element clear button (IE specifix) */
+.sapMInputBaseInner::-ms-clear {
+  display: none;
 }
 .sapMInputBaseInner {
   -webkit-appearance: none;
@@ -6870,6 +6885,7 @@ div.sapMBtnInner.sapMBtnEmphasized > .sapMBtnIcon {
 .sapMCrsl .sapMCrslHud.sapMCrslLeftmost a.sapMCrslPrev,
 .sapMCrsl .sapMCrslHud.sapMCrslRightmost a.sapMCrslNext {
   opacity: 0;
+  display: none;
 }
 .sapMCrslHud .sapMCrslHudInner {
   -webkit-border-radius: 50%;
@@ -10866,14 +10882,15 @@ li.sapMLIB.sapMLIBNoFlex.sapMObjLItem > .sapMLIBContent > .sapMLIBContentNF .sap
 .sapMPage.sapUiStdPage > section > .sapMPageScroll {
   padding: 1rem;
 }
-/* page with header or subHeader */
-.sapMPageWithHeader > section,
-.sapMPageWithSubHeader > section {
-  top: 3em;
-}
 /* page with header and subHeader */
-.sapMPageWithHeader.sapMPageWithSubHeader > section {
+.sapMPage > .sapMPageHeader + .sapMPageSubHeader + section {
   top: 6em;
+}
+/* page with header */
+.sapMPage > .sapMPageHeader + section,
+.sapMPage > .sapMPageSubHeader + section,
+.sapMPage > .sapMPageHeader + .sapUiHiddenPlaceholder + section {
+  top: 3em;
 }
 /* page with footer */
 .sapMPageWithFooter > section {
