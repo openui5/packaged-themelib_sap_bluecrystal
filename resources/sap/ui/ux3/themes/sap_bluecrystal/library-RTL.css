@@ -4693,10 +4693,13 @@ html[dir="rtl"] .sapUiUx3NavBarToplevel.sapUiUx3NavBarScrollForward > .sapUiUx3N
 }
 .sapUiUx3Shell .sapUiUx3NavBarToplevel .sapUiUx3NavBarArrow {
   display: inline-block;
-  bottom: 8px;
+  bottom: 0px;
   border-right: 8px solid transparent;
   border-bottom: 8px solid #e5e5e5;
   border-left: 8px solid transparent;
+}
+.sapUiUx3NavBarToplevel > .sapUiUx3NavBarList {
+  height: 37px;
 }
 .sapUiUx3ShellWorksetBar > .sapUiUx3NavBarToplevel .sapUiUx3NavBarOverflowBtn {
   top: 23px;
