@@ -606,6 +606,7 @@ html[dir=rtl] .sapMDTICustomDateTime .dwc:last-child {
   display: inline-block;
   /*this is for horizontal scrolling enablement*/
   min-height: 100%;
+  width: 100%;
   vertical-align: middle;
 }
 /* disable scrolling automatically for sap.m.Page sap.m.NavContainer sap.m.ScrollingContainer inside Dialog */
@@ -4757,10 +4758,6 @@ html[data-sap-ui-browser="ie9"] .sapMPersoDialog .sapMPersoDialogFixedBar .sapMP
   word-break: break-all;
   word-break: break-word;
   /* Non standard for old webkits */
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
 }
 .sapMTextMaxWidth {
   max-width: 100%;
@@ -6717,6 +6714,8 @@ div.sapMBtnInner.sapMBtnEmphasized > .sapMBtnIcon {
   color: #ffffff;
   background: rgba(54, 62, 67, 0.96);
   border-color: rgba(100, 114, 123, 0.96);
+  /* override the default text-shadow */
+  text-shadow: none;
 }
 .sap-desktop .sapMActionSelectPicker .sapMBtnDefault:not(.sapMBtnActive):hover {
   background: rgba(68, 78, 84, 0.96);
@@ -10347,14 +10346,19 @@ html[data-sap-ui-browser*='ie9'] .sapMListNoData {
 .sapMMultiComboBox > .sapMInputBasePlaceholder {
   z-index: 1;
 }
+.sapMMultiComboBox .sapMComboBoxBaseArrow {
+  z-index: 2;
+}
 /* ------------------------------ */
 /* InputInner                     */
 /* ------------------------------ */
 .sapMMultiComboBoxInputContainer > input.sapMComboBoxBaseInputInner {
   height: 2.375rem;
+  padding-right: 0;
 }
 .sapUiSizeCompact .sapMMultiComboBoxInputContainer > input.sapMComboBoxBaseInputInner {
   height: 1.625rem;
+  padding-right: 0;
 }
 /* ------------------------------ */
 /* ValueState                     */
@@ -10503,9 +10507,6 @@ html[data-sap-ui-browser*='ie9'] .sapMListNoData {
 .sapUiSizeCompact .sapMMultiInput .sapMInputBaseInner {
   padding-left: 0.0rem;
   padding-right: 0.1rem;
-}
-.sapMMultiInput > .sapMInputBasePlaceholder {
-  z-index: 1;
 }
 /* ============================================= */
 /* CSS for control sap.m/ObjectAttribute.control */
