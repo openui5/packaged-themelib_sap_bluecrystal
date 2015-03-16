@@ -3727,12 +3727,6 @@ button.sapUiBtnS.sapUiBtnNorm.sapUiUx3EditCollectionButton.sapUiBtnStd:hover {
   background-color: transparent;
   border-width: 0px;
 }
-.sapUiUx3ExactLstLb > ul > .sapUiLbxI:hover > span.sapUiLbxIIco,
-.sapUiUx3ExactLstLb > ul > .sapUiLbxI.sapUiLbxISel:hover > span.sapUiLbxIIco,
-.sapUiUx3ExactLstLb > ul > .sapUiLbxI:focus > span.sapUiLbxIIco,
-.sapUiUx3ExactLstLb > ul > .sapUiLbxI.sapUiLbxISel:focus > span.sapUiLbxIIco {
-  background-image: url("img/exact/expand_item_down.png");
-}
 .sapUiUx3ExactLstLb > ul > .sapUiLbxI > .sapUiLbxIIco:after {
   content: "";
 }
@@ -3755,7 +3749,6 @@ html[data-sap-ui-browser="ie10"] .sapUiUx3ExactLstLb > ul > .sapUiLbxISel {
 .sapUiUx3ExactLstLb > ul > .sapUiLbxI:focus > span,
 .sapUiUx3ExactLstLb > ul > .sapUiLbxI.sapUiLbxISel:focus > span {
   background-color: #e3e3e3;
-  color: #ffffff;
 }
 /* Expander */
 .sapUiUx3ExactLstExp {

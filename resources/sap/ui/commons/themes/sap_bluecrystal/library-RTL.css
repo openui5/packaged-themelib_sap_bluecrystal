@@ -6383,7 +6383,6 @@ html[data-sap-ui-browser="ie8"] .sapUiGrid td > .sapUiLnk {
 .sapUiLbx:not(.sapUiLbxDis) > ul > .sapUiLbxI:hover:not(.sapUiLbxISel):not(.sapUiLbxIDis) > span {
   /* Fix for IE10 :hover bug - need to set the color on children as well */
   background-color: #e3e3e3;
-  color: #ffffff;
 }
 /*
 no special style for focus!
@@ -8224,8 +8223,7 @@ html[data-sap-ui-browser='ie8'] .sapUiBtnS.sapUiBtnLite.sapUiBtnIconOnly.sapUiTo
 }
 .sapUiTreeNode:hover {
   background-color: #e3e3e3;
-  color: #ffffff;
-  background-image: url(img-RTL/tree/TreeNode-white.gif);
+  background-image: url(img-RTL/tree/TreeNode.gif);
 }
 .sapUiTreeNode:focus {
   outline: 1px dashed #007cc0;
@@ -8233,7 +8231,6 @@ html[data-sap-ui-browser='ie8'] .sapUiBtnS.sapUiBtnLite.sapUiBtnIconOnly.sapUiTo
 .sapUiTreeNodeSelectedParent:Hover,
 .sapUiTreeNodeSelected:Hover {
   background-color: #e3e3e3;
-  color: #ffffff;
 }
 .sapUiTreeNodeSelectedParent,
 .sapUiTreeNodeSelected {
@@ -8248,8 +8245,7 @@ html[data-sap-ui-browser='ie8'] .sapUiBtnS.sapUiBtnLite.sapUiBtnIconOnly.sapUiTo
 .sapUiTreeNodeExpanded.sapUiTreeNodeSelected:Hover,
 .sapUiTreeNodeExpanded.sapUiTreeNode:Hover {
   background-color: #e3e3e3;
-  color: #ffffff;
-  background-image: url(img-RTL/tree/TreeNode_Exp-white.gif);
+  background-image: url(img-RTL/tree/TreeNode_Exp.gif);
 }
 .sapUiTreeNodeCollapsed.sapUiTreeNodeSelectedParent,
 .sapUiTreeNodeCollapsed.sapUiTreeNodeSelected {
@@ -8259,8 +8255,7 @@ html[data-sap-ui-browser='ie8'] .sapUiBtnS.sapUiBtnLite.sapUiBtnIconOnly.sapUiTo
 .sapUiTreeNodeCollapsed.sapUiTreeNodeSelected:Hover,
 .sapUiTreeNodeCollapsed.sapUiTreeNode:Hover {
   background-color: #e3e3e3;
-  color: #ffffff;
-  background-image: url(img-RTL/tree/TreeNode_Coll-white.gif);
+  background-image: url(img-RTL/tree/TreeNode_Coll.gif);
 }
 .sapUiTreeTbCont > .sapUiBtn.sapUiBtnS.sapUiBtnLite {
   width: 30px;
