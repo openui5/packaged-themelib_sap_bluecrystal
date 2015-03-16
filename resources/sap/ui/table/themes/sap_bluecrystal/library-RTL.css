@@ -189,8 +189,10 @@ html[data-sap-ui-browser="ie8"] .sapUiTable {
 /* COL HEADER */
 .sapUiTableColHdrCnt {
   display: none;
-  min-height: 32px;
   background-color: #f2f2f2;
+}
+.sapUiTableColHdrCnt {
+  min-height: 32px;
 }
 .sapUiTableCHdr .sapUiTableColHdrCnt {
   display: block;
@@ -225,7 +227,8 @@ html[data-sap-ui-browser="ie8"] .sapUiTable {
   position: relative;
   vertical-align: top;
 }
-.sapUiTableColCell {
+.sapUiTableColCell,
+.sapUiTableColRowHdrIco {
   text-overflow: ellipsis;
   overflow: hidden;
   padding: 0 8px;
@@ -431,6 +434,49 @@ html[data-sap-ui-browser="ie8"] .sapUiTable {
 }
 .sapUiTableVScr .sapUiTableVSb {
   display: block;
+}
+/* Cozy Mode when sap.m. library is loaded */
+.sapUiTableM.sapUiTableCozy {
+  /* Header */
+  /* Footer */
+  /* Row */
+  /* Cell Adjustments */
+  /* Group Header Adjustments */
+  /* Footer Adjustments */
+}
+.sapUiTableM.sapUiTableCozy > .sapUiTableCnt > .sapUiTableColHdrCnt {
+  min-height: 3rem;
+}
+.sapUiTableM.sapUiTableCozy > .sapUiTableFtr {
+  height: 3rem;
+  line-height: 3rem;
+  padding-top: 0;
+}
+.sapUiTableM.sapUiTableCozy .sapUiTableCtrl tr {
+  height: 3rem;
+}
+.sapUiTableM.sapUiTableCozy .sapUiTableColCell,
+.sapUiTableM.sapUiTableCozy .sapUiTableColRowHdrIco {
+  position: absolute;
+  display: block;
+  right: 0;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+}
+.sapUiTableM.sapUiTableCozy .sapUiTableColIcons {
+  padding-top: 0px;
+}
+.sapUiTableM.sapUiTableCozy div.sapUiTableGroupHeader div.sapUiTableGroupIcon {
+  height: 3rem;
+  line-height: 3rem;
+  background-color: transparent;
+}
+.sapUiTableM.sapUiTableCozy .sapUiTableFtr > .sapMLabel {
+  height: 3rem;
+  line-height: 3rem;
 }
 /*******************************************************************************
  * HORIZONTAL SCROLLBAR
@@ -1060,9 +1106,11 @@ html[data-sap-ui-browser^="ie"] .sapUiTableColHdrCnt {
   margin-bottom: 2px;
   background-color: transparent;
 }
-.sapUiTableHdrTitle {
+.sapUiTable .sapUiTableHdrTitle {
   font-size: 18px;
+  font-weight: bold;
   height: 100%;
+  color: #333333;
 }
 .sapUiTable > .sapUiTableFtr {
   height: 28px;
@@ -1198,35 +1246,35 @@ div.sapUiTableRowHdr.sapUiTableFixedBottomRow {
   background: #ffffff;
 }
 /* Table Row (only) Selected */
-.sapUiTableCtrl tr.sapUiTableRowSel > td {
-  /* data cells of row */
+/* data cells of row */
+.sapUiTableCtrl tr.sapUiTableRowSel:not(.sapUiTableGroupHeader) > td {
   background-color: #e6f2f9;
 }
-.sapUiTableRowHdr.sapUiTableRowSel {
-  /* row-select-button of row */
-  background-color: #e6f2f9 !important;
-  border-left: 1px solid #dddddd !important;
+/* row-select-button of row */
+.sapUiTable .sapUiTableRowHdr.sapUiTableRowSel {
+  background-color: #e6f2f9;
+  border-left: 1px solid #dddddd;
 }
 /* Table Row Selected[+Hover] */
 .sapUiTableCtrl tr.sapUiTableRowSel.sapUiTableRowHvr > td {
   /* data cells of row */
   background-color: #d9ecf6;
 }
-.sapUiTableRowHdr.sapUiTableRowSel.sapUiTableRowHvr {
-  /* row-select-button of row */
-  background-color: #d9ecf6 !important;
+/* row-select-button of row and hover */
+.sapUiTable .sapUiTableRowHdr.sapUiTableRowSel.sapUiTableRowHvr {
+  background-color: #d9ecf6;
   border-left-color: #dddddd;
 }
 /* Table Row (only) Hover */
-.sapUiTableCtrl tr.sapUiTableRowHvr > td {
+.sapUiTable .sapUiTableCtrl tr.sapUiTableRowHvr > td {
   /* data cells of row */
-  background-color: #f0f0f0 !important;
+  background-color: #f0f0f0;
 }
-.sapUiTableCtrl tr.sapUiTableRowHvr,
-.sapUiTableCtrl tr.sapUiTableRowHvr .sapUiTableColHdrCnt {
-  background-color: #f0f0f0 !important;
+.sapUiTable .sapUiTableCtrl tr.sapUiTableRowHvr,
+.sapUiTable .sapUiTableCtrl tr.sapUiTableRowHvr .sapUiTableColHdrCnt {
+  background-color: #f0f0f0;
 }
-.sapUiTableCtrl tr.sapUiTableRowSel > td {
+.sapUiTableCtrl tr.sapUiTableRowSel:not(.sapUiTableGroupHeader) > td {
   background-color: #e6f2f9;
 }
 .sapUiTableCtrl tr.sapUiTableRowSel.sapUiTableRowHvr > td {
@@ -1446,11 +1494,12 @@ tr.sapUiTableRowHvr .sapUiLnk:hover,
 .sapUiTableRowHdr .sapUiTableGroupIcon {
   background-color: #f7f7f7;
 }
-tr.sapUiTableGroupHeader.sapUiTableRowHvr,
-.sapUiTableRowHdr.sapUiTableGroupHeader.sapUiTableRowHvr,
-.sapUiTableRowHdr.sapUiTableRowHvr .sapUiTableGroupIcon,
-.sapUiTableCtrl .sapUiTableRowHvr > td {
-  background-color: #f0f0f0 !important;
+/* Hover State */
+div.sapUiTable tr.sapUiTableGroupHeader.sapUiTableRowHvr,
+div.sapUiTable .sapUiTableRowHdr.sapUiTableGroupHeader.sapUiTableRowHvr,
+div.sapUiTable .sapUiTableRowHdr div.sapUiTableRowHvr .sapUiTableGroupIcon,
+div.sapUiTable .sapUiTableCtrl .sapUiTableRowHvr > td {
+  background-color: #f0f0f0;
 }
 .sapUiTableHSb,
 .sapUiTableCCnt,
@@ -1468,4 +1517,46 @@ tr.sapUiTableGroupHeader.sapUiTableRowHvr,
 }
 .sapUiTableCtrlEmptyMsg {
   font-size: 16px;
+}
+.sapUiTableM.sapUiTableTouch ::-webkit-scrollbar-thumb {
+  background-color: #dedede;
+  border-top: 0.125rem solid #f7f7f7;
+  border-right: 0.125rem solid #f7f7f7;
+  border-left: 0.125rem solid #f7f7f7;
+  border-bottom: 0.125rem solid #f7f7f7;
+  width: 0.25rem;
+  height: 0.25rem;
+}
+.sapUiTableM.sapUiTableTouch ::-webkit-scrollbar {
+  background-color: #f7f7f7;
+}
+.sapUiTableM.sapUiTableTouch.sapUiTableVScr .sapUiTableHSb {
+  padding-left: 0.5rem;
+  height: 0.5rem;
+}
+.sapUiTableM.sapUiTableTouch.sapUiTableVScr .sapUiTableVSb {
+  width: 0.45rem;
+}
+.sapUiTableM.sapUiTableTouch.sapUiTableVScr .sapUiTableCtrlScr,
+.sapUiTableM.sapUiTableTouch.sapUiTableVScr .sapUiTableColHdrScr {
+  margin-left: 0.45rem;
+}
+.sapUiTableM.sapUiTableCozy {
+  /* Hover */
+  /* Active Header */
+}
+.sapUiTableM.sapUiTableCozy .sapUiTableCol:hover,
+.sapUiTableM.sapUiTableCozy .sapUiTableColRowHdr:hover,
+.sapUiTableM.sapUiTableCozy tr.sapUiTableGroupHeader.sapUiTableRowHvr,
+.sapUiTableM.sapUiTableCozy .sapUiTableRowHdr.sapUiTableGroupHeader.sapUiTableRowHvr,
+.sapUiTableM.sapUiTableCozy .sapUiTableCtrl .sapUiTableRowHvr > td {
+  background-color: #e3e3e3;
+}
+.sapUiTableM.sapUiTableCozy .sapUiTableColRowHdr:active,
+.sapUiTableM.sapUiTableCozy .sapUiTableCol:active {
+  background-color: #007cc0;
+}
+.sapUiTableM.sapUiTableCozy .sapUiTableColRowHdr:active .sapUiLbl,
+.sapUiTableM.sapUiTableCozy .sapUiTableCol:active .sapUiLbl {
+  color: #ffffff;
 }
