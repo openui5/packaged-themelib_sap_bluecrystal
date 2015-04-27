@@ -574,31 +574,9 @@ html[dir=rtl][data-sap-ui-browser^="ie"] .sapMCrslInner {
 .sapMDP > .sapMInputBaseInner {
   padding-left: 2.5rem;
 }
-.sapMDP > .sapUiIcon,
-.sapMDP.sapMInputIE9 > .sapUiIcon {
-  /* override .sapMIcon display */
-  height: 2.5rem;
-  width: 2.5rem;
-  line-height: 2.5rem;
-  position: absolute;
-  left: 0;
-  top: 0.25rem;
-  cursor: pointer;
-}
 /* Compact size */
 .sapUiSizeCompact .sapMDP > .sapMInputBaseInner {
   padding-left: 1.625rem;
-}
-.sapUiSizeCompact .sapMDP > .sapUiIcon,
-.sapUiSizeCompact .sapMDP.sapMInputIE9 > .sapUiIcon {
-  height: 1.5rem;
-  width: 2rem;
-  line-height: 1.5rem;
-}
-/* Condensed size */
-.sapUiSizeCondensed .sapMDP > .sapUiIcon,
-.sapUiSizeCondensed .sapMDP.sapMInputIE9 > .sapUiIcon {
-  top: 0;
 }
 /* ============================================= */
 /* CSS for control sap.m/DateRangeSelection.control */
@@ -5552,6 +5530,21 @@ html[dir=rtl] .sapMTC .sapMTCEdgeRight {
   height: 1.625rem;
   display: inline-block;
 }
+.sapMTokenTruncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+}
+.sapMTokenTruncate > .sapMTokenIcon {
+  position: absolute;
+  left: 0rem;
+}
+.sapMTokenTruncate > .sapMTokenText {
+  line-height: 1.625rem;
+  display: inline-block;
+  width: calc(100% - 2rem);
+}
 .sap-phone .sapMTokenizerMultiLine {
   padding-right: 1rem;
   padding-left: 1rem;
@@ -5573,6 +5566,10 @@ html[dir=rtl] .sapMTC .sapMTCEdgeRight {
 }
 .sapUiSizeCompact .sapMMultiInputMultiModeBorder .sapMTokenizer .sapMToken {
   margin-bottom: -0.125rem;
+}
+.sapUiSizeCompact .sapMTokenTruncate > .sapMTokenText {
+  line-height: 1.25rem;
+  width: calc(100% - 1.25rem);
 }
 .sapMTokenizer:focus {
   outline: none;
@@ -5779,7 +5776,6 @@ html[dir=rtl] .sapMTC .sapMTCEdgeRight {
   margin-right: 0.125rem;
 }
 .sapMUCText {
-  height: 3rem;
   -webkit-box-flex: 10;
   /* OLD - iOS 6-, Safari 3.1-6 */
   -webkit-flex: 10;
@@ -7805,6 +7801,13 @@ html[dir='rtl'] .sapMCrslNext > .sapMCrslHudInner > .sapUiIcon,
 /* ======================================================== */
 /* CSS for control sap.m/ComboBox.control BlueCrystal theme */
 /* ======================================================== */
+/* ------------------------------ */
+/* ComboBox's Arrow               */
+/* ------------------------------ */
+/* note: fix for a specific IE10 rendering issue, change the background color of the arrow button from transparent to white */
+:not(.sapMComboBoxState) > .sapMComboBoxArrow {
+  background: #ffffff;
+}
 /* ============================================================ */
 /* CSS for control sap.m/ComboBoxBase.control BlueCrystal theme */
 /* ============================================================ */
@@ -7987,24 +7990,6 @@ div.sapMComboBoxBasePicker .sapMDialogScrollCont {
 /* CSS for control sap.m/DatePicker.control */
 /* bluecrystal                              */
 /* ======================================== */
-.sapMDP > .sapUiIcon {
-  speak: none;
-  color: #666666;
-}
-.sap-desktop .sapMDP > .sapUiIcon:focus,
-.sap-desktop .sapMDP > .sapUiIcon:hover {
-  background-color: rgba(222, 222, 222, 0.5);
-}
-.sap-desktop .sapMDP > .sapUiIcon:focus {
-  outline: 1px dotted #005483;
-  outline-offset: -1px;
-}
-.sapMDP > .sapUiIcon:active,
-.sap-desktop .sapMDP > .sapUiIcon:active {
-  background-color: #007cc0;
-  color: #ffffff;
-  outline: 1px dotted #ffffff;
-}
 /* ============================================= */
 /* CSS for control sap.m/DateRangeSelection.control */
 /* ============================================= */
@@ -9574,25 +9559,25 @@ html[data-sap-ui-browser='ie9'] .sapMInputValHelp {
   speak: none;
   color: #666666;
 }
-.sapMInput:not(.sapMInputBaseReadonly) .sapMInputValHelp > .sapMInputValHelpInner:hover,
-.sapMInput:not(.sapMInputBaseReadonly) .sapMInputValHelp > .sapMInputValHelpInner:focus {
+.sapMInputVH:not(.sapMInputBaseReadonly) .sapMInputValHelp > .sapMInputValHelpInner:hover,
+.sapMInputVH:not(.sapMInputBaseReadonly) .sapMInputValHelp > .sapMInputValHelpInner:focus {
   background-color: rgba(222, 222, 222, 0.5);
 }
-.sapMInput:not(.sapMInputBaseReadonly) .sapMInputValHelp > .sapMInputValHelpInner:focus {
+.sapMInputVH:not(.sapMInputBaseReadonly) .sapMInputValHelp > .sapMInputValHelpInner:focus {
   outline: 1px dotted #005483;
   outline-offset: -1px;
 }
-.sapMInput:not(.sapMInputBaseReadonly) .sapMInputValHelp > .sapMInputValHelpInner:active {
+.sapMInputVH:not(.sapMInputBaseReadonly) .sapMInputValHelp > .sapMInputValHelpInner:active {
   /* works fine in desktop browsers, iOS6 and mobile Chrome; does not work well in older Android browser */
   background-color: #007cc0;
   color: #ffffff;
   outline: 1px dotted #ffffff;
 }
 /* value help icon in IE9 */
-.sapMInputIE9.sapMInput {
-  padding-left: 2.25rem;
+.sapMInputIE9.sapMInputVH {
+  padding-left: 2.375rem;
 }
-.sapMInputIE9.sapMInput > .sapMInputBaseInner {
+.sapMInputIE9.sapMInputVH > .sapMInputBaseInner {
   /* only in sapMInput and not in .sapMDP */
   padding-left: 0;
   border-left: 0;
@@ -9600,11 +9585,12 @@ html[data-sap-ui-browser='ie9'] .sapMInputValHelp {
 .sapMInputIE9 .sapMInputValHelp {
   color: #000000;
   background-color: #ffffff;
-  border: 1px solid #c0c0c0;
+  border: 0.0625rem solid #c0c0c0;
   border-right: none;
   margin: 0;
   line-height: normal;
   height: 2.5rem;
+  width: 2.4375rem;
   top: 0.25rem;
   left: 0;
 }
@@ -9622,7 +9608,8 @@ html[data-sap-ui-browser='ie9'] .sapMInputValHelp {
   border-color: #007cc0;
 }
 .sapMInputIE9.sapMInputBaseState .sapMInputValHelp {
-  border-width: 2px;
+  border-width: 0.125rem;
+  width: 2.375rem;
 }
 .sapMInputIE9.sapMInputBaseWarning .sapMInputValHelp {
   border-color: #f0ab00;
@@ -9662,15 +9649,15 @@ div.sapMInputSuggestionPopup {
 .sapUiSizeCompact .sapMInputValHelp {
   top: 0.25rem;
   height: 1.5rem;
-  width: 2rem;
+  width: 1.5rem;
 }
 .sapUiSizeCompact .sapMInputDescription.sapMInputVH > span > .sapMInputValHelp {
   right: -1.5625rem;
 }
 .sapUiSizeCompact .sapMInputValHelp > .sapMInputValHelpInner {
-  font-size: 0.75rem;
+  font-size: 1rem;
   height: 1.5rem;
-  width: 2rem;
+  width: 1.5rem;
   line-height: 1.5rem;
 }
 .sapUiSizeCompact .sapMInputDescription.sapMInputVH > span > .sapMInputValHelp > .sapMInputValHelpInner {
@@ -9694,7 +9681,11 @@ div.sapMInputSuggestionPopup {
 }
 .sapUiSizeCompact .sapMInputIE9 .sapMInputValHelp {
   height: 1.625rem;
+  width: 1.5625rem;
   top: 0.1875rem;
+}
+.sapUiSizeCompact .sapMInputIE9.sapMInputBaseState .sapMInputValHelp {
+  width: 1.5rem;
 }
 .sapUiSizeCompact .sapMInputIE9.sapMInputDescription.sapMInputVH > span > .sapMInputValHelp {
   right: -1.5rem;
@@ -11670,6 +11661,9 @@ li.sapMLIB.sapMLIBNoFlex.sapMObjLItem > .sapMLIBContent > .sapMLIBContentNF .sap
 .sapMObjStatusSuccess > .sapMObjStatusIcon {
   color: #007833;
 }
+.sapUiTableCell .sapMObjStatus {
+  font-size: 0.875rem;
+}
 /* ============================================= */
 /* FIX: CSS 0120061532 0001316230 2014 */
 /* ============================================= */
@@ -11901,7 +11895,7 @@ li.sapMLIB.sapMLIBNoFlex.sapMObjLItem > .sapMLIBContent > .sapMLIBContentNF .sap
   display: none;
 }
 html[data-sap-ui-browser='ie9'] .sapMPopoverSpecialFooter > .sapMBarMiddle > .sapMBarPH {
-  /* 
+  /*
 		In IE 9, .sapMBarPH gets style width: 100% when there's content only in the contentMiddle.
 		This style pushes the popover to maximum width. Therefore this inline style has to be overwritten by important.
 	*/
@@ -12021,7 +12015,7 @@ html[dir=rtl][data-sap-ui-browser='ie9'] .sapMPopoverArrLeft:after {
 html[dir=rtl][data-sap-ui-browser='ie9'] .sapMPopoverHeaderAlignArr.sapMPopoverArrRight:after,
 .sapMPopoverHeaderAlignArr.sapMPopoverArrLeft:after {
   border-color: transparent;
-  border-left-color: #f7f7f7;
+  border-left-color: #f2f2f2;
 }
 html[dir=rtl][data-sap-ui-browser='ie9'] .sapMPopoverCrossArr.sapMPopoverArrLeft:after,
 .sapMPopoverCrossArr.sapMPopoverArrLeft:after {
@@ -12053,7 +12047,7 @@ html[dir=rtl][data-sap-ui-browser='ie9'] .sapMPopoverArrRight:after {
 html[dir=rtl][data-sap-ui-browser='ie9'] .sapMPopoverHeaderAlignArr.sapMPopoverArrLeft:after,
 .sapMPopoverHeaderAlignArr.sapMPopoverArrRight:after {
   border-color: transparent;
-  border-right-color: #f7f7f7;
+  border-right-color: #f2f2f2;
 }
 html[dir=rtl][data-sap-ui-browser='ie9'] .sapMPopoverCrossArr.sapMPopoverArrLeft:after,
 .sapMPopoverCrossArr.sapMPopoverArrRight:after {
