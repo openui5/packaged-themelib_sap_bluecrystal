@@ -8528,7 +8528,7 @@ li.sapMLIB.sapMFeedListItemTitleDiv.sapMLIBNoFlex > .sapMLIBContent > .sapMLIBCo
 /* Head Container */
 .sapMITBHead {
   display: block;
-  margin: 1rem 2rem 0 2rem;
+  margin: 1rem 1.25rem 0 1.25rem;
   padding: 1px 1px 0 1px;
   white-space: nowrap;
   font-size: 0.75rem;
@@ -8559,8 +8559,8 @@ html[data-sap-ui-os=win8] .sapMITBHead {
 }
 .sap-tablet .sapMITBScrollContainer,
 html[data-sap-ui-os=win8] .sapMITBScrollContainer {
-  margin-left: 2rem;
-  margin-right: 2rem;
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
 }
 /* scrollbar from iscroll should not be visible */
 .sapMITBScrollContainer > div:nth-child(2) {
@@ -8684,19 +8684,27 @@ html[dir=rtl] .sapMITBTextOnly .sapMITBTab {
   margin: 0 1rem;
 }
 .sapMITBTextOnly .sapMITBFilter:first-child {
-  padding: 0 1px 0 0;
+  padding: 0;
   margin: 0 0.5rem 0 1rem;
 }
 .sapMITBTextOnly .sapMITBFilter:last-child {
-  padding: 0 0 0 1px;
+  padding: 0;
   margin: 0 1rem 0 0.5rem;
-}
-.sap-phone .sapMITBTextOnly .sapMITBFilter {
-  padding: 0 0.75rem;
-  margin: 0 1rem;
 }
 .sap-phone .sapMITBFilter {
   margin: 0 0.125rem;
+}
+.sap-phone .sapMITBTextOnly .sapMITBFilter {
+  padding: 0 0.75rem;
+  margin: 0 0.125rem;
+}
+.sap-phone .sapMITBTextOnly .sapMITBFilter:first-child {
+  padding: 0 0 0 0.75rem;
+  margin: 0 0 0 0.125rem;
+}
+.sap-phone .sapMITBTextOnly .sapMITBFilter:last-child {
+  padding: 0 0.75rem 0 0;
+  margin: 0 0.125rem 0 0;
 }
 .sapMITBNoText .sapMITBFilter > .sapMITBTab {
   width: 3rem;
@@ -8944,7 +8952,7 @@ html[data-sap-ui-os=win8] .sapMITBNoText .sapMITBFilter:last-child {
   padding-right: 0;
 }
 .sapMITBAll:first-Child {
-  margin-right: 0;
+  margin-right: 0.75rem;
 }
 .sapMITBAll .sapMITBText {
   color: #333333;
@@ -9218,7 +9226,7 @@ div.sapMInputSuggestionPopup {
   right: -1.5625rem;
 }
 .sapUiSizeCompact .sapMInputValHelp > .sapMInputValHelpInner {
-  font-size: 0.75rem;
+  font-size: 1rem;
   height: 1.5rem;
   width: 2rem;
   line-height: 1.5rem;
@@ -9632,7 +9640,23 @@ html[dir=rtl][data-sap-ui-browser^=ie] .sapUiRespGridMedia-Std-Desktop.sapUiForm
 }
 .sap-desktop .sapMLnk:focus:not(.sapMLnkDsbl) {
   outline: 0.0625rem dotted #005483;
-  outline-offset: -1px;
+  outline-offset: -0.0625rem;
+}
+/* IE ignores outline-offset. Use an overlay: */
+.sap-desktop[data-sap-ui-browser^="ie"] .sapMLnk:focus {
+  outline: none;
+  position: relative;
+}
+.sap-desktop[data-sap-ui-browser^="ie"] .sapMLnk:focus:before {
+  content: " ";
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 0.0625rem dotted #005483;
+  pointer-events: none;
 }
 .sapMLIBActive .sapMLnk {
   color: #ffffff;
