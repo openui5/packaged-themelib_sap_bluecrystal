@@ -866,7 +866,9 @@ html.sap-tablet .sapUiSelectable {
 /* Reset BackgroundColor, -Images to ensure proper display in ThemeDesigner (loads original and modified theme in the same page)*/
 .sapUiUfdShellBackground,
 .sapMGlobalBackgroundColor,
+.sapUshellShellBackground,
 html[data-sap-ui-browser="ie9"] .sapUiUfdShellBackground,
+html[data-sap-ui-browser="ie9"] .sapUshellShellBackground,
 html[data-sap-ui-browser="ie9"] .sapMGlobalBackgroundColor,
 .sapMGlobalBackgroundColorStrong,
 html[data-sap-ui-browser="ie9"] .sapMGlobalBackgroundColorStrong,
@@ -888,6 +890,7 @@ html[data-sap-ui-browser="ie9"] {
 }
 /********************************************************************************************************************************/
 .sapUiUfdShellBackground,
+.sapUshellShellBackground,
 .sapMGlobalBackgroundColor {
   background-color: #f2f2f2;
   background-image: -moz-linear-gradient(top, #dff2f3 0%, #dcecf0 50%, #dde4eb 100%);
@@ -897,6 +900,7 @@ html[data-sap-ui-browser="ie9"] {
   background-image: linear-gradient(to bottom, #dff2f3 0%, #dcecf0 50%, #dde4eb 100%);
 }
 html[data-sap-ui-browser="ie9"] .sapUiUfdShellBackground,
+html[data-sap-ui-browser="ie9"] .sapUshellShellBackground,
 html[data-sap-ui-browser="ie9"] .sapMGlobalBackgroundColor {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#dff2f3', EndColorStr='#dde4eb');
   /* IE8+9 */
@@ -987,6 +991,7 @@ html[data-sap-ui-browser="ie9"] .sapMGlobalBackgroundColor .sapMGlobalBackground
   display: none;
 }
 .sapMGlobalBackgroundImage.sapUiUfdShellBG,
+.sapMGlobalBackgroundImage.sapUshellShellBG,
 .sapMShellGlobalOuterBackground > .sapMGlobalBackgroundImage {
   display: block;
 }
