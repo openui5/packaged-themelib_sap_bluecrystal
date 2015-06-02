@@ -524,6 +524,11 @@ html[dir=rtl][data-sap-ui-browser^="ie"] .sapMCrslInner {
   -moz-appearance: none;
   background: transparent;
   font-size: inherit;
+  /* auto vertical centering */
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .sapMComboBoxBaseReadonly .sapMComboBoxBaseArrow {
   display: none;
@@ -668,6 +673,9 @@ html[dir=rtl] .sapMDTICustomDateTime .dwc:last-child {
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
   transition-duration: 0.3s;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -webkit-transform;
+  transition-property: transform;
 }
 .sapMDialogBlockLayer {
   opacity: 0.6;
@@ -3960,9 +3968,8 @@ html[data-sap-ui-os^="Android"] .sapUiSizeCompact .sapMSegBBtn .sapUiIcon {
 /* ------------------------------ */
 .sapMSlt,
 .sapMSltNative,
-.sapMSlt > .sapMSltLabel {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+.sapMSlt > .sapMSltLabel,
+.sapMSltPicker-CTX .sapMIBar {
   box-sizing: border-box;
 }
 .sapMSltNative,
@@ -4039,6 +4046,12 @@ html[data-sap-ui-os^="Android"] .sapUiSizeCompact .sapMSegBBtn .sapUiIcon {
   width: auto;
   opacity: 0;
 }
+/* ------------------------------ */
+/* Select list                    */
+/* ------------------------------ */
+.sapMSltPicker-CTX .sapMSelectList {
+  border: none;
+}
 /* ============================================= */
 /* CSS for control sap.m/SelectDialog.control    */
 /* ============================================= */
@@ -4078,7 +4091,6 @@ html[data-sap-ui-os^="Android"] .sapUiSizeCompact .sapMSegBBtn .sapUiIcon {
   padding: 0;
   outline: none;
   list-style-type: none;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 /* ------------------------------ */
@@ -4309,8 +4321,6 @@ html[data-sap-ui-os^="Android"] .sapUiSizeCompact .sapMSegBBtn .sapUiIcon {
 .sapMSlider {
   display: inline-block;
   vertical-align: top;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
   /* IE Windows 8 */
@@ -6641,7 +6651,7 @@ html[data-sap-ui-browser^=ie] .sapMActionSheetDialog.sapMDialogPhone > .sapMBar.
 html[dir=rtl][data-sap-ui-browser^=ie] .sapMActionSheetDialog.sapMDialogPhone > .sapMBar.sapMHeader-CTX > .sapMBarMiddle {
   text-align: right;
 }
-.sapMActionSheetDialog.sapMDialogPhone > .sapMBar.sapMHeader-CTX > .sapMBarMiddle > .sapMBarPH > .sapMLabel {
+.sapMActionSheetDialog.sapMDialogPhone > .sapMBar.sapMHeader-CTX > .sapMBarMiddle > .sapMBarPH > .sapMDialogTitle {
   color: #ffffff;
   text-shadow: 0 -0.0625rem 0 rgba(0, 0, 0, 0.6);
   font-size: 0.875rem;
@@ -7021,7 +7031,7 @@ svg.sapMBusySvg {
 /* ---------------------------------------------------------------------*/
 /* Custom focus outline:                                                */
 /* ---------------------------------------------------------------------*/
-.sapMBtn:focus > .sapMBtnInner.sapMFocusable {
+html.sap-desktop .sapMBtn:focus > .sapMFocusable {
   outline: 1px dotted #005483;
   outline-offset: -1px;
 }
@@ -7876,13 +7886,6 @@ html[dir='rtl'] .sapMCrslNext > .sapMCrslHudInner > .sapUiIcon,
 /* ======================================================== */
 /* CSS for control sap.m/ComboBox.control BlueCrystal theme */
 /* ======================================================== */
-/* ------------------------------ */
-/* ComboBox's Arrow               */
-/* ------------------------------ */
-/* note: fix for a specific IE10 rendering issue, change the background color of the arrow button from transparent to white */
-:not(.sapMComboBoxState) > .sapMComboBoxArrow {
-  background: #ffffff;
-}
 /* ============================================================ */
 /* CSS for control sap.m/ComboBoxBase.control BlueCrystal theme */
 /* ============================================================ */
@@ -7915,8 +7918,14 @@ input.sapMComboBoxBaseInputInner:not(.sapMComboBoxBaseInputInnerReadonly) {
   width: 2.5rem;
   height: 2.375rem;
   line-height: 2.375rem;
-  top: 0.3125rem;
   right: 0.0625rem;
+  /* note: add a non-transparent background because the input field text overflows arrow button in IE10 */
+  background: #ffffff;
+}
+.sapMComboBoxBaseState .sapMComboBoxBaseArrow {
+  height: 2.25rem;
+  line-height: 2.25rem;
+  right: 0.125rem;
 }
 /* hover */
 .sap-desktop .sapMComboBoxBaseArrow:not(.sapMComboBoxBasePressed):hover {
@@ -8028,10 +8037,12 @@ div.sapMComboBoxBasePicker .sapMDialogScrollCont {
   width: 2rem;
   height: 1.5rem;
   line-height: 1.5rem;
-  top: 0.25rem;
+}
+.sapUiSizeCompact .sapMComboBoxBaseState .sapMComboBoxBaseArrow {
+  height: 1.375rem;
+  line-height: 1.375rem;
 }
 .sapUiSizeCondensed .sapMComboBoxBaseArrow {
-  top: 0;
   right: 0;
 }
 /* ------------------------------ */
@@ -8425,15 +8436,6 @@ html[data-sap-ui-browser^="ie"] .sapMCustomSlt.dw-bubble .dw {
 /* ====================================================== */
 /* CSS for control sap.m/Dialog.control BlueCrystal theme */
 /* ====================================================== */
-.sapMDialogPhone {
-  opacity: 1;
-  -webkit-transform: translate3d(0px, 0px, 0px);
-  -moz-transform: translate3d(0px, 0px, 0px);
-  transform: translate3d(0px, 0px, 0px);
-  -webkit-transition-property: -webkit-transform;
-  -moz-transition-property: -webkit-transform;
-  transition-property: transform;
-}
 .sapMDialog {
   border-radius: 2px;
   border: 1px rgba(154, 154, 154, 0.6) solid;
@@ -9244,7 +9246,7 @@ html[data-sap-ui-os=win8] .sapMITBNoText .sapMITBFilter:last-child {
 .sapMITBFilter .sapMITBText {
   position: relative;
   color: #666666;
-  text-shadow: 0 0.0625rem 0 rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0.0625rem 0 rgba(255, 255, 255, 0.7);
   padding: 0.375rem 0 0;
   width: 5rem;
   line-height: 0.9375rem;
@@ -9315,7 +9317,7 @@ html[data-sap-ui-os=win8] .sapMITBNoText .sapMITBFilter:last-child {
 }
 .sapMITBTextOnly .sapMITBFilterDefault > .sapMITBText {
   color: #333333;
-  text-shadow: 0 0.0625rem 0 rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0.0625rem 0 rgba(255, 255, 255, 0.7);
 }
 .sapMITBTextOnly .sapMITBFilterDefault.sapMITBSelected > .sapMITBText {
   color: #0079ad;
@@ -9335,7 +9337,7 @@ html[data-sap-ui-os=win8] .sapMITBNoText .sapMITBFilter:last-child {
 .sapMITBFilter .sapMITBCount {
   position: absolute;
   color: #000000;
-  text-shadow: 0 0.0625rem 0 rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0.0625rem 0 rgba(255, 255, 255, 0.7);
   max-width: 2rem;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -9445,7 +9447,7 @@ html[data-sap-ui-os=win8] .sapMITBNoText .sapMITBFilter:last-child {
   padding: 0 0.5rem;
   display: inline-block;
   width: auto;
-  text-shadow: 0 0.0625rem 0 rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0.0625rem 0 rgba(255, 255, 255, 0.7);
 }
 .sap-phone .sapMITBAll > .sapMITBTab > .sapMITBCount {
   padding: 0 0.25rem;
@@ -9467,7 +9469,7 @@ html[data-sap-ui-os=win8] .sapMITBNoText .sapMITBFilter:last-child {
   max-height: 3rem;
   overflow: hidden;
   text-overflow: ellipsis;
-  text-shadow: 0 0.0625rem 0 rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0.0625rem 0 rgba(255, 255, 255, 0.7);
 }
 .sap-phone .sapMITBAll .sapMITBText {
   padding-right: 0.5rem;
@@ -13810,8 +13812,6 @@ html[data-sap-ui-browser*='ie1'] .sapMSLIDiv {
 /* ------------------------------ */
 .sapMSwtText,
 .sapMSwtAcceptReject .sapMSwtHandle {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 /* ------------------------------ */
