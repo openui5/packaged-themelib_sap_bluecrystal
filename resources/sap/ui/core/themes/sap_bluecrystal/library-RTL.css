@@ -1185,7 +1185,7 @@ html[data-sap-ui-browser^=ie] .sapUiBusy {
 .sapUiIcon:focus {
   outline: 1px dashed #005483;
 }
-.sapMTB-Info-CTX .sapUiIcon {
+.sapMTB-Info-CTX > .sapUiIcon {
   width: 1rem;
   font-size: 1rem;
   color: #ffffff;
