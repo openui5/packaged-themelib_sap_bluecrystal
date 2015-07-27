@@ -923,6 +923,7 @@
     "sapUiTableCompactRowHeight": "32px",
     "sapUiTableCompactColHdrHeight": "32px",
     "sapUiTableCompactRowHdrWidth": "32px",
+    "sapUiTableCozyRowHdrWidth": "3rem",
     "sapUiTableCondensedRowHeight": "25px",
     "sapUiTableCondensedColHdrHeight": "25px",
     "sapUiTableCondensedRowHdrWidth": "25px"
