@@ -211,8 +211,8 @@
 }
 html[dir='rtl'] .sapMBsyIndIcon {
   -moz-animation: sapMBsyIndRotateRTL 2s linear 0s infinite normal none;
-  -webkit-animation: sapMBsyIndRotateRTL 2s linear 0 infinite normal none;
-  animation: sapMBsyIndRotateRTL 2s linear 0 infinite normal none;
+  -webkit-animation: sapMBsyIndRotateRTL 2s linear 0s infinite normal none;
+  animation: sapMBsyIndRotateRTL 2s linear 0s infinite normal none;
 }
 .sapMBsyIndIcon {
   vertical-align: middle;
@@ -223,8 +223,8 @@ html[dir='rtl'] .sapMBsyIndIcon {
   transform: rotate(0deg) translateZ(0);
   transition-duration: 0ms;
   -moz-animation: sapMBsyIndRotate 2s linear 0s infinite normal none;
-  -webkit-animation: sapMBsyIndRotate 2s linear 0 infinite normal none;
-  animation: sapMBsyIndRotate 2s linear 0 infinite normal none;
+  -webkit-animation: sapMBsyIndRotate 2s linear 0s infinite normal none;
+  animation: sapMBsyIndRotate 2s linear 0s infinite normal none;
 }
 @-moz-keyframes sapMBsyIndRotate {
   from {
@@ -528,6 +528,10 @@ html[dir=rtl][data-sap-ui-browser^="ed"] .sapMCrslInner {
 }
 .sapMComboBoxBaseReadonly .sapMComboBoxBaseArrow {
   display: none;
+}
+div.sapMComboBoxBasePicker {
+  min-width: 0;
+  /* override the default min-width of the popover */
 }
 /* ============================================= */
 /* CSS for control sap.m/CustomTile.control */
@@ -1855,6 +1859,11 @@ html[dir=rtl] .sapMILIDiv {
 /* ============================================= */
 /* CSS for control sap.m/MultiComboBox.control   */
 /* ============================================= */
+li.sapMMultiComboBoxItem .sapMCbBg {
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
 /* ============================================= */
 /* CSS for control sap.m/MultiInput.control */
 /* ============================================= */
@@ -4211,6 +4220,10 @@ html[data-sap-ui-os^="Android"] .sapUiSizeCompact .sapMSegBBtn .sapUiIcon {
 /* ------------------------------ */
 /* SelectList commons styles      */
 /* ------------------------------ */
+.sapMSelectList,
+.sapMSelectListItem {
+  box-sizing: border-box;
+}
 /* disabled */
 .sapMSelectListDisabled,
 .sapMSelectListItemDisabled {
@@ -4224,7 +4237,6 @@ html[data-sap-ui-os^="Android"] .sapUiSizeCompact .sapMSegBBtn .sapUiIcon {
   padding: 0;
   outline: none;
   list-style-type: none;
-  box-sizing: border-box;
 }
 /* ------------------------------ */
 /* SelectList Item                */
@@ -4238,6 +4250,9 @@ html[data-sap-ui-os^="Android"] .sapUiSizeCompact .sapMSegBBtn .sapUiIcon {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+li.sapMSelectListItemInvisible {
+  display: none;
 }
 /* ============================================= */
 /* CSS for control sap.m/Shell.control */
@@ -8031,6 +8046,12 @@ html[dir='rtl'] .sapMCrslNext > .sapMCrslHudInner > .sapUiIcon,
 /* ======================================================== */
 /* CSS for control sap.m/ComboBox.control BlueCrystal theme */
 /* ======================================================== */
+label.sapMComboBoxPlaceholder {
+  padding-left: 3rem;
+}
+.sapUiSizeCompact label.sapMComboBoxPlaceholder {
+  padding-left: 2.5rem;
+}
 /* ============================================================ */
 /* CSS for control sap.m/ComboBoxBase.control BlueCrystal theme */
 /* ============================================================ */
@@ -8087,53 +8108,11 @@ input.sapMComboBoxBaseInputInner:not(.sapMComboBoxBaseInputInnerReadonly) {
   color: #ffffff;
 }
 /* ------------------------------ */
-/* ComboBox's List                */
-/* ------------------------------ */
-.sapMComboBoxBaseList {
-  border: 0.0625rem solid #c0c0c0;
-}
-.sapMComboBoxBaseItemDisabled {
-  opacity: 0.5;
-  pointer-events: none;
-}
-.sapMComboBoxBasePicker .sapMSLITitleOnly {
-  font-size: 0.875rem;
-}
-/* ------------------------------ */
-/* ComboBox's Item                */
-/* ------------------------------ */
-li.sapMComboBoxBaseItem {
-  height: 2.5rem;
-  border: none;
-}
-.sapMComboBoxBaseItem .sapMCb {
-  height: 2.5rem;
-  line-height: 2.5rem;
-}
-.sapMComboBoxBaseItem .sapMCbBg {
-  top: 0;
-  bottom: 0;
-  margin: auto;
-}
-li.sapMComboBoxBaseItemVisible {
-  display: block;
-}
-li.sapMComboBoxBaseItemNotVisible {
-  display: none;
-}
-/* focus */
-.sap-desktop li.sapMComboBoxBaseItem:focus {
-  outline: none;
-}
-/* ------------------------------ */
 /* ComboBox's Picker              */
 /* ------------------------------ */
 div.sapMComboBoxBasePicker {
-  -webkit-box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.5);
   box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.5);
   border: none;
-  min-width: 0;
-  /* override the default min-width of the popover */
 }
 /* remove the Popover's arrow */
 .sapMComboBoxBasePicker .sapMPopoverArr {
@@ -8143,7 +8122,6 @@ div.sapMComboBoxBasePicker {
 /* ComboBox's Dialog              */
 /* ------------------------------ */
 .sapMComboBoxBaseBar {
-  -webkit-box-shadow: none;
   box-shadow: none;
 }
 div.sapMComboBoxBasePicker .sapMDialogScrollCont {
@@ -8189,12 +8167,6 @@ div.sapMComboBoxBasePicker .sapMDialogScrollCont {
 }
 .sapUiSizeCondensed .sapMComboBoxBaseArrow {
   left: 0;
-}
-/* ------------------------------ */
-/* ComboBox Item                  */
-/* ------------------------------ */
-.sapUiSizeCompact li.sapMComboBoxBaseItem {
-  height: 2rem;
 }
 /* ============================================= */
 /* CSS for controlsap.m/CustomListItem.control */
@@ -11150,6 +11122,9 @@ html[data-sap-ui-browser*='ie9'] .sapMListNoData {
   padding: 0.25rem 0;
   height: 3.0rem;
 }
+li.sapMMultiComboBoxItem {
+  border: none;
+}
 /* ------------------------------ */
 /* BorderDiv                      */
 /* ------------------------------ */
@@ -11324,6 +11299,16 @@ html[data-sap-ui-browser*='ie9'] .sapMListNoData {
 /* focus to allow go down via keyboard navigation into list */
 .sap-desktop .sapMMultiComboBoxList li.sapMComboBoxBaseItem:focus {
   outline: 1px dotted #005483;
+}
+.sapMMultiComboBoxItem .sapMCb {
+  height: 2.5rem;
+  line-height: 2.5rem;
+}
+li.sapMMultiComboBoxItem {
+  height: 2.5rem;
+}
+.sapMMultiComboBoxPicker .sapMSLITitleOnly {
+  font-size: 0.875rem;
 }
 .sap-desktop li.sapMMultiComboBoxItemRangeSelection {
   background-color: #f0f0f0;
@@ -13502,7 +13487,6 @@ html[data-sap-ui-os^="Android4.1"][data-sap-ui-browser^="an"] .sapUiSizeCompact 
 /* ------------------------------ */
 div.sapMSltPicker {
   border: none;
-  -webkit-box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.5);
   box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.5);
 }
 .sapMSltPicker .sapMBtn {
@@ -13516,7 +13500,6 @@ div.sapMSltPicker {
 /* Select Dialog                  */
 /* ------------------------------ */
 .sapMSltBar {
-  -webkit-box-shadow: none;
   box-shadow: none;
 }
 div.sapMSltPicker .sapMDialogScrollCont {
