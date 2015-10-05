@@ -1008,7 +1008,8 @@ html[data-sap-ui-browser^="ie"] .sapUiTableColHdrCnt {
 }
 .sapUiTableGroupMenuButton {
   position: absolute;
-  min-width: 1rem;
+  min-width: 2.5rem;
+  text-align: center;
   z-index: 2;
   right: 0;
   top: 50%;
@@ -1016,11 +1017,13 @@ html[data-sap-ui-browser^="ie"] .sapUiTableColHdrCnt {
   -ms-transform: translatey(-50%);
   -webkit-transform: translatey(-50%);
   transform: translatey(-50%);
+  background: #f7f7f7;
   font-family: 'SAP-icons';
   font-size: 1.375rem;
   color: #666666;
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
+}
+.sapUiTableRowHvr .sapUiTableGroupMenuButton {
+  background-color: #e5e5e5;
 }
 .sapUiAnalyticalTable [data-sap-ui-level="2"].sapUiTableRowHdr.sapUiTableGroupHeader,
 .sapUiAnalyticalTable [data-sap-ui-level="2"].sapUiTableRowHdr.sapUiAnalyticalTableSum,
