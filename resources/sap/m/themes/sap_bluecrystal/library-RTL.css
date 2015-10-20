@@ -1386,6 +1386,7 @@ html[data-sap-ui-browser="ie9"] .sapMFeedListItemTitleDiv {
   display: block;
 }
 .sapMFeedListItemTitleDiv .sapMLIBContent {
+  flex-basis: auto;
   overflow: hidden;
 }
 /* phone adoption */
@@ -2251,7 +2252,8 @@ li.sapMMultiComboBoxItem .sapMCbBg {
   display: inline-block;
   position: static;
 }
-.sapMMultiInput .sapMMultiInputMultiModeInputContainer .sapMInputValHelp {
+.sapMMultiInput .sapMMultiInputMultiModeInputContainer .sapMInputValHelp,
+.sapUiSizeCompact .sapMMultiInput .sapMMultiInputMultiModeInputContainer .sapMInputValHelp {
   position: absolute;
   top: 0;
   left: 0;
@@ -12673,23 +12675,23 @@ li.sapMLIB.sapMLIBNoFlex.sapMObjLItem > .sapMLIBContent > .sapMLIBContentNF .sap
 }
 /* page with header and subHeader */
 .sapMPage > .sapMPageHeader + .sapMPageSubHeader + section {
-  top: 6em;
+  top: 6rem;
 }
 /* page with header */
 .sapMPage > .sapMPageHeader + section,
 .sapMPage > .sapMPageSubHeader + section,
 .sapMPage > .sapMPageHeader + .sapUiHiddenPlaceholder + section {
-  top: 3em;
+  top: 3rem;
 }
 /* page with footer */
 .sapMPageWithFooter > section {
-  bottom: 3em;
+  bottom: 3rem;
 }
 /* page app icon */
 .sapMBar-CTX .sapMBarLeft > .sapMImg.sapMPageAppIcon {
-  max-height: 1.375em;
-  max-width: 1.375em;
-  margin: 0.8125em;
+  max-height: 1.375rem;
+  max-width: 1.375rem;
+  margin: 0.8125rem;
 }
 /* vertical scroll bar */
 .sapMPage .sapMScrollbarV > div {
@@ -12782,7 +12784,7 @@ li.sapMLIB.sapMLIBNoFlex.sapMObjLItem > .sapMLIBContent > .sapMLIBContentNF .sap
   color: #333333;
   background-color: transparent;
 }
-.sapMPanelContent {
+.sapMPanelContent:not(.sapMPanelBGTransparent) {
   border-bottom: 1px solid #dddddd;
 }
 .sapMPanelExpandableIcon {
