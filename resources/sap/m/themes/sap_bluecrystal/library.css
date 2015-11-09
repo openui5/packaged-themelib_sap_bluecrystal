@@ -1480,14 +1480,14 @@ html[dir=rtl] .sapMILIDiv {
 /* Overwrites for Label in Form */
 /* ============================ */
 /* GridLayout */
-.sapUiGridLabel > .sapMLabel {
+td.sapUiFormElementLbl > .sapMLabel {
   float: right;
 }
 /* ResponsiveGridLayout */
 /* make labels right aligned if left from fields*/
-.sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanS12) > .sapMLabel,
-.sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanM12) > .sapMLabel,
-.sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanL12) > .sapMLabel {
+.sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanS12) > .sapMLabel,
+.sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanM12) > .sapMLabel,
+.sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanL12) > .sapMLabel {
   float: right;
 }
 /* ============================================= */
@@ -2466,13 +2466,6 @@ html[dir=rtl][data-sap-ui-browser^=ed] .sapMOHStatusFixedWidth {
   text-align: left;
 }
 /* Styles for Responsive Object Header */
-div[class*='sapMOHRBg'] {
-  padding-bottom: 1.5rem;
-}
-.sap-desktop.sapUiMedia-Std-Phone div[class*='sapMOHRBg'],
-.sap-phone div[class*='sapMOHRBg'] {
-  padding-bottom: 1rem;
-}
 .sapMOHR {
   width: 100%;
   height: 100%;
@@ -2482,6 +2475,13 @@ div[class*='sapMOHRBg'] {
 .sap-desktop.sapUiMedia-Std-Phone .sapMOHR,
 .sap-phone .sapMOHR {
   padding: 0.625rem 1rem 0 1rem;
+}
+div[class*='sapMOHRBg']:only-child {
+  padding-bottom: 1.5rem;
+}
+.sap-desktop.sapUiMedia-Std-Phone div[class*='sapMOHRBg']:only-child,
+.sap-phone div[class*='sapMOHRBg']:only-child {
+  padding-bottom: 1rem;
 }
 /* Group1 (title, flags and number) */
 .sapMOHRTitleNumberDiv {
@@ -3946,10 +3946,6 @@ html[data-sap-ui-browser*='ie'] .sapMRISelector {
   overflow: hidden;
   position: relative;
   /* to make the iScroll scrollbars appear at the correct position, if enabled */
-}
-.sapMScrollContScroll {
-  display: inline-block;
-  /* to make this content wrapper as large as its content */
 }
 .sapMScrollContV .sapMScrollContScroll {
   display: block;
@@ -7882,6 +7878,10 @@ html[dir='rtl'] .sapMCrslNext > .sapMCrslHudInner > .sapUiIcon,
   outline-width: 1px;
   outline-style: dotted;
 }
+.sapMFooter-CTX .sapMCb:not(.sapMCbBgDis):focus > .sapMCbBg,
+.sapMFooter-CTX .sapMCb:not(.sapMCbBgDis) > .sapMCbBg:focus {
+  outline-color: #ffffff;
+}
 .sapMLIBActive .sapMCbBg,
 .sapMLIBActive .sapMCbBg.sapMCbMarkChecked,
 .sapMLIBActive .sapMCbBg.sapMCbBgDis,
@@ -10127,7 +10127,7 @@ html[dir=rtl] .sapMILI-CTX .sapMInputBasePlaceholder {
   color: #ffffff;
 }
 /* collapse lines in a form */
-.sapUiForm .sapMLabel {
+.sapUiForm .sapUiFormElementLbl > .sapMLabel {
   height: auto;
   position: relative;
   /* 
@@ -10138,19 +10138,17 @@ html[dir=rtl] .sapMILI-CTX .sapMInputBasePlaceholder {
 	*/
   padding-right: 0.3em;
 }
-.sapUiForm.sapUiFormEdit .sapMLabel {
+.sapUiForm.sapUiFormEdit .sapUiFormElementLbl > .sapMLabel {
   vertical-align: top;
   /* align vertically to multiline texts */
 }
-.sapUiForm .sapMLabel:after {
+.sapUiForm .sapUiFormElementLbl > .sapMLabel:after {
   content: ":";
 }
-.sapUiForm .sapMLabel:lang(fr):after {
+.sapUiForm .sapUiFormElementLbl > .sapMLabel:lang(fr):after {
   content: " :";
 }
-.sapUiForm .sapMCb > .sapMCbLabel:after,
-.sapUiForm .sapMRb > .sapMRbBLabel:after,
-.sapUiForm .sapMLabel.sapMLabelNoText:after {
+.sapUiForm .sapUiFormElementLbl > .sapMLabel.sapMLabelNoText:after {
   content: none;
 }
 .sapMLIBUnread .sapMLabel,
@@ -10199,9 +10197,9 @@ html[dir=rtl] .sapMTB-Info-CTX .sapMLabel {
   box-sizing: border-box;
 }
 /* in the cases text-align: end is set, we position the colon of the label to absolute so it does not get truncated in the ellipsis*/
-.sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanS12) > .sapMLabel:after,
-.sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanM12) > .sapMLabel:after,
-.sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanL12) > .sapMLabel:after,
+.sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanS12) > .sapMLabel:after,
+.sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanM12) > .sapMLabel:after,
+.sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanL12) > .sapMLabel:after,
 .sapUiFormResLayout .sapUiRFLRow:first-child > .sapUiRFLContainer:first-child > .sapUiRFLContainerContent > .sapUiForm .sapMLabel:after {
   position: absolute;
   right: 0;
@@ -10232,38 +10230,35 @@ html[dir=rtl][data-sap-ui-browser^=ed] .sapUiFormResLayout .sapUiRFLRow:first-ch
   /* to overwrite setting on label */
 }
 /* ResponsiveGridLayout */
-.sapUiFormResGridLbl > .sapMLabel {
+.sapUiFormResGridCont > .sapUiFormElementLbl > .sapMLabel {
   width: 100%;
 }
 /* ================================ */
 /* SMALL,  MEDIUM and LARGE DEVICES */
 /* ================================ */
-.sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanS12) > .sapMLabel,
-.sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanM12) > .sapMLabel,
-.sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanL12) > .sapMLabel {
+.sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanS12) > .sapMLabel,
+.sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanM12) > .sapMLabel,
+.sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanL12) > .sapMLabel {
   text-align: end !important;
   /* to overwrite style set on element */
   float: none;
   /* as label has 100% width not needed (will bring wrong alignments on iPad) */
 }
-html[data-sap-ui-browser^=ie] .sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanS12) > .sapMLabel,
-html[data-sap-ui-browser^=ie] .sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanM12) > .sapMLabel,
-html[data-sap-ui-browser^=ie] .sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanL12) > .sapMLabel,
-html[data-sap-ui-browser^=ie] .sapUiRespGridMedia-Std-LargeDesktop.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanXL12) > .sapMLabel,
-html[data-sap-ui-browser^=ed] .sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanS12) > .sapMLabel,
-html[data-sap-ui-browser^=ed] .sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanM12) > .sapMLabel,
-html[data-sap-ui-browser^=ed] .sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanL12) > .sapMLabel,
-html[data-sap-ui-browser^=ed] .sapUiRespGridMedia-Std-LargeDesktop.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanXL12) > .sapMLabel {
+html[data-sap-ui-browser^=ie] .sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanS12) > .sapMLabel,
+html[data-sap-ui-browser^=ie] .sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanM12) > .sapMLabel,
+html[data-sap-ui-browser^=ie] .sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanL12) > .sapMLabel,
+html[data-sap-ui-browser^=ed] .sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanS12) > .sapMLabel,
+html[data-sap-ui-browser^=ed] .sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanM12) > .sapMLabel,
+html[data-sap-ui-browser^=ed] .sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanL12) > .sapMLabel {
   text-align: right !important;
   /* to overwrite style set on element */
 }
-html[dir=rtl][data-sap-ui-browser^=ie] .sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanS12) > .sapMLabel,
-html[dir=rtl][data-sap-ui-browser^=ie] .sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanM12) > .sapMLabel,
-html[dir=rtl][data-sap-ui-browser^=ie] .sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanL12) > .sapMLabel html[dir=rtl][data-sap-ui-browser^=ie] .sapUiRespGridMedia-Std-LargeDesktop.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanXL12) > .sapMLabel,
-html[dir=rtl][data-sap-ui-browser^=ed] .sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanS12) > .sapMLabel,
-html[dir=rtl][data-sap-ui-browser^=ed] .sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanM12) > .sapMLabel,
-html[dir=rtl][data-sap-ui-browser^=ed] .sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanL12) > .sapMLabel,
-html[dir=rtl][data-sap-ui-browser^=ed] .sapUiRespGridMedia-Std-LargeDesktop.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanXL12) > .sapMLabel {
+html[dir=rtl][data-sap-ui-browser^=ie] .sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanS12) > .sapMLabel,
+html[dir=rtl][data-sap-ui-browser^=ie] .sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanM12) > .sapMLabel,
+html[dir=rtl][data-sap-ui-browser^=ie] .sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanL12) > .sapMLabel,
+html[dir=rtl][data-sap-ui-browser^=ed] .sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanS12) > .sapMLabel,
+html[dir=rtl][data-sap-ui-browser^=ed] .sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanM12) > .sapMLabel,
+html[dir=rtl][data-sap-ui-browser^=ed] .sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanL12) > .sapMLabel {
   text-align: left !important;
   /* to overwrite style set on element */
 }
@@ -10985,6 +10980,7 @@ html[data-sap-ui-browser*='ie9'] .sapMListNoData {
 /* Compact size */
 .sapUiSizeCompact .sapMLIBSelectSL,
 .sapUiSizeCompact .sapMLIBSelectM {
+  padding-left: 0.5rem;
   width: 2.5rem;
 }
 /* ============================================= */
@@ -11520,13 +11516,16 @@ li.sapMMultiComboBoxItem {
 /* ============================================= */
 /* CSS for control sap.m/ObjectHeaderItem.control */
 /* ============================================= */
+.sapMOH.sapMOHBgTransparent,
 .sapMOHC.sapMOHBgTransparent {
   background-color: transparent;
 }
+.sapMOH.sapMOHBgSolid,
 .sapMOHC.sapMOHBgSolid {
   background-color: #ffffff;
   border-bottom: 0.063rem #e5e5e5;
 }
+.sapMOH.sapMOHBgTranslucent,
 .sapMOHC.sapMOHBgTranslucent {
   background: rgba(255, 255, 255, 0.6);
 }
@@ -11632,9 +11631,18 @@ html[data-sap-ui-browser^="ie"] .sapMOH .sapMObjStatusMarker .sapUiIcon:focus {
 }
 /*** styles for responsive object header ***/
 .sapMOHR {
-  background: rgba(255, 255, 255, 0.6);
   border-bottom: 1px solid #e5e5e5;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+.sapMOHR.sapMOHRBgTranslucent {
+  background: rgba(255, 255, 255, 0.6);
+}
+.sapMOHR.sapMOHRBgTransparent {
+  background-color: transparent;
+}
+.sapMOHR.sapMOHRBgSolid {
+  background-color: #ffffff;
+  border-bottom: 0.063rem #ffffff;
 }
 .sapMOHRTitle h1 {
   font-family: Arial, Helvetica, sans-serif;
@@ -14284,6 +14292,7 @@ html[dir=rtl] .sapMSwtTrans > .sapMSwtInner {
 .sapMListTblSelCol > .sapMLIBSelectD,
 .sapMListTblSelCol > .sapMLIBSelectM {
   margin: 0;
+  padding: 0;
 }
 .sapMListTblUnreadCol {
   display: none;
