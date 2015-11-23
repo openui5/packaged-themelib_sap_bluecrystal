@@ -1846,8 +1846,8 @@ html[data-sap-ui-browser^="cr"] .sapUiFupInputMask > input {
   outline: 0.0625rem dotted #005483;
   outline-offset: -0.0625rem;
 }
-html[data-sap-ui-browser^="ie"] .sapUiCalMonth:focus,
-html[data-sap-ui-browser^="ie"] .sapUiCalYear:focus {
+html[data-sap-ui-browser^="ie"].sap-desktop .sapUiCalMonth:focus,
+html[data-sap-ui-browser^="ie"].sap-desktop .sapUiCalYear:focus {
   /* as IE don't support outline-offset */
   outline: none;
   border: 0.0625rem dotted #005483;
@@ -1891,8 +1891,8 @@ html[data-sap-ui-browser^="ie"] .sapUiCalYear:focus {
 .sap-desktop .sapUiCalYearSel:focus {
   background-color: #005b8d;
 }
-html[data-sap-ui-browser^="ie"] .sapUiCalMonthSel:focus,
-html[data-sap-ui-browser^="ie"] .sapUiCalYearSel:focus {
+html[data-sap-ui-browser^="ie"].sap-desktop .sapUiCalMonthSel:focus,
+html[data-sap-ui-browser^="ie"].sap-desktop .sapUiCalYearSel:focus {
   /* as IE don't support outline-offset */
   border-color: #ffffff;
 }

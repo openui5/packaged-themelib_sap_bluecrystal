@@ -8866,7 +8866,8 @@ html[dir=rtl] .sapMDLIValue {
 /* CSS for control sap.m/FacetFilterList.control */
 /* ============================================= */
 /* Facet Filter Popover */
-.sapMFFPop.sapMPopover {
+.sapMFFPop.sapMPopover,
+.sapMFFPop.sapMPopover .sapMPopoverCont {
   min-width: 300px;
 }
 .sapMFFPop .sapMCbLabel {
