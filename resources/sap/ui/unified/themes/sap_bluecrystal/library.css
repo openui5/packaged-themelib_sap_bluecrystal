@@ -220,7 +220,7 @@
   background-color: #f2f2f2;
 }
 .sap-desktop .sapUiCalItem:focus {
-  background-color: #ffffff;
+  background-color: #d8d8d8;
 }
 .sapUiCalMonthView .sapUiCalFirstWDay {
   clear: both;
@@ -2082,8 +2082,7 @@ html[data-sap-ui-browser^="cr"] .sapUiFupInputMask > input {
   overflow: visible;
 }
 /* hover and focus makes only sense on desktops. On mobile devices it's not needed */
-.sap-desktop .sapUiCalItem:hover,
-.sap-desktop .sapUiCalItem:focus {
+.sap-desktop .sapUiCalItem:hover {
   background-color: #d8d8d8;
 }
 .sap-desktop .sapUiCalItem:focus > .sapUiCalItemText {
@@ -2128,9 +2127,7 @@ html[data-sap-ui-browser^="ie"].sap-desktop .sapUiCalYearPicker .sapUiCalItem:fo
   color: #000000;
 }
 .sap-desktop .sapUiCalItemSel:hover,
-.sap-desktop .sapUiCalItemSel:focus,
-.sap-desktop .sapUiCalItemSel.sapUiCalItemOtherMonth:hover,
-.sap-desktop .sapUiCalItemSel.sapUiCalItemOtherMonth:focus {
+.sap-desktop .sapUiCalItemSel:focus {
   background-color: #005b8d;
 }
 html[data-sap-ui-browser^="ie"].sap-desktop .sapUiCalMonthPicker .sapUiCalItemSel:focus,
@@ -2139,9 +2136,7 @@ html[data-sap-ui-browser^="ie"].sap-desktop .sapUiCalYearPicker .sapUiCalItemSel
   border-color: #ffffff;
 }
 .sap-desktop .sapUiCalItemSelBetween:hover,
-.sap-desktop .sapUiCalItemSelBetween:focus,
-.sap-desktop .sapUiCalItemSelBetween.sapUiCalItemOtherMonth:hover,
-.sap-desktop .sapUiCalItemSelBetween.sapUiCalItemOtherMonth:focus {
+.sap-desktop .sapUiCalItemSelBetween:focus {
   background-color: #8dd7ff;
 }
 .sapUiCalItemNow.sapUiCalItemSel {
