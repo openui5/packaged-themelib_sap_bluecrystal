@@ -2193,9 +2193,16 @@ li.sapMMultiComboBoxItem .sapMCbBg {
 .sapMObjectAttributeDiv .sapMObjectAttributeText {
   font-size: .875rem;
 }
+.sapMObjectAttributeActive {
+  pointer-events: none;
+}
 .sapMObjectAttributeActive .sapMText {
   color: #00679e;
   cursor: pointer;
+  pointer-events: auto;
+}
+.sapMObjectAttributeActive .sapMObjectAttributeText {
+  pointer-events: auto;
 }
 .sapMObjectAttributeActive .sapMText:active,
 .sapMObjectAttributeActive .sapMText:focus,
@@ -9021,6 +9028,10 @@ clicking the icon does not remove the facet button in ie9
   right: -0.25rem;
   bottom: 0.25rem;
 }
+html[data-sap-ui-browser*='ie'] .sapMFeedIn .sapMBtnInner {
+  width: 3.5rem;
+  display: block;
+}
 .sapMFeedIn .sapMBtnInner {
   width: 3.5rem;
   height: 3.5rem;
@@ -12674,7 +12685,12 @@ html[dir=rtl][data-sap-ui-browser='ie9'] .sapMPopoverFooterAlignArr.sapMPopoverA
   background-color: #f2f2f2;
   color: #bfbfbf;
 }
-.sapMQuickViewPage .sapUiIcon:focus {
+.sapMQuickViewPage .sapUiIcon:focus,
+.sap-phone .sapMQuickViewPage .sapMLnk:focus,
+.sap-tablet .sapMQuickViewPage .sapMLnk:focus {
+  outline: none;
+}
+.sap-desktop .sapMQuickViewPage .sapUiIcon:focus {
   outline: 1px dotted #005483;
   outline-offset: -1px;
 }
