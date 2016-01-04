@@ -356,6 +356,7 @@
     "sapMShellAppWidthLimitPlusPadding": "1296px",
     "sapUiSltBtnInnerSize": "1.25rem",
     "sapUiSltLstBtnInnerSize": "1.25rem",
+    "sapUiSltLstBtnInnerSizePhone": "1.5rem",
     "sapMTitleSize1": "1.75rem",
     "sapMTitleSize2": "1.5rem",
     "sapMTitleSize3": "1.25rem",
