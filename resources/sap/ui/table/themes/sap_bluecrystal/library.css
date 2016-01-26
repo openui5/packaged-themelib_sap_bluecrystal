@@ -1563,8 +1563,7 @@ tr.sapUiTableRowHvr .sapUiLnk:hover,
 .sapUiSizeCondensed .sapUiTableCtrl tr {
   height: 25px;
 }
-.sapUiSizeCondensed .sapUiTableCell .sapMDP > .sapUiIcon,
-.sapUiSizeCondensed .sapUiTableCell .sapMDP.sapMInputIE9 > .sapUiIcon {
+.sapUiSizeCondensed .sapUiTableCell .sapMDP > .sapUiIcon {
   height: 1.5rem;
   line-height: 1.5rem;
 }
