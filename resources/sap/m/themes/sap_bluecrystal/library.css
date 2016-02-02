@@ -699,15 +699,24 @@ html[dir=rtl][data-sap-ui-browser^="ed"] .sapMCrslInner {
   text-align: right;
 }
 .sapMCrslItemTable {
-  display: table;
+  height: 100%;
 }
 .sapMCrslItemTableCell {
   height: 100%;
-  display: table-cell;
 }
 .sapMCrslImg {
   text-align: center;
-  vertical-align: middle;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.sapMCrslItemTableCell.sapMCrslImg img {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 .sapMCrslInner.sapMCrslNoTransition {
   -webkit-transition-duration: 0.01s;
@@ -2739,10 +2748,8 @@ td.sapUiFormElementLbl > .sapMLabel {
 .sapMLIBContent {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
-  -ms-flex: auto;
-  flex: 1;
-  -ms-flex-negative: 1;
-  /* IE10 does not shrink by auto */
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
   max-width: 100%;
 }
 .sapMLIBTypeNavigation {
@@ -5386,8 +5393,12 @@ html[dir=rtl] .sapUiIconMirrorInRTL:not(.sapUiIconSuppressMirrorInRTL).sapMPanel
   display: block;
   border: none;
 }
+/* if Head is displayed next to CalendarRow, use head size as minimum */
+.sapMPlanCal:not(.sapMPlanCalNoHead) > .sapMList > table > tbody > tr > td > .sapUiCalendarRow:not(.sapMPlanCalRowLarge) > .sapUiCalendarRowApps {
+  min-height: 3rem;
+}
 /* if Head has 2 lines, CalendarRow must be large */
-.sapMPlanCalRowLarge.sapUiCalendarRow > .sapUiCalendarRowApps {
+.sapMPlanCal:not(.sapMPlanCalNoHead) > .sapMList > table > tbody > tr > td > .sapUiCalendarRow.sapMPlanCalRowLarge > .sapUiCalendarRowApps {
   min-height: 4rem;
 }
 .sapMPlanCalHead > .sapMTB {
@@ -5899,6 +5910,7 @@ html[data-sap-ui-animation='on'] .sapMPopover {
   bottom: .625rem;
   left: .75rem;
   right: .625rem;
+  pointer-events: none;
 }
 .sapMRbHasLabel.sapMRb:focus:before {
   right: -0.0625rem;
@@ -6188,6 +6200,9 @@ input.sapMSFI[type="search"]:focus {
   text-shadow: none;
   cursor: default;
   opacity: 0.5;
+}
+.sapMSegBBtn:not(.sapMSegBBtnDis) .sapUiIcon {
+  cursor: pointer;
 }
 html[data-sap-ui-os^="mac"][data-sap-ui-browser^="sf"] .sapMBar .sapMSegB {
   line-height: 2.5rem;
@@ -8935,6 +8950,7 @@ html[dir=rtl][data-sap-ui-browser^="ed"] .sapMTitleAlignEnd {
 }
 .sapMTokenizer:focus {
   outline: none;
+  border: 0.0625rem dotted #005483;
 }
 .sapMTokenizerScrollContainer {
   display: inline-block;
@@ -10834,6 +10850,10 @@ html[data-sap-ui-browser^=ff] .sapMCbBg > input {
 .sapUiSizeCompact .sapMLIBSelectM > .sapMCb {
   width: 2rem;
 }
+.sapUiSizeCompact .sapUiForm .sapMCbBg {
+  /* In forms, align left with '0.0625rem' ( the focus width) */
+  left: 0.0625rem;
+}
 /* Condensed size */
 .sapUiSizeCondensed.sapUiTable .sapMCb,
 .sapUiSizeCondensed .sapUiTable .sapMCb {
@@ -12720,7 +12740,6 @@ html[dir=rtl] .sapMILI-CTX .sapMInputBasePlaceholder {
   font-family: Arial, Helvetica, sans-serif;
   padding: 0.3rem 0.625rem;
   min-width: 6rem;
-  max-width: 22rem;
 }
 .sapMInputBaseMessageError {
   background: #fbdfdf;
@@ -16337,7 +16356,7 @@ html[data-sap-ui-os^="Android4.1"][data-sap-ui-browser^="an"] .sapUiSizeCompact 
   background: #f0f0f0;
   border-color: #007cc0;
 }
-.sap-desktop .sapMSlt:focus {
+.sap-desktop .sapMSlt:not(.sapMSltDisabled):focus {
   border-color: #007cc0;
 }
 .sapMSltHoverable:hover {
@@ -17965,6 +17984,7 @@ html[data-sap-ui-browser^="ie"] .sapMBtn:focus > .sapMToggleBtnPressed.sapMFocus
 }
 .sapMToken:focus {
   border: 0.0625rem dotted #005483;
+  outline: none;
 }
 .sapMTokenSelected {
   color: #ffffff;
