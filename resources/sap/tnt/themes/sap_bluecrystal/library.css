@@ -102,9 +102,6 @@
 .sapTntNavLIGroupItem > .sapMText {
   padding-left: 3rem;
 }
-.sapTntNavLIPopup {
-  margin: 2px;
-}
 .sapTntNavLIPopup .sapTntNavLIGroupItem > .sapMText {
   padding: 0 1rem;
 }
@@ -144,6 +141,10 @@
 }
 .sapTntNavLICollapsed {
   width: 3rem;
+}
+.sapTntNavLI li,
+.sapTntNavLIItem {
+  position: relative;
 }
 /* Compact size */
 .sapUiSizeCompact .sapTntNavLIItem {
@@ -731,8 +732,19 @@ html[dir=rtl].sap-phone .sapUiSizeCompact .sapTntToolPageAsideCollapsed .sapTntT
 }
 .sapTntNavLI li:focus,
 .sapTntNavLIItem:focus {
-  outline: 1px dotted #005483;
-  outline-offset: -1px;
+  outline: none;
+}
+.sapTntNavLI li:focus::before,
+.sapTntNavLIItem:focus::before {
+  border: 1px dotted #005483;
+  position: absolute;
+  content: " ";
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  z-index: 2;
+  pointer-events: none;
 }
 /* ========================================== */
 /* CSS for control sap.tnt/ToolHeader.control */
