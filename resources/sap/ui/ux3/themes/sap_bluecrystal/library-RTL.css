@@ -3085,7 +3085,7 @@ html[data-sap-ui-browser="ie8"] .sapUiUx3ShellCanvas {
 .sapUiUx3TPArrow {
   position: absolute;
   width: 13px;
-  height: 20px;
+  height: 24px;
   right: -13px;
 }
 .sapUiUx3TPArrowLeft {
@@ -3105,7 +3105,7 @@ html[data-sap-ui-browser="ie8"] .sapUiUx3ShellCanvas {
 .sapUiUx3TPArrowUp {
   right: 10px;
   top: -13px;
-  width: 20px;
+  width: 24px;
   height: 13px;
   background-image: url(img-RTL/toolpopup/arrow_up.png);
 }
@@ -3115,7 +3115,7 @@ html[data-sap-ui-browser="ie8"] .sapUiUx3ShellCanvas {
 .sapUiUx3TPArrowDown {
   right: 10px;
   bottom: -13px;
-  width: 20px;
+  width: 24px;
   height: 13px;
   background-image: url(img-RTL/toolpopup/arrow_down.png);
 }
@@ -5450,7 +5450,7 @@ HTML[data-sap-ui-browser='ie8'] .sapUiUx3TPArrowRight > .sapUiUx3TPArrowBorder {
 .sapUiUx3TPArrow.sapUiUx3TPArrowUp,
 .sapUiUx3TPArrow.sapUiUx3TPArrowDown {
   height: 13px;
-  width: 26px;
+  width: 24px;
 }
 .sapUiUx3TPArrowUp > .sapUiUx3TPArrowBorder {
   top: 3px;

@@ -231,7 +231,7 @@
     "sapUiNotifierSeparatorWidth": "1px",
     "sapUiUx3ToolPopupInverted": "false",
     "sapUiUx3ToolPopupArrowWidth": "13px",
-    "sapUiUx3ToolPopupArrowHeight": "20px",
+    "sapUiUx3ToolPopupArrowHeight": "24px",
     "sapUiUx3ToolPopupArrowRightMarginCorrection": "-1px",
     "sapUiUx3ToolPopupArrowRightMarginCorrectionInverted": "-7px",
     "sapUiUx3TPPaddingBottom": "50px",
