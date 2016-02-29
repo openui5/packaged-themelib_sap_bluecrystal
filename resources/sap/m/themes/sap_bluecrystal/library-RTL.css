@@ -114,12 +114,12 @@
   max-width: 100% !important;
   max-height: 100% !important;
   opacity: 1;
+  transform: translate(0, 0) !important;
 }
 .sapMActionSheetDialog.sapMDialogOpen {
   -webkit-transform: translate(0, 0);
   -moz-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
-  transform: translate(0, 0);
 }
 .sapMActionSheet:focus {
   outline: none;
@@ -5744,6 +5744,10 @@ html[data-sap-ui-browser^="ie"] .sapMRbGDummy {
   padding-right: 2.875rem;
   display: inline-block;
 }
+html[data-sap-ui-browser^="ie"] .sapMRbG .sapMRbBLabel {
+  box-sizing: border-box;
+  min-width: 5rem;
+}
 .sapMRbG .sapMRbHasLabel .sapMRbBOut {
   margin: 0.8125rem;
 }
@@ -9780,6 +9784,9 @@ html[dir=rtl][data-sap-ui-browser^=ed] .sapMActionSheetDialog > .sapMBar.sapMHea
 }
 .sap-desktop .sapMActionSheetPopover .sapMActionSheet button.sapMActionSheetButton:hover .sapMBtnInner:not(.sapMBtnActive) {
   background: rgba(234, 234, 234, 0.1);
+}
+.sap-phone .sapMActionSheetDialog .sapMDialogScroll {
+  background-color: transparent;
 }
 .sapMActionSheetPopover.sapMPopover .sapMActionSheet button.sapMActionSheetButton > .sapMBtnInner.sapMBtnAccept,
 .sapMActionSheetPopover.sapMPopover .sapMActionSheet button.sapMActionSheetButton > .sapMBtnInner.sapMBtnReject {
@@ -16060,16 +16067,12 @@ html.sap-desktop .sapMSegBBtnFocusable:hover {
   width: 1.0rem;
   vertical-align: top;
 }
-/* Compact size */
 .sapUiSizeCompact .sapMSegB.sapMSegBIcons:not(.sapMBarChild) .sapMSegBBtn {
   padding-right: 0;
   padding-left: 0;
 }
 .sapUiSizeCompact .sapMSegB .sapMBtnIconLeft {
   margin-right: 0;
-}
-.sapUiSizeCompact .sapMSegB.sapMSegBIcons .sapMSegBBtnMixed {
-  padding-right: 0;
 }
 .sapUiSizeCompact .sapMSegB.sapMSegBIcons .sapMSegBBtnMixed img {
   padding: 0;
@@ -17795,7 +17798,7 @@ html[data-sap-ui-browser^="ie"] .sapMBtn:focus > .sapMToggleBtnPressed.sapMFocus
   color: #ffffff;
 }
 .sapMTokenIcon {
-  padding: 0.25rem 0.5rem;
+  padding: 0.2rem 0.5rem;
   font-size: 1rem;
   color: #666666;
   vertical-align: middle;
@@ -17810,7 +17813,7 @@ html[data-sap-ui-browser^="ie"] .sapMBtn:focus > .sapMToggleBtnPressed.sapMFocus
 }
 .sapUiSizeCompact .sapMTokenIcon {
   font-size: 0.75rem;
-  padding: 0.1rem 0.25rem;
+  padding: 0.15rem 0.25rem;
   vertical-align: baseline;
 }
 .sapUiSizeCompact .sapMListTbl .sapMToken .sapUiIcon:not(.sapMLIBImgNav) {
