@@ -1744,6 +1744,12 @@ html[data-sap-ui-browser^="cr4"].sap-phone .sapUxAPHierarchicalSelect .sapMSltLa
 html.sap-desktop .sapUxAPObjectPageHeaderDesign-Dark .sapMBtn:focus > .sapMFocusable {
   outline: 1px dotted #ffffff;
 }
+html.sap-desktop .sapUxAPObjectPageHeaderDesign-Dark .sapMBtn:focus > .sapMFocusable.sapMIE {
+  outline: none;
+}
+html.sap-desktop .sapUxAPObjectPageHeaderDesign-Dark .sapMBtn:focus .sapMBtnFocusDiv {
+  border: 1px dashed #ffffff;
+}
 .sapUxAPObjectPageHeaderObjectImageContainer .sapUiIcon {
   color: #666666;
 }
@@ -1775,6 +1781,12 @@ html.sap-desktop .sapUxAPObjectPageHeaderDesign-Dark .sapMBtn:focus > .sapMFocus
 }
 html.sap-desktop .sapUxAPObjectPageHeaderDetailsDesign-Dark .sapMBtn:focus > .sapMFocusable {
   outline: 1px dotted #ffffff;
+}
+html.sap-desktop .sapUxAPObjectPageHeaderDetailsDesign-Dark .sapMBtn:focus > .sapMFocusable.sapMIE {
+  outline: none;
+}
+html.sap-desktop .sapUxAPObjectPageHeaderDetailsDesign-Dark .sapMBtn:focus .sapMBtnFocusDiv {
+  border: 1px dashed #ffffff;
 }
 .sapUxAPObjectPageAnchorBar .sapMBtnInner {
   color: #ffffff;
