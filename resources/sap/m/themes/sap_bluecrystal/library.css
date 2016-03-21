@@ -502,6 +502,7 @@ html[dir=rtl][data-sap-ui-browser^="ed"] .sapMCrslInner {
 .sapMCb {
   display: inline-block;
   position: relative;
+  white-space: normal;
 }
 .sapMCbBg {
   height: 2rem;
@@ -7820,6 +7821,7 @@ div.sapMBtnInner.sapMBtnEmphasized > .sapMBtnIcon {
 .sapMCrslHud a {
   z-index: 2;
   opacity: 0;
+  display: none;
   position: absolute;
   top: calc(46.125%);
   width: 3rem;
@@ -7851,10 +7853,12 @@ div.sapMBtnInner.sapMBtnEmphasized > .sapMBtnIcon {
 }
 .sapMCrsl:hover .sapMCrslHud a {
   opacity: 0.3;
+  display: block;
 }
 .sapMCrsl .sapMCrslHud a:hover,
 .sapMCrsl .sapMCrslHud a:focus {
   opacity: 1;
+  display: block;
 }
 .sapMCrsl .sapMCrslHud.sapMCrslLeftmost a.sapMCrslPrev,
 .sapMCrsl .sapMCrslHud.sapMCrslRightmost a.sapMCrslNext {
