@@ -2602,7 +2602,6 @@ td.sapUiFormElementLbl > .sapMLabel {
   position: relative;
   /* This should not break the list but help swipe list content position calculation */
   box-sizing: border-box;
-  overflow: hidden;
 }
 .sapMListUl {
   list-style-type: none;
@@ -5059,6 +5058,15 @@ html[dir=rtl][data-sap-ui-browser^="ed"] .sapMOTAPopover.sapMPopover .sapMPopove
 }
 .sapMConditionPanel .sapMCb {
   display: block;
+}
+.sapMConditionPanel .sapMTB {
+  border-bottom: 0px;
+}
+.sapMFilterPanel .sapMPanelWrappingDivTb {
+  border-bottom: 0px;
+}
+.sapMFilterPanel .sapMTB {
+  border-bottom: 0px;
 }
 /* ============================================= */
 /* CSS for control sap.m/P13nDialog.control */
@@ -8411,14 +8419,12 @@ html[dir=rtl] .sapMTC .sapMCustomTile {
 .sapMTC .sapMTCRemove {
   display: none;
 }
-.sapMTC.sapMTCEditable .sapMTileContent {
-  margin-top: -1em;
-}
 .sapMTC.sapMTCEditable .sapMTile {
   cursor: move;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.6);
 }
 .sapMTC.sapMTCEditable .sapMTile .sapMTCRemove {
+  position: absolute;
   background-color: #666666;
   display: block;
   height: 2rem;
@@ -8427,8 +8433,8 @@ html[dir=rtl] .sapMTC .sapMCustomTile {
   font-family: "SAP-icons";
   font-size: 16px;
   color: #ffffff;
-  padding-top: 0.375rem;
-  padding-right: 0.5rem;
+  line-height: 2rem;
+  text-align: center;
   box-sizing: border-box;
   margin-top: -0.5rem;
   margin-right: -0.5rem;
@@ -9661,7 +9667,7 @@ html[data-sap-ui-animation='on'] .sapMWizardNextButton {
   padding: 0 0.5rem;
   max-height: 2rem;
   overflow: hidden;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
   max-width: calc(100% - 3rem);
   line-height: 1rem;
 }
@@ -10613,6 +10619,7 @@ div.sapMBtnInner.sapMBtnEmphasized > .sapMBtnIcon {
 .sapMCrslHud a {
   z-index: 2;
   opacity: 0;
+  display: none;
   position: absolute;
   top: calc(46.125%);
   width: 3rem;
@@ -10639,10 +10646,12 @@ div.sapMBtnInner.sapMBtnEmphasized > .sapMBtnIcon {
 }
 .sapMCrsl:hover .sapMCrslHud a {
   opacity: 0.3;
+  display: block;
 }
 .sapMCrsl .sapMCrslHud a:hover,
 .sapMCrsl .sapMCrslHud a:focus {
   opacity: 1;
+  display: block;
 }
 .sapMCrsl .sapMCrslHud.sapMCrslLeftmost a.sapMCrslPrev,
 .sapMCrsl .sapMCrslHud.sapMCrslRightmost a.sapMCrslNext {
@@ -11920,6 +11929,20 @@ li.sapMLIB.sapMFeedListItemTitleDiv.sapMLIBNoFlex > .sapMLIBContent > .sapMLIBCo
 .sapMGT {
   border: 1px solid #dddddd;
 }
+.sapMGTFocusDiv {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  border-radius: 0.25rem;
+}
+.sap-desktop .sapMGT:focus .sapMGTFocusDiv {
+  border: 1px dotted #005483;
+}
+.sap-desktop .sapMGT:focus:not([tabindex]) {
+  border-color: transparent;
+}
 .sapMGTBackgroundImage {
   border-color: rgba(221, 221, 221, 0.6);
 }
@@ -11939,12 +11962,6 @@ li.sapMLIB.sapMFeedListItemTitleDiv.sapMLIBNoFlex > .sapMLIBContent > .sapMLIBCo
 .sap-tablet .sapMGTBackgroundHvrOutln:hover {
   box-shadow: 0rem 0rem 0rem 0.125rem #ffffff;
   border-color: rgba(221, 221, 221, 0.6);
-}
-.sap-desktop .sapMGT:focus {
-  border: 1px dotted #005483;
-}
-.sap-desktop .sapMGT:focus:not([tabindex]) {
-  border-color: transparent;
 }
 .sapMGenericTileFtrFldIcn {
   color: #666666;
@@ -12455,11 +12472,15 @@ html[data-sap-ui-os=win8] .sapMITBArrowScroll {
 }
 .sapMITBArrowScrollLeftTextOnly {
   right: 0.25rem;
-  padding: 1rem 0.4rem;
+  padding: 1.1rem 0.4rem;
 }
 .sapMITBArrowScrollRightTextOnly {
-  padding: 1rem 0.4rem;
+  padding: 1.1rem 0.4rem;
   left: 0.25rem;
+}
+.sapMITBStretch .sapMITBArrowScrollLeftTextOnly,
+.sapMITBStretch .sapMITBArrowScrollRightTextOnly {
+  padding: 2.1rem 0.4rem;
 }
 .sap-phone .sapMITBArrowScrollLeft {
   right: 0.25rem;
@@ -12471,11 +12492,21 @@ html[data-sap-ui-os=win8] .sapMITBArrowScroll {
 }
 .sap-phone .sapMITBArrowScrollLeftTextOnly {
   right: 0.25rem;
-  padding: 1.25rem 0 0.75rem;
+  padding: 1.1rem 0 0.75rem;
 }
 .sap-phone .sapMITBArrowScrollRightTextOnly {
-  padding: 1.25rem 0 0.75rem;
+  padding: 1.1rem 0 0.75rem;
   left: 0.25rem;
+}
+.sap-phone .sapMITB.sapMITBStretch .sapMITBArrowScrollLeftTextOnly,
+.sap-phone .sapMITB.sapMITBStretch .sapMITBArrowScrollRightTextOnly {
+  padding: 1.1rem 0 0.75rem;
+}
+.sap-tablet .sapMITBArrowScrollLeftTextOnly,
+html[data-sap-ui-os=win8] .sapMITBArrowScrollLeftTextOnly,
+.sap-tablet .sapMITBArrowScrollRightTextOnly,
+html[data-sap-ui-os=win8] .sapMITBArrowScrollRightTextOnly {
+  padding: 1.25rem 0.4rem;
 }
 .sapMITBNotScrollable > .sapMITBArrowScroll {
   visibility: hidden;
@@ -12521,12 +12552,22 @@ html[data-sap-ui-os=win8] .sapMITBArrowScroll {
   .sapMITB.sapUiNoContentPadding .sapMITBArrowScrollLeftTextOnly,
   .sapMITB.sapUiResponsiveContentPadding .sapMITBArrowScrollLeftTextOnly {
     right: 0.25rem;
-    padding: 1.25rem 0 0.75rem;
+    padding: 1.1rem 0 0.75rem;
   }
   .sapMITB.sapUiNoContentPadding .sapMITBArrowScrollRightTextOnly,
   .sapMITB.sapUiResponsiveContentPadding .sapMITBArrowScrollRightTextOnly {
-    padding: 1.25rem 0 0.75rem;
+    padding: 1.1rem 0 0.75rem;
     left: 0.25rem;
+  }
+  .sap-tablet .sapMITB.sapMITBStretch .sapMITBArrowScrollLeftTextOnly,
+  html[data-sap-ui-os=win8] .sapMITB.sapMITBStretch .sapMITBArrowScrollLeftTextOnly,
+  .sap-tablet .sapMITB.sapMITBStretch .sapMITBArrowScrollRightTextOnly,
+  html[data-sap-ui-os=win8] .sapMITB.sapMITBStretch .sapMITBArrowScrollRightTextOnly {
+    padding: 1.25rem 0 0.75rem;
+  }
+  .sapMITB.sapMITBStretch .sapMITBArrowScrollLeftTextOnly,
+  .sapMITB.sapMITBStretch .sapMITBArrowScrollRightTextOnly {
+    padding: 2.1rem 0 0.75rem;
   }
   html[data-sap-ui-os=win8] .sapMITB.sapUiNoContentPadding .sapMITBHead,
   html[data-sap-ui-os=win8] .sapMITB.sapUiResponsiveContentPadding .sapMITBHead {
