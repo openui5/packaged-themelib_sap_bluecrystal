@@ -1191,8 +1191,9 @@ html[data-sap-ui-browser=ie8] .sapUiShd {
   font-size: 16px;
 }
 html.sap-phone *,
-html.sap-tablet * {
+html.sap-tablet:not(sap-desktop) * {
   /* FIXME!!! (star rule with any-parent selector...) */
+  /* for phones and tablets (combi devices are excluded because they should have desktop behavior)*/
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
