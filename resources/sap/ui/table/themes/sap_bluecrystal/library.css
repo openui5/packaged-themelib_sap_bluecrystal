@@ -296,6 +296,11 @@
 .sapUiTableRSel .sapUiTableCtrlScrFixed {
   margin-left: 25px;
 }
+.sapUiTableCtrlScrFixed,
+.sapUiTableColHdrFixed {
+  max-width: 100%;
+  overflow: hidden;
+}
 .sapUiTableVScr .sapUiTableCtrlScr {
   margin-right: 16px;
 }
@@ -940,6 +945,25 @@ html[data-sap-ui-browser^="ie"] .sapUiTableColHdrCnt {
 }
 .sapUiAnalyticalTable .sapUiTableGroupIcon {
   padding-right: 10px;
+}
+.sapUiAnalyticalTable .sapUiTableGroupIcon {
+  padding-right: 40px;
+  background: #f2f2f2;
+  background-clip: content-box;
+}
+.sapUiAnalyticalTable .sapUiTableRowHvr .sapUiTableGroupIcon {
+  background-color: #f0f0f0;
+}
+.sapUiAnalyticalTable .sapUiTableGroupIcon:after {
+  position: absolute;
+  content: "";
+  width: 40px;
+  top: 1px;
+  bottom: 1px;
+  box-shadow: inset 40px 0px 20px -20px #f2f2f2;
+}
+.sapUiAnalyticalTable .sapUiTableRowHvr .sapUiTableGroupIcon:after {
+  box-shadow: inset 40px 0px 20px -20px #f0f0f0;
 }
 .sapUiAnalyticalTable .sapUiTableRowHdrScr .sapUiTableRowHdr.sapUiTableGroupHeader::after {
   display: none;
