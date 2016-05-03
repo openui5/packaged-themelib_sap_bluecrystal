@@ -10,3 +10,12 @@
 .sapMPopoverHeader .sapMSegBBtn.sapMSegBBtnFocusable.sapMSegBBtnSel {
 	border-color: @sapUiLightestBG;
 }
+
+html.sap-phone, html.sap-tablet:not(.sap-desktop) {
+	.sapMVSPopover {
+		.sapMLIBSelectM > .sapMCb:focus,
+		.sapMBarChild.sapMCb:focus {
+			outline: none;
+		}
+	}
+}

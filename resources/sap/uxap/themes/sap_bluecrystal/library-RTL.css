@@ -1031,6 +1031,9 @@ body > .sapUxAPObjectPageLayout,
   left: 0;
   z-index: 2;
 }
+.sapUxAPObjectPageSubSectionPromoted:not(:first-of-type) {
+  padding-top: 0.25rem;
+}
 .sapUxAPObjectPageWrapper {
   position: absolute;
   top: 0;
@@ -1431,8 +1434,8 @@ Common compact/cozy
   background: #f2f8fc;
 }
 /* L fullscreen paddings */
-.sapUiMedia-Std-Desktop .sapUxAPAnchorBar.sapMTB,
-.sapUiMedia-Std-Desktop .sapMSplitContainer.sapMSplitContainerHideMode .sapMSplitContainerDetail .sapUxAPAnchorBar.sapMTB {
+html.sapUiMedia-Std-Desktop .sapUxAPAnchorBar.sapMTB,
+html.sapUiMedia-Std-Desktop .sapMSplitContainer.sapMSplitContainerHideMode .sapMSplitContainerDetail .sapUxAPAnchorBar.sapMTB {
   padding-right: 2rem;
 }
 /* visual in anchor bar */
@@ -1640,16 +1643,16 @@ html[data-sap-ui-animation="off"].sapUiMedia-Std-Desktop .sapUxAPAnchorBar.sapUx
   background: #d9ecf6;
 }
 /* styling needed to achieve underline of the select label on phone */
-.sapUiMedia-Std-Phone .sapUxAPHierarchicalSelect .sapMSltLabel,
-.sap-phone .sapUxAPHierarchicalSelect .sapMSltLabel {
+html.sapUiMedia-Std-Phone .sapUxAPHierarchicalSelect .sapMSltLabel,
+html.sap-phone .sapUxAPHierarchicalSelect .sapMSltLabel {
   border-bottom: 0.125rem solid #999999;
 }
-.sapUiMedia-Std-Phone .sapUxAPHierarchicalSelect .sapMSltArrow,
-.sap-phone .sapUxAPHierarchicalSelect .sapMSltArrow {
+html.sapUiMedia-Std-Phone .sapUxAPHierarchicalSelect .sapMSltArrow,
+html.sap-phone .sapUxAPHierarchicalSelect .sapMSltArrow {
   box-shadow: inset 0 -0.125rem #dddddd;
 }
-.sapUiMedia-Std-Phone .sapMSlt.sapUxAPHierarchicalSelect,
-.sap-phone .sapMSlt.sapUxAPHierarchicalSelect {
+html.sapUiMedia-Std-Phone .sapMSlt.sapUxAPHierarchicalSelect,
+html.sap-phone .sapMSlt.sapUxAPHierarchicalSelect {
   box-shadow: inset 0 -0.125rem #dddddd;
 }
 /* styling needed to achieve underline of the select label on phone on Android 4.4.2
@@ -1732,7 +1735,7 @@ html[data-sap-ui-browser^="cr4"].sap-phone .sapUxAPHierarchicalSelect .sapMSltLa
 .sapUxAPObjectPageHeaderStickied .sapUxAPObjectPageHeaderIdentifier .sapUxAPObjectPageHeaderIdentifierActions {
   display: inline-block;
 }
-.sapUiMedia-Std-Phone .sapUxAPObjectPageHeaderIdentifierTitle {
+html.sapUiMedia-Std-Phone .sapUxAPObjectPageHeaderIdentifierTitle {
   font-size: 1.125rem;
 }
 .sapUxAPObjectPageHeaderDesign-Dark .sapMTitle,
@@ -1744,8 +1747,8 @@ html[data-sap-ui-browser^="cr4"].sap-phone .sapUxAPHierarchicalSelect .sapMSltLa
 .sapUxAPObjectPageHeaderLockBtn .sapMBtnTransparent > .sapMBtnIcon {
   color: #004990;
 }
-.sapUiMedia-Std-Phone .sapUiSizeCompact.sapUxAPObjectPageHeaderChangesBtn .sapMBtn,
-.sapUiMedia-Std-Phone .sapUiSizeCompact.sapUxAPObjectPageHeaderLockBtn .sapMBtn {
+html.sapUiMedia-Std-Phone .sapUiSizeCompact.sapUxAPObjectPageHeaderChangesBtn .sapMBtn,
+html.sapUiMedia-Std-Phone .sapUiSizeCompact.sapUxAPObjectPageHeaderLockBtn .sapMBtn {
   margin-top: -0.5rem;
 }
 .sapUiSizeCompact.sapUxAPObjectPageHeaderChangesBtn .sapMBtn,
@@ -1788,12 +1791,12 @@ html.sap-desktop .sapUxAPObjectPageHeaderDesign-Dark .sapMBtn:focus .sapMBtnFocu
 .sapUxAPObjectPageContainer .sapMObjStatus {
   font-size: 0.875rem;
 }
-.sapUiMedia-Std-Desktop .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHeaderObjectImage-Circle .sapUxAPObjectPageHeaderObjectImage,
-.sapUiMedia-Std-Tablet .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHeaderObjectImage-Circle .sapUxAPObjectPageHeaderObjectImage {
+html.sapUiMedia-Std-Desktop .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHeaderObjectImage-Circle .sapUxAPObjectPageHeaderObjectImage,
+html.sapUiMedia-Std-Tablet .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHeaderObjectImage-Circle .sapUxAPObjectPageHeaderObjectImage {
   border-color: rgba(0, 73, 144, 0.2);
 }
-.sapUiMedia-Std-Desktop .sapUxAPObjectPageHeaderDetailsDesign-Dark .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHeaderObjectImage-Circle .sapUxAPObjectPageHeaderObjectImage,
-.sapUiMedia-Std-Tablet .sapUxAPObjectPageHeaderDetailsDesign-Dark .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHeaderObjectImage-Circle .sapUxAPObjectPageHeaderObjectImage {
+html.sapUiMedia-Std-Desktop .sapUxAPObjectPageHeaderDetailsDesign-Dark .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHeaderObjectImage-Circle .sapUxAPObjectPageHeaderObjectImage,
+html.sapUiMedia-Std-Tablet .sapUxAPObjectPageHeaderDetailsDesign-Dark .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHeaderObjectImage-Circle .sapUxAPObjectPageHeaderObjectImage {
   border-color: rgba(255, 255, 255, 0.2);
 }
 .sapUxAPObjectPageHeaderIdentifierSubTitleInContent {
