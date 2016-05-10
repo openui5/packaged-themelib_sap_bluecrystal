@@ -5831,6 +5831,9 @@ html[data-sap-ui-animation='on'] .sapMPopover {
   vertical-align: top;
   display: inline-block;
 }
+.sapMQuickViewCard .sapMQuickViewPage.sapMNavItem {
+  width: 100% !important;
+}
 .sapMQuickViewPage.sapMNavItem.sapMNavItemHidden {
   display: none;
 }
@@ -5920,6 +5923,11 @@ html[data-sap-ui-animation='on'] .sapMPopover {
 }
 .sapMQuickViewPage .sapUiHLayout {
   margin-bottom: 2rem;
+}
+.sapMQuickViewCard .sapUiHLayout,
+.sapMQuickViewCard .sapUiHLayoutChildWrapper,
+.sapMQuickViewCard .sapUiVlt {
+  display: block;
 }
 .sap-phone .sapMQuickViewPage .sapUiHLayout {
   margin: 1rem 0.75rem 0 0;
@@ -6295,9 +6303,6 @@ input.sapMSFI[type="search"]:focus {
   vertical-align: top;
   pointer-events: none;
   /*To disable the save image menu on ios*/
-}
-.sapMSegB.sapMSegBHide {
-  visibility: hidden;
 }
 .sapMSegBBtn.sapMSegBBtnDis {
   text-shadow: none;
@@ -7408,11 +7413,46 @@ html[dir=rtl] .sapMStdTileInfo {
 }
 .sapMTabContainer .sapMTabContainerContent .sapMTabContainerInnerContent {
   position: relative;
-  padding: 1rem;
 }
 .sapUiSizeCompact .sapMTabContainer .sapMTabContainerContent .sapMTabContainerInnerContent {
   top: 2rem;
-  padding: 0.5rem;
+}
+/* mixin call for creating container content padding classes (arguments: rootContainer, contentSelector) */
+.sapMTabContainer.sapUiContentPadding > .sapMTabContainerContent > .sapMTabContainerInnerContent {
+  padding: 1rem;
+  box-sizing: border-box;
+}
+@media (max-width: 599px) {
+  .sapMSplitContainerHideMode > .sapMSplitContainerDetail .sapMTabContainer.sapUiResponsiveContentPadding > .sapMTabContainerContent > .sapMTabContainerInnerContent,
+  .sapMSplitContainerPortrait > .sapMSplitContainerDetail .sapMTabContainer.sapUiResponsiveContentPadding > .sapMTabContainerContent > .sapMTabContainerInnerContent,
+  .sapMTabContainer.sapUiResponsiveContentPadding > .sapMTabContainerContent > .sapMTabContainerInnerContent {
+    padding: 0;
+  }
+}
+@media (min-width: 600px) and (max-width: 1023px) {
+  .sapMSplitContainerHideMode > .sapMSplitContainerDetail .sapMTabContainer.sapUiResponsiveContentPadding > .sapMTabContainerContent > .sapMTabContainerInnerContent,
+  .sapMTabContainer.sapUiResponsiveContentPadding > .sapMTabContainerContent > .sapMTabContainerInnerContent {
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+}
+@media (min-width: 1024px) {
+  .sapMSplitContainerHideMode > .sapMSplitContainerDetail .sapMTabContainer.sapUiResponsiveContentPadding > .sapMTabContainerContent > .sapMTabContainerInnerContent,
+  .sapMTabContainer.sapUiResponsiveContentPadding > .sapMTabContainerContent > .sapMTabContainerInnerContent {
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+  }
+}
+/* overrides the responsive settings for the split app master page */
+.sapMSplitContainerMaster .sapMTabContainer.sapUiResponsiveContentPadding > .sapMTabContainerContent > .sapMTabContainerInnerContent {
+  padding: 0;
+}
+/* overrides the responsive settings for the split app detail page */
+.sapMSplitContainerDetail .sapMTabContainer.sapUiResponsiveContentPadding > .sapMTabContainerContent > .sapMTabContainerInnerContent {
+  padding: 1rem;
+}
+.sapMTabContainer.sapUiNoContentPadding > .sapMTabContainerContent > .sapMTabContainerInnerContent {
+  padding: 0;
 }
 /* ============================================= */
 /* CSS for control sap.m/Table.control 		     */
@@ -9576,7 +9616,6 @@ html[data-sap-ui-browser="ie9"] .sapMUCButtonContainer {
   /* 4rem is the height of the Progress Navigator*/
   box-sizing: border-box;
   padding: 1rem;
-  transform: translateZ(0);
 }
 .sapMWizard .sapMWizardStep {
   position: relative;
@@ -10004,6 +10043,9 @@ html[data-sap-ui-animation='on'] .sapMWizardNextButton {
 .sapMList .sapMLIB.sapMALI:focus {
   outline: 0.0625rem dotted #ffffff;
   outline-offset: -0.0625rem;
+}
+.sapMALI.sapMLIBLegacyOutline:focus::before {
+  border: 0.0625rem dotted #ffffff;
 }
 .sapMALI > .sapMLIBContent {
   line-height: 3rem;
@@ -12000,6 +12042,7 @@ li.sapMLIB.sapMFeedListItemTitleDiv.sapMLIBNoFlex > .sapMLIBContent > .sapMLIBCo
 }
 .sapMGTFocusDiv {
   position: absolute;
+  pointer-events: none;
   right: 1px;
   top: 1px;
   left: 1px;
@@ -14914,6 +14957,9 @@ html[data-sap-ui-browser^="ie"] .sapMOHR .sapMObjStatusMarker .sapUiIcon:focus {
 }
 html[data-sap-ui-browser^="ie"] .sapMOHR .sapMObjectAttributeDiv {
   padding: 0.125rem 0.125rem 0 0.125rem;
+}
+html[data-sap-ui-browser^="ie"] .sapMOHR .sapMObjectAttributeActive {
+  padding: 0.125rem;
 }
 html[data-sap-ui-browser^="ie"] .sapMOHR .sapMOHRStatus {
   padding: 0.125rem 0.125rem 0.5rem 0.125rem;
