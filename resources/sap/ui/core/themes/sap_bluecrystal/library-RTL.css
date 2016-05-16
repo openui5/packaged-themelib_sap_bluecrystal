@@ -1618,51 +1618,6 @@ html.sap-desktop ::-webkit-scrollbar-thumb:hover {
 html.sap-desktop ::-webkit-scrollbar-corner {
   background-color: #f7f7f7;
 }
-.sapUiBusy {
-  height: 5px;
-  width: 100%;
-  -moz-background-size: 40% 5px;
-  -webkit-background-size: 40% 5px;
-  background-size: 40% 5px;
-  background-image: -moz-linear-gradient(right, rgba(0, 124, 192, 0), rgba(0, 124, 192, 0) 30%, #007cc0 70%, rgba(0, 124, 192, 0));
-  background-image: -webkit-linear-gradient(right, rgba(0, 124, 192, 0), #007cc0 30%, #007cc0 70%, rgba(0, 124, 192, 0));
-  background-image: -webkit-gradient(linear, right top, left top, color-stop(0, rgba(0, 124, 192, 0)), color-stop(0.3, #007cc0), color-stop(0.7, #007cc0), color-stop(1, rgba(0, 124, 192, 0)));
-  background-image: linear-gradient(right, rgba(0, 124, 192, 0), #007cc0 30%, #007cc0 70%, rgba(0, 124, 192, 0));
-  /* IE is handled using a real bg image */
-  background-repeat: no-repeat;
-  -webkit-animation: slide 1.5s linear infinite;
-  -moz-animation: slide 1.5s linear;
-  animation: slide 1.5s linear infinite;
-}
-html[data-sap-ui-browser^=ie] .sapUiBusy {
-  background-color: white;
-  background-image: url(img-RTL/Busy.png);
-  background-repeat: repeat-y;
-}
-@-webkit-keyframes slide {
-  0% {
-    background-position: -500px 0;
-  }
-  100% {
-    background-position: -100% 0;
-  }
-}
-@-moz-keyframes slide {
-  0% {
-    background-position: -500px 0;
-  }
-  100% {
-    background-position: -100% 0;
-  }
-}
-@keyframes slide {
-  0% {
-    background-position: -500px 0;
-  }
-  100% {
-    background-position: -100% 0;
-  }
-}
 /* ============================================== */
 /* CSS for control sap.ui.core/DatePicker.control */
 /* Bluecrystal                                    */
