@@ -343,9 +343,6 @@
     "sapUiRatingSymbolUnselected": "img/rating/star_unselected.png",
     "sapUiRatingSymbolHovered": "img/rating/star_hover.png",
     "sapUiTextFieldHeight": "16px",
-    "sapUiValueHelpIconRegularUrl": "/img/valuehelpfield/F4-Help_icon_regular.png",
-    "sapUiValueHelpIconHoverUrl": "/img/valuehelpfield/F4-Help_icon_hover.png",
-    "sapUiValueHelpIconDsblUrl": "/img/valuehelpfield/F4-Help_icon_dsbl.png",
     "sapBackgroundColorDefault": "#f2f2f2",
     "sapBackgroundGradientBaseColor": "#178299",
     "sapFontFamily": "Arial, Helvetica, sans-serif",
@@ -974,5 +971,8 @@
     "sapMeTabColorAttachments": "#007cc0",
     "sapMeTabIconPeople": "group",
     "sapMeTabColorPeople": "#004990",
-    "sapUiTabBorderRadius": "0"
+    "sapUiTabBorderRadius": "0",
+    "sapUiValueHelpIconRegularUrl": "/img/valuehelpfield/F4-Help_icon_regular.png",
+    "sapUiValueHelpIconHoverUrl": "/img/valuehelpfield/F4-Help_icon_hover.png",
+    "sapUiValueHelpIconDsblUrl": "/img/valuehelpfield/F4-Help_icon_dsbl.png"
 }
