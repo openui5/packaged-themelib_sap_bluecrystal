@@ -951,7 +951,9 @@ html[data-sap-ui-browser^="ie9"] .sapMDialog:not(.sapMDialogHighPixelDensity) {
 }
 [dir="rtl"] .sapMDialog {
   left: 50%;
-  right: auto !important;
+}
+[dir="rtl"] .sapMDialog.sapMDialogTouched {
+  left: auto;
 }
 .sapMDialog {
   max-width: calc(100% -  10%);
@@ -1105,6 +1107,12 @@ html[data-sap-ui-browser^="ie9"] .sapMDialog:not(.sapMDialogHighPixelDensity) {
 }
 .sapUiPopupWithPadding .sapMDialogScrollCont {
   padding: 1rem;
+}
+.sapUiPopupWithPadding .sapMDialogScrollCont.sapMDialogStretchContent {
+  height: calc(100% - 2 *  1rem);
+}
+.sapMDialogScrollCont.sapMDialogStretchContent {
+  height: 100%;
 }
 /* messagedialog always has content padding */
 .sapMMessageDialog .sapMDialogScrollCont {
@@ -2580,6 +2588,7 @@ td.sapUiFormElementLbl > .sapMLabel {
   overflow: hidden;
   text-overflow: ellipsis;
   word-wrap: normal;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .sapMLnk:active {
   background-color: transparent;
@@ -2642,6 +2651,10 @@ td.sapUiFormElementLbl > .sapMLabel {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+.sapMListDummyArea {
+  position: fixed;
+  /* keep it in the visible viewport, so that IE does not scroll on focus */
 }
 /* swipe animations */
 @-webkit-keyframes sapMListSwpInAnim {
@@ -6431,6 +6444,14 @@ html[data-sap-ui-os^="Android"] .sapUiSizeCompact .sapMSegBBtn .sapUiIcon {
   padding: 0;
   width: auto;
   opacity: 0;
+}
+/* ------------------------------ */
+/* table context                  */
+/* ------------------------------ */
+.sapUiTableCell .sapMSlt,
+.sapUiSizeCondensed .sapUiTableCell .sapMSlt,
+.sapUiSizeCompact .sapUiTableCell .sapMSlt {
+  margin: 0;
 }
 /* ============================================= */
 /* CSS for control sap.m/SelectDialog.control    */
@@ -14100,43 +14121,43 @@ html[data-sap-ui-browser*='ie9'] .sapMListNoData {
 .sapMPopover.sapMMsgPopover.sapMMsgPopover-init .sapMPopoverArr:after {
   border-top-color: #f2f2f2;
 }
-.sapMMsgPopover .sapMSegBBtn {
+.sapMMsgPopover .sapMSegB .sapMSegBBtn {
   background-color: transparent;
   border-color: transparent;
   border-radius: 0.125rem;
   color: #333333;
 }
-.sapMMsgPopover .sapMSegBBtn:hover {
+.sapMMsgPopover .sapMSegB .sapMSegBBtn:hover {
   background-color: rgba(196, 196, 196, 0.5);
   color: #333333;
 }
-.sapMMsgPopover .sapMSegBBtn:hover .sapMBtnIcon {
+.sapMMsgPopover .sapMSegB .sapMSegBBtn:hover .sapMBtnIcon {
   color: #666666;
 }
-.sapMMsgPopover .sapMSegBBtn:active {
+.sapMMsgPopover .sapMSegB .sapMSegBBtn:active {
   background-color: #007cc0;
   color: #ffffff;
 }
-.sapMMsgPopover .sapMSegBBtn:active .sapMBtnIcon.sapUiIcon {
+.sapMMsgPopover .sapMSegB .sapMSegBBtn:active .sapMBtnIcon.sapUiIcon {
   color: #ffffff;
 }
-.sapMMsgPopover .sapMSegBBtn:last-child {
+.sapMMsgPopover .sapMSegB .sapMSegBBtn:last-child {
   border-color: transparent;
 }
-.sapMMsgPopover .sapMSegBBtn.sapMSegBBtnSel {
+.sapMMsgPopover .sapMSegB .sapMSegBBtn.sapMSegBBtnSel {
   background-color: #007cc0;
   color: #ffffff;
 }
-.sapMMsgPopover .sapMSegBBtn.sapMSegBBtnSel .sapMBtnIcon {
+.sapMMsgPopover .sapMSegB .sapMSegBBtn.sapMSegBBtnSel .sapMBtnIcon {
   color: #ffffff;
 }
-.sapMMsgPopover .sapMSegBBtn.sapMSegBBtnSel:hover,
-.sapMMsgPopover .sapMSegBBtn.sapMSegBBtnSel:active {
+.sapMMsgPopover .sapMSegB .sapMSegBBtn.sapMSegBBtnSel:hover,
+.sapMMsgPopover .sapMSegB .sapMSegBBtn.sapMSegBBtnSel:active {
   background-color: #006ca7;
   color: #ffffff;
 }
-.sapMMsgPopover .sapMSegBBtn.sapMSegBBtnSel:hover .sapMBtnIcon,
-.sapMMsgPopover .sapMSegBBtn.sapMSegBBtnSel:active .sapMBtnIcon {
+.sapMMsgPopover .sapMSegB .sapMSegBBtn.sapMSegBBtnSel:hover .sapMBtnIcon,
+.sapMMsgPopover .sapMSegB .sapMSegBBtn.sapMSegBBtnSel:active .sapMBtnIcon {
   color: #ffffff;
 }
 .sapMMsgPopover .sapMMsgPopoverTitleText {
@@ -16862,8 +16883,6 @@ div.sapMSltPicker .sapMDialogScrollCont {
 /* ------------------------------ */
 .sapUiSizeCondensed .sapUiTableCell .sapMSlt {
   height: 1.5rem;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 /* ------------------------------ */
 /* Select in the Table            */
