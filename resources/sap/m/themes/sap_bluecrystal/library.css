@@ -10229,13 +10229,6 @@ label.sapMComboBoxPlaceholder {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
 }
-.sapMLabel.sapMLabelTBHeader {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  font-weight: normal;
-  color: #333333;
-  text-shadow: 0 0.0625rem 0 rgba(255, 255, 255, 0.5);
-}
 .sapMLabel.sapMLabelBold {
   font-weight: bold;
 }
@@ -10253,12 +10246,6 @@ label.sapMComboBoxPlaceholder {
   font-size: 0.875rem;
   color: #ffffff;
   text-shadow: 0 0.0625rem 0 rgba(0, 0, 0, 0.5);
-}
-.sapMIBar-CTX.sapMPageHeader .sapMLabel,
-.sapMDialog-CTX .sapMIBar-CTX .sapMLabel {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  font-weight: normal;
 }
 .sapMLIBActive .sapMLabel,
 .sapMLIBActive .sapMListTblCell .sapMLabel,
@@ -10311,14 +10298,9 @@ html[dir=rtl] .sapMTB-Info-CTX .sapMLabel {
 /* Transparent Toolbar Context*/
 .sapMTB-Transparent-CTX .sapMLabel {
   font-weight: normal;
-  font-size: 1rem;
   font-family: Arial, Helvetica, sans-serif;
   text-shadow: 0 1px 0 #ffffff;
   color: #333333;
-}
-/* Transparent Toolbar Label Header */
-.sapMTB-Transparent-CTX > .sapMLabelTBHeader {
-  font-size: 1.125rem;
 }
 /* ============================ */
 /* Overwrites for Label in Form */
@@ -10411,14 +10393,6 @@ html[dir=rtl][data-sap-ui-browser^=ed] .sapUiRespGridMedia-Std-Desktop.sapUiForm
 .sapUiSizeCompact .sapMDialog-CTX .sapMIBar-CTX .sapMLabel,
 .sapUiSizeCondensed .sapMDialog-CTX .sapMIBar-CTX .sapMLabel {
   font-size: 0.875rem;
-}
-.sapUiSizeCompact .sapMTB-Transparent-CTX .sapMLabel,
-.sapUiSizeCondensed .sapMTB-Transparent-CTX .sapMLabel {
-  font-size: 0.875rem;
-}
-.sapUiSizeCompact .sapMTB-Transparent-CTX > .sapMLabelTBHeader,
-.sapUiSizeCondensed .sapMTB-Transparent-CTX > .sapMLabelTBHeader {
-  font-size: 1.125rem;
 }
 .sapUiSizeCondensed .sapUiTableCell > .sapMLabel {
   box-sizing: border-box;
@@ -14576,7 +14550,6 @@ html[data-sap-ui-browser='ie10'] .sapMPersoDialogLI .sapMILILabel {
 /* Transparent Toolbar Context*/
 .sapMTB-Transparent-CTX .sapMText {
   font-weight: normal;
-  font-size: 1rem;
   font-family: Arial, Helvetica, sans-serif;
   text-shadow: 0 1px 0 #ffffff;
   color: #333333;
@@ -14690,6 +14663,10 @@ html[data-sap-ui-browser='ie10'] .sapMPersoDialogLI .sapMILILabel {
 }
 .sapMTB-Transparent-CTX > .sapMTitleTB.sapMTitleStyleAuto {
   font-size: 1.125rem;
+}
+.sapMIBar-CTX.sapMFooter-CTX .sapMTitle {
+  color: #ffffff;
+  text-shadow: 0 0.0625rem 0 rgba(0, 0, 0, 0.5);
 }
 /* ============================================= */
 /* CSS for control sap.m/ToggleButton.control    */
