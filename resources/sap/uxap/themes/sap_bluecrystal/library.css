@@ -1676,6 +1676,10 @@ html[data-sap-ui-browser^="cr4"].sap-phone .sapUxAPHierarchicalSelect .sapMSltLa
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
+.sapUxAPObjectPageHeader.sapUxAPObjectPageHeaderDesign-Dark .sapMBreadcrumbsSeparator,
+.sapUxAPObjectPageHeader.sapUxAPObjectPageHeaderDesign-Dark .sapMLnk {
+  color: #ffffff;
+}
 .sapUxAPObjectPageHeaderDesign-Dark.sapUxAPObjectPageHeader .sapMBar {
   background-color: transparent;
   color: #ffffff;
