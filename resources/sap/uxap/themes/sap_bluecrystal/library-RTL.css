@@ -1696,6 +1696,10 @@ html[data-sap-ui-browser^="cr4"].sap-phone .sapUxAPHierarchicalSelect .sapMSltLa
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
+.sapUxAPObjectPageHeader.sapUxAPObjectPageHeaderDesign-Dark .sapMBreadcrumbsSeparator,
+.sapUxAPObjectPageHeader.sapUxAPObjectPageHeaderDesign-Dark .sapMLnk {
+  color: #ffffff;
+}
 .sapUxAPObjectPageHeaderDesign-Dark.sapUxAPObjectPageHeader .sapMBar {
   background-color: transparent;
   color: #ffffff;
@@ -1929,6 +1933,21 @@ html.sap-desktop .sapUxAPObjectPageHeaderDetailsDesign-Dark .sapMBtn:focus .sapM
 .sapUxAPObjectPageSection:focus {
   outline: 0.0625rem dotted #005483;
   outline-offset: -0.0625rem;
+}
+/* IE does not support css outline-offset */
+html[data-sap-ui-browser^="ie"].sap-desktop .sapUxAPObjectPageSection:focus {
+  outline: none;
+  position: relative;
+}
+html[data-sap-ui-browser^="ie"].sap-desktop .sapUxAPObjectPageSection:focus:before {
+  content: "";
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 0.0625rem dotted #005483;
 }
 .sapUxAPObjectPageSubSection {
   border-bottom: 2px solid #f2f2f2;
