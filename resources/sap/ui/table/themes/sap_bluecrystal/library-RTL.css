@@ -57,6 +57,9 @@
 .sapUiSizeCompact .sapUiAnalyticalTable .sapUiTableGroupIcon::before {
   line-height: 28px;
 }
+.sapUiSizeCondensed .sapUiAnalyticalTable .sapUiTableGroupIcon::before {
+  line-height: 22px;
+}
 /*******************************************************************************
  * TABLE PARAMETERS
  ******************************************************************************/
@@ -732,7 +735,7 @@ html[data-sap-ui-browser^="ed"] .sapUiTableVScr .sapUiTableHSb {
 }
 .sapUiSizeCompact .sapUiTableRowHdr.sapUiTableGroupHeader > .sapUiTableGroupIcon,
 .sapUiSizeCozy .sapUiTableRowHdr.sapUiTableGroupHeader > .sapUiTableGroupIcon {
-  right: 0;
+  right: 1px;
 }
 html[dir=rtl] .sapUiSizeCompact .sapUiTableGroupIcon.sapUiTableGroupIconClosed::before,
 html[dir=rtl] .sapUiSizeCozy .sapUiTableGroupIcon.sapUiTableGroupIconClosed::before,
@@ -1114,9 +1117,6 @@ html[data-sap-ui-browser^="ie"] .sapUiTableColHdrCnt {
 .sapUiSizeCompact .sapUiTableSelModeMultiToggle .sapUiAnalyticalTableSum.sapUiTableRowHdr::after,
 .sapUiSizeCozy .sapUiTableSelModeMultiToggle .sapUiAnalyticalTableSum.sapUiTableRowHdr::after {
   display: none;
-}
-.sapUiAnalyticalTable .sapUiTableTr > td:focus {
-  outline: 1px dotted #000000;
 }
 .sapUiAnalyticalTable .sapUiTableRowHdr {
   position: relative;
@@ -1646,6 +1646,9 @@ tr.sapUiTableRowHvr .sapUiLnk:hover,
   outline-offset: -1px;
   outline: 1px dotted #000000;
 }
+.sapUiTableRowHdr.sapUiTableGroupHeader:focus:not(*:root) {
+  outline: 0px;
+}
 /* Firefox */
 @supports (-moz-appearance:meterbar) {
   .sapUiTableTr > td:focus,
@@ -1655,6 +1658,15 @@ tr.sapUiTableRowHvr .sapUiLnk:hover,
     outline-offset: -1px;
     outline: 1px dotted #000000;
   }
+}
+.sapUiTableRowHdr.sapUiTableGroupHeader:focus .sapUiTableGroupIcon {
+  outline-width: 1px;
+  outline-style: dotted;
+  outline-offset: 0px;
+  outline-color: #000000;
+}
+.sapUiTableRowHdr.sapUiTableGroupHeader {
+  outline: 0px;
 }
 .sapUiTableRSel .sapUiTableCtrlScr,
 .sapUiTableRSel .sapUiTableCtrlScrFixed {
@@ -1728,8 +1740,8 @@ tr.sapUiTableRowHvr .sapUiLnk:hover,
   font-size: 0.875rem;
 }
 .sapUiSizeCondensed .sapUiTableGroupIcon {
-  height: 24px;
-  line-height: 24px;
+  height: 22px;
+  line-height: 22px;
 }
 /* Table Cell Tree Node */
 .sapUiTableCtrl tr.sapUiTableGroupHeader,
