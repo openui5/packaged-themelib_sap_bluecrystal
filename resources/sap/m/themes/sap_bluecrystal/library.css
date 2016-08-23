@@ -1845,7 +1845,8 @@ html[data-sap-ui-animation='on'] .sapMDynamicPage .sapMDynamicPageActualFooterCo
 /* ============================================= */
 /* CSS for control sap.m/FacetFilter.control */
 /* ============================================= */
-.sapUiSizeCompact .sapMFF {
+.sapMFF > .sapMTB-Info-CTX.sapMTB,
+.sapMFF {
   height: 2rem;
 }
 .sapUiSizeCompact .sapMFFArrowScroll {
@@ -4208,6 +4209,12 @@ html.sap-desktop .sapMMultiInputBorder {
 }
 .sapMMultiInputMultiModeInputContainer {
   position: static;
+}
+html.sap-desktop .sapMMultiInput.sapMFocus .sapMInputBaseInner:focus {
+  outline: none;
+}
+.sapMMultiInput .sapMInputBaseInner:not(.sapMInputBaseReadonlyInner):not(.sapMInputBaseStateInner):not(.sapMInputBaseDisabledInner):hover {
+  background: transparent;
 }
 /* ============================================= */
 /* CSS for control sap.m/NavContainer.control */
@@ -7295,6 +7302,11 @@ html.sap-phone .sapMQuickViewPage .sapUiHLayout {
   outline: none;
   text-overflow: ellipsis;
   position: relative;
+  white-space: nowrap;
+  max-width: 100%;
+}
+.sapMRb > .sapMLabel {
+  max-width: calc(100% - 2.8125rem);
 }
 .sapMILI-CTX .sapMRb {
   float: right;
@@ -7337,7 +7349,7 @@ html.sap-phone .sapMQuickViewPage .sapUiHLayout {
   pointer-events: none;
 }
 .sapMRbHasLabel.sapMRb:focus:before {
-  right: -0.0625rem;
+  right: 0;
 }
 .sapMRbDis:focus:before {
   display: none;
@@ -8767,7 +8779,7 @@ html.sap-phone .sapMStdTileNumS {
 .sapMStepInput .sapMStepInputBtnWrapper.sapMStepInputBtnIncrease {
   right: 0;
 }
-.sapMStepInput-CTX .sapMInput .sapMInputBaseInner {
+.sapMStepInput-CTX .sapMInput .sapMInputBaseInner:not(.sapMInputBaseReadonlyInner) {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -8775,10 +8787,6 @@ html.sap-phone .sapMStdTileNumS {
 }
 .sapMStepInput-CTX .sapMInputBaseWidthPadding {
   padding: 0;
-}
-.sapMStepInput-CTX.sapMStepInputDisabled .sapMInput .sapMInputBaseInner {
-  padding-left: 0;
-  padding-right: 0;
 }
 .sapMStepInput-CTX .sapMBtn {
   padding: 0;
@@ -8800,7 +8808,7 @@ html.sap-phone .sapMStdTileNumS {
 .sapMStepInput-CTX.sapMStepInputWarning .sapMBtn .sapMBtnInner {
   width: 2.25rem;
 }
-.sapUiSizeCompact .sapMStepInput-CTX .sapMInput .sapMInputBaseInner {
+.sapUiSizeCompact .sapMStepInput-CTX .sapMInput .sapMInputBaseInner:not(.sapMInputBaseReadonlyInner) {
   padding: 0 1.75rem;
 }
 .sapUiSizeCompact .sapMStepInput-CTX .sapMInputBaseWidthPadding {
@@ -19280,6 +19288,9 @@ html.sap-phone .sapMSltBar.sapMTSSltBar::after {
 .sapMTextArea > .sapMTextAreaInner {
   padding: 0.75rem;
 }
+.sapMTextArea.sapMInputBaseState > .sapMTextAreaInner {
+  padding: 0.6875rem;
+}
 .sapMTextArea > .sapMInputBaseReadonlyInner.sapMTextAreaInner {
   border: 1px solid #bfbfbf;
 }
@@ -19287,6 +19298,9 @@ html.sap-phone .sapMSltBar.sapMTSSltBar::after {
 .sapUiSizeCompact .sapMTextArea > .sapMTextAreaInner {
   padding: 0.3125rem 0.5rem;
   height: auto;
+}
+.sapUiSizeCompact .sapMTextArea.sapMInputBaseState > .sapMTextAreaInner {
+  padding: 0.25rem 0.4375rem;
 }
 /* ====================================== */
 /* CSS for control sap.m/Tile control     */
@@ -19689,16 +19703,16 @@ html.sap-desktop .sapMToken.sapMTokenSelected:hover,
 .sapMTB-Info-CTX.sapMTBActive:active {
   background: #2f5477;
 }
-html.sap-desktop .sapMTBActive:focus {
+html.sap-desktop .sapMTB-Info-CTX.sapMTBActive:focus {
   outline: 1px dotted #ffffff;
   outline-offset: -0.125rem;
 }
 /* IE ignores outline-offset. Use an overlay: */
-html[data-sap-ui-browser^="ie"].sap-desktop .sapMTBActive:focus {
+html[data-sap-ui-browser^="ie"].sap-desktop .sapMTB-Info-CTX.sapMTBActive:focus {
   outline: none;
   position: relative;
 }
-html[data-sap-ui-browser^="ie"].sap-desktop .sapMTBActive:focus:before {
+html[data-sap-ui-browser^="ie"].sap-desktop .sapMTB-Info-CTX.sapMTBActive:focus:before {
   content: " ";
   box-sizing: border-box;
   width: calc(100% - 0.0625rem);
@@ -19708,9 +19722,6 @@ html[data-sap-ui-browser^="ie"].sap-desktop .sapMTBActive:focus:before {
   top: 0;
   border: 0.0625rem dotted #ffffff;
   pointer-events: none;
-}
-html.sap-desktop .sapMTB-Info-CTX.sapMTBActive:focus {
-  outline-color: #ffffff;
 }
 /********** COMPACT DESIGN ************/
 /* toolbar has 2rem height in compact mode */
