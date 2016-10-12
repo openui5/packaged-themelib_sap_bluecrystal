@@ -664,7 +664,7 @@
     "sapUiMarginMedium": "2rem",
     "sapUiMarginLarge": "3rem",
     "sapUiEscapedEmptyString": "",
-    "sapUiFeedPersonPlaceholder": "/img/feed/person_placeholder_48.png",
+    "sapUiFeedPersonPlaceholder": "url(\"../base/img/feed/person_placeholder_48.png\")",
     "sapBackgroundColorDefault": "#f2f2f2",
     "sapBackgroundGradientBaseColor": "#178299",
     "sapAccentColor1": "#f0ab00",
@@ -1022,6 +1022,6 @@
     "sapMeTabColorAttachments": "#007cc0",
     "sapMeTabIconPeople": "group",
     "sapMeTabColorPeople": "#004990",
-    "sapUiFeedToolsIconUrl": "/img/feed/Action_Menu_regular.png",
-    "sapUiFeedToolsIconHoverUrl": "/img/feed/Action_Menu_hover.png"
+    "sapUiFeedToolsIconUrl": "url(\"img/feed/Action_Menu_regular.png\")",
+    "sapUiFeedToolsIconHoverUrl": "url(\"img/feed/Action_Menu_hover.png\")"
 }
