@@ -680,9 +680,9 @@
     "sapUiDlgFooterHeight": "44px",
     "sapUiListBoxBorderRadius": "0",
     "sapUiPanelBorderRadius": "0",
-    "sapUiRatingSymbolSelected": "img/rating/star_selected.png",
-    "sapUiRatingSymbolUnselected": "img/rating/star_unselected.png",
-    "sapUiRatingSymbolHovered": "img/rating/star_hover.png",
+    "sapUiRatingSymbolSelected": "url(\"img/rating/star_selected.png\")",
+    "sapUiRatingSymbolUnselected": "url(\"img/rating/star_unselected.png\")",
+    "sapUiRatingSymbolHovered": "url(\"img/rating/star_hover.png\")",
     "sapUiTextFieldHeight": "16px",
     "sapBackgroundColorDefault": "#f2f2f2",
     "sapBackgroundGradientBaseColor": "#178299",
@@ -1036,8 +1036,5 @@
     "sapMeTabColorAttachments": "#007cc0",
     "sapMeTabIconPeople": "group",
     "sapMeTabColorPeople": "#004990",
-    "sapUiTabBorderRadius": "0",
-    "sapUiValueHelpIconRegularUrl": "/img/valuehelpfield/F4-Help_icon_regular.png",
-    "sapUiValueHelpIconHoverUrl": "/img/valuehelpfield/F4-Help_icon_hover.png",
-    "sapUiValueHelpIconDsblUrl": "/img/valuehelpfield/F4-Help_icon_dsbl.png"
+    "sapUiTabBorderRadius": "0"
 }
