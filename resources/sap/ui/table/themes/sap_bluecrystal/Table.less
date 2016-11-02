@@ -147,12 +147,6 @@
 	border-right: 1px solid @sapUiListVerticalBorderColor;
 }
 
-.sapUiTableRowHdr,
-.sapUiTableTr > td {
-	padding-top: 2px;
-	padding-bottom: 1px;
-}
-
 .sapUiTableRowHdr {
 	border-bottom: 1px solid @sapUiListBorderColor;
 	border-right: 1px solid @sapUiListVerticalBorderColor;
@@ -612,37 +606,6 @@ div.sapUiTable {
 
 .sapUiTableCtrlEmptyMsg {
 	font-size: @sapUiFontSize;
-}
-
-.sapUiTableM.sapUiTableTouch .sapUiScrollBar {
-	::-webkit-scrollbar-thumb {
-		background-color: @sapUiScrollBarFaceColor;
-		border-top: 0.125rem solid @sapUiScrollBarBorderColor;
-		border-left: 0.125rem solid @sapUiScrollBarBorderColor;
-		border-right: 0.125rem solid @sapUiScrollBarBorderColor;
-		border-bottom: 0.125rem solid @sapUiScrollBarBorderColor;
-		width: 0.25rem;
-		height: 0.25rem;
-	}
-
-	::-webkit-scrollbar {
-		background-color: @sapUiScrollBarTrackColor;
-	}
-
-	&.sapUiTableVScr {
-		.sapUiTableHSb {
-			padding-right: 0.5rem;
-			height: 0.5rem;
-		}
-
-		.sapUiTableVSb {
-			width: 0.45rem;
-		}
-
-		.sapUiTableCtrlScr, .sapUiTableColHdrScr {
-			margin-right: 0.45rem;
-		}
-	}
 }
 
 .sapUiSizeCozy .sapUiTable {
