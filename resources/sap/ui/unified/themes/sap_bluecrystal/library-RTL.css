@@ -706,7 +706,6 @@ html.sap-desktop .sapUiCalendarApp.sapUiCalendarAppSel:focus:not(:active) > .sap
 }
 .sapUiUfdCurrencyAlign {
   text-align: right;
-  max-width: 200px;
 }
 .sapUiUfdCurrencyValue,
 .sapUiUfdCurrencyCurrency {
@@ -3116,9 +3115,6 @@ html.sap-desktop .sapUiCalendarApp.sapUiCalendarAppSel:hover:not(:active) > .sap
   font-size: 0.875rem;
   font-family: Arial, Helvetica, sans-serif;
   line-height: normal;
-}
-.sapUiUfdCurrencyCurrency {
-  width: 2rem;
 }
 .sapUiSizeCondensed .sapUiTableCell > .sapUiUfdCurrency {
   box-sizing: border-box;
