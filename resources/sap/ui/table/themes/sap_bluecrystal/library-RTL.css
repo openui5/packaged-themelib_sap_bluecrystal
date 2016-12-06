@@ -105,11 +105,12 @@
 .sapUiTableCtrlEmptyMsg {
   position: absolute;
   top: 50%;
-  margin-top: -0.5em;
+  display: inline-block;
   right: 0;
   width: 100%;
   box-sizing: border-box;
-  padding: 0 1rem;
+  padding: 0.2rem 1rem;
+  transform: translateY(-50%);
   white-space: pre-wrap;
 }
 .sapUiTableCtrlEmpty,
@@ -365,6 +366,9 @@ html[data-sap-ui-browser^="ie"] .sapUiTableColHdrCnt {
   border-left: 1px solid #dddddd;
   background-color: #f7f7f7;
   color: #333333;
+}
+.sapUiTableColHdrTr > .sapUiTableCol {
+  position: relative;
 }
 .sapUiSizeCozy .sapUiTableCol {
   padding-top: 0;
@@ -661,6 +665,7 @@ html[data-sap-ui-browser^="ie"] .sapUiTableColHdrCnt {
 }
 .sapUiTableTr > .sapUiTableTDDummy {
   border-bottom: none;
+  background: #f9f9f9;
 }
 .sapUiTableTr > td.sapUiTableTdFirst {
   padding-right: 2px;
@@ -687,13 +692,13 @@ html[data-sap-ui-browser^="ie"] .sapUiTableColHdrCnt {
 .sapUiTableCtrlFixed .sapUiTableTr:not(.sapUiTableGroupHeader) > td:last-child {
   border-left: 1px solid #999999;
 }
-.sapUiTableTr.sapUiTableRowHvr > td {
+.sapUiTableTr.sapUiTableRowHvr > td:not(.sapUiTableTDDummy) {
   background-color: #f0f0f0;
 }
-.sapUiTableTr.sapUiTableRowSel:not(.sapUiTableGroupHeader) > td {
+.sapUiTableTr.sapUiTableRowSel:not(.sapUiTableGroupHeader) > td:not(.sapUiTableTDDummy) {
   background-color: #e6f2f9;
 }
-.sapUiTableTr.sapUiTableRowHvr.sapUiTableRowSel:not(.sapUiTableGroupHeader) > td {
+.sapUiTableTr.sapUiTableRowHvr.sapUiTableRowSel:not(.sapUiTableGroupHeader) > td:not(.sapUiTableTDDummy) {
   background-color: #d9ecf6;
 }
 .sapUiTableCell {
@@ -1175,6 +1180,9 @@ html[dir=rtl] .sapUiTableTreeIcon.sapUiTableTreeIconNodeClosed::before {
   border-top: 1px solid #e5e5e5;
   height: 1px;
 }
+.sapUiTableGroupMode .sapUiTableRowHdr.sapUiTableFixedFirstBottomRow::before {
+  border-top-color: #999999;
+}
 .sapUiTableGroupShield {
   position: absolute;
   top: 0px;
@@ -1204,6 +1212,14 @@ html[dir=rtl] .sapUiTableTreeIcon.sapUiTableTreeIconNodeClosed::before {
 .sapUiTableRowHdr.sapUiTableGroupHeader,
 .sapUiTableGroupMode .sapUiTableRowHdr:focus {
   outline: 0px;
+}
+.sapUiTableGroupMode .sapUiTableTr.sapUiTableGroupHeader > .sapUiTableTDDummy {
+  border-bottom: 1px solid #e5e5e5;
+  background: #f2f2f2;
+}
+.sapUiTableRowHdr.sapUiTableGroupHeader.sapUiTableFixedPreBottomRow,
+.sapUiTableGroupMode .sapUiTableTr.sapUiTableGroupHeader.sapUiTableFixedPreBottomRow > .sapUiTableTDDummy {
+  border-bottom-color: #999999;
 }
 .sapUiTableGroupMenuButton {
   display: none;
@@ -1245,7 +1261,7 @@ html[dir=rtl] .sapUiTableTreeIcon.sapUiTableTreeIconNodeClosed::before {
   border-right: 0;
   border-left: 0;
 }
-.sapUiAnalyticalTable tr.sapUiAnalyticalTableSum > td:last-child {
+.sapUiAnalyticalTable tr.sapUiAnalyticalTableSum > td.sapUiTableTdLast {
   border-left: 1px solid #dddddd;
 }
 .sapUiAnalyticalTable tr.sapUiAnalyticalTableDummy td {
