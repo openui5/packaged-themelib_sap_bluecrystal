@@ -1965,7 +1965,7 @@ html[data-sap-ui-browser^="ie"].sap-desktop .sapUxAPObjectPageSection:focus:befo
   border-bottom: none;
 }
 .sapUxAPObjectPageSubSectionHeaderTitle {
-  color: #808080;
+  color: #757575;
   font-size: 1.25rem;
   font-weight: normal;
 }
