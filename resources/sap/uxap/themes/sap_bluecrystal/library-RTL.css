@@ -1276,6 +1276,9 @@ html[data-sap-ui-browser^="ie"][data-sap-ui-os^="win8"] .sapMShell .sapUxAPObjec
   margin-right: 0;
   margin-bottom: 0;
 }
+.sapUxAPObjectPageSectionTitleUppercase {
+  text-transform: uppercase;
+}
 .sapUxAPObjectPageSectionHeader {
   box-sizing: border-box;
   height: 3rem;
@@ -2085,9 +2088,6 @@ html.sap-desktop .sapUxAPObjectPageHeaderDetailsDesign-Dark .sapMBtn:focus .sapM
   font-size: 0.875rem;
   font-weight: bold;
   border-bottom: 2px solid #999999;
-}
-.sapUxAPObjectPageSectionTitleUppercase {
-  text-transform: uppercase;
 }
 .sapUxAPObjectPageSection:focus {
   outline: 0.0625rem dotted #000000;
