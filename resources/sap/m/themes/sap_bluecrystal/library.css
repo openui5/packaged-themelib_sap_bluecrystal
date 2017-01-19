@@ -1,11 +1,11 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2016 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2017 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2016 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2017 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 /* Global CSS for 'base' theme */
@@ -8532,6 +8532,10 @@ html[data-sap-ui-browser^="ie9"] .sapMDTICustom .dwwb > span:before {
 }
 .sapMDTICustom.dw-bubble .dwo {
   display: none;
+}
+[data-sap-ui-browser^="ff"] .sapMDTICustom.dw-bubble .dwo {
+  background: none;
+  display: initial;
 }
 .sap-desktop .sapMDTICustom .dwww:focus {
   outline: none;
