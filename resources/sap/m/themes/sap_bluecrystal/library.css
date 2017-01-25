@@ -1,11 +1,11 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2016 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2017 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2016 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2017 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 /* =========================== */
@@ -2526,8 +2526,9 @@ html[data-sap-ui-animation='on'] .sapMFCL .sapMFCLColumn {
   right: 0;
   left: 0;
   bottom: 0;
+  border-radius: 0.125rem;
 }
-.sapMGTFocusDiv {
+.sapMGT .sapMGTFocusDiv {
   position: absolute;
   pointer-events: none;
   left: 0px;
@@ -2537,13 +2538,19 @@ html[data-sap-ui-animation='on'] .sapMFCL .sapMFCLColumn {
   border-radius: 0.25rem;
   z-index: 2;
 }
+.sapMGT.sapMGTBackgroundImage .sapMGTFocusDiv {
+  top: 1px;
+  right: 1px;
+  left: 1px;
+  bottom: 1px;
+}
 .sapMGenericTileLoading {
   height: 100%;
 }
 .sapMGenericTileFtrFld {
   left: 0.4375rem;
+  right: 0.4375rem;
   bottom: 0.4375rem;
-  display: table;
   position: absolute;
 }
 .sapMGenericTileFtrFldTxt {
@@ -2563,6 +2570,9 @@ html[dir=rtl] .sapMGenericTileFtrFldTxt {
 }
 .sapMGenericTileFtrFldIcn > .sapMGTFtrFldIcnMrk {
   vertical-align: bottom;
+}
+.sapMGT.sapMGTBackgroundImage {
+  border: none;
 }
 /* the following is needed for non-webkit browsers that don't support line-clamping */
 /* some places should be left for subheader when the subheader exists*/
@@ -3055,7 +3065,7 @@ html.sap-phone .sapMITBAll .sapMITBText {
   padding-right: 1rem;
 }
 .sapMITB .sapMITBItemNoCount.sapMITBFilter:last-child {
-  padding-right: 0;
+  padding-right: 0.8rem;
 }
 /* Tab Separator Item */
 .sapMITBSep {
@@ -5052,6 +5062,7 @@ html[dir=rtl] .sapMNCValueScr {
 .sapMObjectAttributeActive {
   pointer-events: none;
 }
+.sapMListTbl .sapMObjectAttributeActive .sapMText,
 .sapMObjectAttributeActive .sapMText {
   color: #00679e;
   cursor: pointer;
@@ -5073,6 +5084,10 @@ html[dir=rtl] .sapMNCValueScr {
 }
 .sapMOH .sapMObjectAttributeText > .sapMText {
   vertical-align: bottom;
+}
+html[data-sap-ui-browser^="ie"] .sapMObjectAttributeDiv,
+html[data-sap-ui-browser^="ed"] .sapMObjectAttributeDiv {
+  padding: 0.25rem 0.25rem 0.25rem 0.25rem;
 }
 /* ============================================= */
 /* CSS for control sap.m/ObjectHeaderItem.control */
@@ -6478,6 +6493,10 @@ html[data-sap-ui-os^="iOS7"][data-sap-ui-browser^="msf"]:not(.sap-tablet) .sapUi
   right: 0.75rem;
   bottom: 0.75rem;
   left: 0.75rem;
+  border: 1px dotted #000000;
+}
+html[data-sap-ui-browser^="ie"].sap-desktop .sapMPanelExpandableIcon:focus::after {
+  border-style: dashed;
 }
 .sapMPanelExpandableIconExpanded {
   display: inline-block;
@@ -7223,6 +7242,15 @@ html.sap-phone .sapMQuickViewPage .sapUiHLayout {
 .sapMRbG .sapMRbHasLabel .sapMRbBOut {
   margin: 0.8125rem;
 }
+/* Read only */
+.sapMRbGRo .sapMRb .sapMRbBOut {
+  background-color: transparent;
+  border-color: transparent;
+}
+.sapMRbGRo .sapMRb.sapMRbSel .sapMRbBInn {
+  background-color: #000000;
+}
+/* Right to left */
 .sapMRbG[dir=rtl] .sapMRbB {
   right: 0;
 }
@@ -7945,7 +7973,7 @@ html.sap-tablet .sapMGTHvrOutln:active {
   top: 1px;
   right: 1px;
   bottom: 1px;
-  border-radius: 0.25rem;
+  border-radius: 0.125rem;
 }
 /* Bulleted indicator of multiple tiles*/
 .sapMSTBulleted {
@@ -7992,14 +8020,18 @@ html.sap-desktop .sapMST.sapMSTIconPressed .sapMSTIconClickTapArea:hover ~ .sapM
   opacity: 1.0;
 }
 .sapMST .sapMSTIconNestedArea {
-  right: 5.9%;
+  right: 1.35rem;
+  top: 1.2rem;
   z-index: 1;
   position: absolute;
-  top: 10.9%;
   outline: none;
 }
 .sapMST.sapMSTPauseIcon .sapMSTIconNestedArea {
-  right: 6.9%;
+  right: 1.55rem;
+}
+/* Play icon in RTL */
+html[dir="rtl"] .sapMST:not(.sapMSTPauseIcon) .sapMSTIconNestedArea {
+  right: 1.5rem;
 }
 .sapMSTIconNestedArea :active {
   outline: none;
@@ -8028,6 +8060,15 @@ html.sap-desktop .sapMST:not(:hover).sapMST:not(:focus) .sapMSTBulleted {
   }
   .sapMSTBulleted {
     bottom: 0.188rem;
+  }
+  .sapMST .sapMSTIconNestedArea {
+    right: 1.35rem;
+  }
+  .sapMSTPauseIcon .sapMST .sapMSTIconNestedArea {
+    right: 1.55rem;
+  }
+  html[dir="rtl"] .sapMST:not(.sapMSTPauseIcon) .sapMSTIconNestedArea {
+    right: 1.5rem;
   }
 }
 .sapMSB {
@@ -9182,6 +9223,10 @@ html[data-sap-ui-animation='on'] .sapMTabStrip .sapMTSTabsContainer .sapMTSTabs 
   font-size: .75rem;
   margin: 0;
 }
+html[data-sap-ui-browser^="ie"] .sapMTabStrip .sapMTSTabsContainer .sapMTSTabs .sapMTabStripItem:focus::before,
+html[data-sap-ui-browser^="ed"] .sapMTabStrip .sapMTSTabsContainer .sapMTSTabs .sapMTabStripItem:focus::before {
+  border-style: dashed;
+}
 /* ====================================================== */
 /* CSS for control sap.m/Select.control                   */
 /* ====================================================== */
@@ -9410,6 +9455,10 @@ html.sap-phone .sapMTabStripSelectListItemCloseBtn .sapMBtnInner {
   /* works only if browser knows the width */
   cursor: text;
 }
+html[data-sap-ui-browser="sf10"] .sapUiVltCell .sapMText,
+html[data-sap-ui-browser="sf10"] .sapuiVltCell .sapMText {
+  display: block;
+}
 .sapMTextNoWrap,
 .sapMTextMaxLine {
   overflow: hidden;
@@ -9534,18 +9583,21 @@ html.sap-phone .sapMTileContent {
   box-sizing: border-box;
   position: relative;
 }
-.sapMTileCnt.ft-Auto {
+.sapMTileCnt.sapMFrameTypeAuto {
   height: 6.375rem;
   min-width: 10.875rem;
   max-width: 22.5rem;
 }
 /* TwoByOne size */
-.sapMTileCnt.ft-TwoByOne {
+.sapMTileCnt.sapMFrameTypeTwoByOne {
   height: 6.375rem;
   width: 22.375rem;
 }
+.sapMTileCnt.sapMFrameTypeTwoByOne.News {
+  width: 22.5rem;
+}
 /* OneByOne size */
-.sapMTileCnt.ft-OneByOne {
+.sapMTileCnt.sapMFrameTypeOneByOne {
   height: 6.375rem;
   width: 11rem;
 }
@@ -9610,16 +9662,19 @@ html[dir=rtl] .sapMTileCntFtrTxt {
 }
 /* BREAKPOINT FOR SMALL PHONES */
 @media screen and (max-width: 374px) {
-  .sapMTileCnt.ft-Auto {
+  .sapMTileCnt.sapMFrameTypeAuto {
     height: 5.5rem;
     min-width: 9.125rem;
     max-width: 19rem;
   }
-  .sapMTileCnt.ft-TwoByOne {
+  .sapMTileCnt.sapMFrameTypeTwoByOne {
     height: 5.5rem;
     width: 18.875rem;
   }
-  .sapMTileCnt.ft-OneByOne {
+  .sapMTileCnt.sapMFrameTypeTwoByOne.News {
+    width: 19rem;
+  }
+  .sapMTileCnt.sapMFrameTypeOneByOne {
     height: 5.5rem;
     width: 9.25rem;
   }
@@ -14074,7 +14129,7 @@ html[data-sap-ui-browser^="ed"].sap-desktop .sapMLnk:focus:not(.sapMLnkDsbl):bef
   position: absolute;
   left: 0;
   top: 0;
-  border: 0.0625rem dotted #005483;
+  border: 0.0625rem dashed #005483;
   pointer-events: none;
 }
 .sapMLIBActive .sapMLnk {
@@ -15131,10 +15186,10 @@ html.sap-tablet .sapUiSizeCompact .sapMMultiInputMultiModeBorder {
 .sapMMultiInput.sapMInputBaseSuccess .sapMMultiInputBorder {
   border-width: 2px;
 }
-.sapMMultiInput.sapMInputBaseWarning .sapMMultiInputBorder {
+.sapMInputBase.sapMMultiInput.sapMInputBaseWarning .sapMMultiInputBorder {
   border-color: #f0ab00;
 }
-.sapMMultiInput.sapMInputBaseError .sapMMultiInputBorder {
+.sapMInputBase.sapMMultiInput.sapMInputBaseError .sapMMultiInputBorder {
   border-color: #e52929;
 }
 .sapMMultiInput.sapMInputBaseSuccess .sapMMultiInputBorder {
@@ -15350,6 +15405,10 @@ html.sap-desktop .sapMObjectAttributeActive:focus {
 html.sap-desktop .sapMObjectAttributeActive:focus > .sapMText {
   outline: 1px dotted #005483;
   outline-offset: -1px;
+}
+html[data-sap-ui-browser^="ie"] .sapMObjectAttributeActive:focus > .sapMText,
+html[data-sap-ui-browser^="ed"] .sapMObjectAttributeActive:focus > .sapMText {
+  outline-style: dashed;
 }
 /*=========================================== */
 /* Custom design for Responsive Object Header */
@@ -16096,7 +16155,7 @@ html.sap-desktop .sapUiFioriObjectPage > section {
   color: #666666;
 }
 .sapMPanelExpandableIcon:focus::after {
-  border: 1px dotted #005483;
+  border-color: #005483;
 }
 /* ============================================== */
 /* CSS for control sap.m/PlanningCalendar.control */
@@ -16820,6 +16879,10 @@ html[data-sap-ui-browser^="ie"] .sapMRbB .sapMRbBInn {
 .sapUiRbGCol > .sapUiRb:focus {
   outline: 1px dotted #005483;
 }
+/* Read only */
+.sapMRbGRo .sapMRb .sapMRbBOut {
+  border-color: #bfbfbf;
+}
 /* ====================================================== */
 /* CSS for sap.m.RangeSlider control's BlueCrystal theme */
 /* ====================================================== */
@@ -16867,6 +16930,10 @@ span.sapMSliderHandleOverlap {
   height: 1.375rem;
   /* default size */
   overflow: hidden;
+}
+/* required to display icons background in RTL Mode*/
+html[dir=rtl] .sapUiIconMirrorInRTL:not(.sapUiIconSuppressMirrorInRTL):before {
+  display: inline;
 }
 .sapMRIIconSel {
   color: #ffc32e;
@@ -19167,16 +19234,16 @@ html.sap-desktop .sapMToken.sapMTokenSelected:hover,
 .sapMTB-Info-CTX.sapMTBActive:active {
   background: #2f5477;
 }
-html.sap-desktop .sapMTBActive:focus {
+html.sap-desktop .sapMTB-Info-CTX.sapMTBActive:focus {
   outline: 1px dotted #ffffff;
   outline-offset: -0.125rem;
 }
 /* IE ignores outline-offset. Use an overlay: */
-html[data-sap-ui-browser^="ie"].sap-desktop .sapMTBActive:focus {
+html[data-sap-ui-browser^="ie"].sap-desktop .sapMTB-Info-CTX.sapMTBActive:focus {
   outline: none;
   position: relative;
 }
-html[data-sap-ui-browser^="ie"].sap-desktop .sapMTBActive:focus:before {
+html[data-sap-ui-browser^="ie"].sap-desktop .sapMTB-Info-CTX.sapMTBActive:focus:before {
   content: " ";
   box-sizing: border-box;
   width: calc(100% - 0.0625rem);
@@ -19186,9 +19253,6 @@ html[data-sap-ui-browser^="ie"].sap-desktop .sapMTBActive:focus:before {
   top: 0;
   border: 0.0625rem dotted #ffffff;
   pointer-events: none;
-}
-html.sap-desktop .sapMTB-Info-CTX.sapMTBActive:focus {
-  outline-color: #ffffff;
 }
 /********** COMPACT DESIGN ************/
 /* toolbar has 2rem height in compact mode */
