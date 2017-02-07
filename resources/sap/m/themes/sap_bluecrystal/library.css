@@ -2559,7 +2559,7 @@ html[data-sap-ui-animation='on'] .sapMFCL .sapMFCLColumn {
   bottom: 0;
   border-radius: 0.125rem;
 }
-.sapMGTFocusDiv {
+.sapMGT .sapMGTFocusDiv {
   position: absolute;
   pointer-events: none;
   left: 0px;
@@ -2569,13 +2569,19 @@ html[data-sap-ui-animation='on'] .sapMFCL .sapMFCLColumn {
   border-radius: 0.25rem;
   z-index: 2;
 }
+.sapMGT.sapMGTBackgroundImage .sapMGTFocusDiv {
+  top: 1px;
+  right: 1px;
+  left: 1px;
+  bottom: 1px;
+}
 .sapMGenericTileLoading {
   height: 100%;
 }
 .sapMGenericTileFtrFld {
   left: 0.4375rem;
+  right: 0.4375rem;
   bottom: 0.4375rem;
-  display: table;
   position: absolute;
 }
 .sapMGenericTileFtrFldTxt {
@@ -3110,7 +3116,7 @@ html.sap-phone .sapMITBAll .sapMITBText {
   padding-right: 1rem;
 }
 .sapMITB .sapMITBItemNoCount.sapMITBFilter:last-child {
-  padding-right: 0;
+  padding-right: 0.8rem;
 }
 /* Tab Separator Item */
 .sapMITBSep {
@@ -3767,6 +3773,10 @@ html.sap-desktop .sapUiSizeCondensed .sapUiTableCell .sapMLnk:focus:not(.sapMLnk
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+.sapMLIBFocusable:focus {
+  outline: 1px dotted #000000;
+  outline-offset: -1px;
 }
 .sapMLIB:not(.sapMLIBFocusable):focus,
 .sapMListTblSubRow:focus {
@@ -6852,6 +6862,10 @@ html[data-sap-ui-animation='on'] .sapMPageFloatingFooter .sapMPageFooterControlH
   right: 0.75rem;
   bottom: 0.75rem;
   left: 0.75rem;
+  border: 1px dotted #000000;
+}
+html[data-sap-ui-browser^="ie"].sap-desktop .sapMPanelExpandableIcon:focus::after {
+  border-style: dashed;
 }
 .sapMPanelExpandableIconExpanded {
   display: inline-block;
@@ -8409,7 +8423,7 @@ html.sap-tablet .sapMGTHvrOutln:active {
   top: 1px;
   right: 1px;
   bottom: 1px;
-  border-radius: 0.25rem;
+  border-radius: 0.125rem;
 }
 /* Bulleted indicator of multiple tiles*/
 .sapMSTBulleted {
@@ -8456,14 +8470,18 @@ html.sap-desktop .sapMST.sapMSTIconPressed .sapMSTIconClickTapArea:hover ~ .sapM
   opacity: 1.0;
 }
 .sapMST .sapMSTIconNestedArea {
-  right: 5.9%;
+  right: 1.35rem;
+  top: 1.2rem;
   z-index: 1;
   position: absolute;
-  top: 10.9%;
   outline: none;
 }
 .sapMST.sapMSTPauseIcon .sapMSTIconNestedArea {
-  right: 6.9%;
+  right: 1.55rem;
+}
+/* Play icon in RTL */
+html[dir="rtl"] .sapMST:not(.sapMSTPauseIcon) .sapMSTIconNestedArea {
+  right: 1.5rem;
 }
 .sapMSTIconNestedArea :active {
   outline: none;
@@ -8492,6 +8510,15 @@ html.sap-desktop .sapMST:not(:hover).sapMST:not(:focus) .sapMSTBulleted {
   }
   .sapMSTBulleted {
     bottom: 0.188rem;
+  }
+  .sapMST .sapMSTIconNestedArea {
+    right: 1.35rem;
+  }
+  .sapMSTPauseIcon .sapMST .sapMSTIconNestedArea {
+    right: 1.55rem;
+  }
+  html[dir="rtl"] .sapMST:not(.sapMSTPauseIcon) .sapMSTIconNestedArea {
+    right: 1.5rem;
   }
 }
 .sapMSB {
@@ -9282,6 +9309,10 @@ html.sap-phone .sapMSupport .sapMDialogScrollCont {
 .sapMListTbl .sapMLIB {
   display: table-row;
 }
+html[data-sap-ui-browser='ie11'] .sapMListTbl {
+  padding: 1px;
+  /* outline must be visible */
+}
 .sapMListTbl th:focus,
 .sapMListTbl td:focus {
   outline: none;
@@ -9887,6 +9918,10 @@ html.sap-phone .sapMTabStripSelectListItemCloseBtn .sapMBtnInner {
   word-wrap: break-word;
   /* works only if browser knows the width */
   cursor: text;
+}
+html[data-sap-ui-browser="sf10"] .sapUiVltCell .sapMText,
+html[data-sap-ui-browser="sf10"] .sapuiVltCell .sapMText {
+  display: block;
 }
 .sapMTextNoWrap,
 .sapMTextMaxLine {
@@ -13123,11 +13158,6 @@ html.sap-desktop .sapUiSizeCompact .sapUiSimpleForm .sapMCb:not(.sapMCbBgDis):fo
 /* separators */
 .sapMLIBShowSeparator > td {
   border-top: 1px solid #e5e5e5;
-}
-/* set overlapped borders transparent to make focus outline more distinct */
-.sapMLIBShowSeparator:focus > td,
-.sapMLIBShowSeparator:focus + .sapMLIBShowSeparator > td {
-  border-top-color: transparent;
 }
 .sapMListShowSeparatorsNone .sapMLIBShowSeparator > td,
 .sapMListShowSeparatorsInner .sapMLIBShowSeparator:first-child > td {
@@ -16652,7 +16682,7 @@ html.sap-desktop .sapUiFioriObjectPage > section {
   color: #666666;
 }
 .sapMPanelExpandableIcon:focus::after {
-  border: 1px dotted #000000;
+  border-color: #000000;
 }
 /* ============================================== */
 /* CSS for control sap.m/PlanningCalendar.control */
