@@ -5,6 +5,7 @@
 
 .sapMBtnGradient(@color) {
 	background-color: @color;
+	background: -ms-linear-gradient(top, @color 0%, darken(@color, 2) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, @color), color-stop(1, darken(@color, 2)));
 	background: -webkit-linear-gradient(top, @color 0%, darken(@color, 2) 100%);
 	background: linear-gradient(top, @color 0%, darken(@color, 2) 100%);
@@ -52,7 +53,8 @@ html.sap-desktop .sapMBtnTransparent > .sapMBtnIcon {
 
 .sapMBar-CTX :not(.sapMBtnDisabled) > .sapMBtnInner.sapMBtnActive,
 .sapMBar-CTX :not(.sapMBtnDisabled) > .sapMBtnInner.sapMBtnTransparent.sapMBtnHoverable.sapMBtnActive {
-	background-color: @sapUiButtonActiveBackground;
+	color: @sapUiButtonActiveTextColor;
+	border-color: @sapUiButtonLiteActiveBorderColor;
 }
 
 .sapMIBar-CTX .sapMBtn:hover > .sapMBtnTransparent.sapMBtnHoverable {
@@ -69,6 +71,10 @@ html.sap-desktop .sapMBtnTransparent > .sapMBtnIcon {
 
 .sapMFooter-CTX .sapMBtn:hover > .sapMBtnHoverable:not(.sapMBtnActive) {
 	background-color: @sapUiButtonFooterHoverBackground;
+	color:            @sapUiButtonFooterTextColor;
+}
+
+.sapMFooter-CTX .sapMBtnTransparent :not(.sapMBtnDisabled) {
 	color:            @sapUiButtonFooterTextColor;
 }
 
@@ -113,9 +119,9 @@ html.sap-desktop .sapMBtn:focus > .sapMBtnEmphasized.sapMFocusable {
 	border:           1px dashed @sapUiContentFocusColor;
 }
 
-.sapMFooter-CTX .sapMBtn:focus .sapMBtnFocusDiv,
-.sapMBtn.sapMBtnInverted:focus .sapMBtnFocusDiv,
-.sapMBtn:focus > .sapMBtnActive > .sapMBtnFocusDiv {
+html.sap-desktop .sapMFooter-CTX .sapMBtn:focus .sapMBtnFocusDiv,
+html.sap-desktop .sapMBtn.sapMBtnInverted:focus .sapMBtnFocusDiv,
+html.sap-desktop .sapMBtn:focus > .sapMBtnActive > .sapMBtnFocusDiv {
 	border-color:    @sapUiContentContrastFocusColor;
 }
 
@@ -169,4 +175,8 @@ html.sap-desktop .sapMBtn:focus > .sapMBtnEmphasized.sapMFocusable {
 .sapMIBar-CTX.sapMFooter-CTX .sapMBtnInner > .sapMBtnIcon {
 	color:            @sapUiButtonFooterTextColor;
 	text-shadow:      0 1px 0 fade(@sapUiContentShadowColor, 50);
+}
+
+.sapMBar-CTX :not(.sapMBtnDisabled) > span.sapMBtnInner.sapMBtnTransparent.sapMBtnActive > .sapMBtnContent {
+	color: @sapUiButtonActiveTextColor;
 }
