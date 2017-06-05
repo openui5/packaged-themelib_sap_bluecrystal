@@ -2030,7 +2030,7 @@ html[data-sap-ui-browser^="ed"].sap-desktop .sapUiCalHead > .sapUiCalHeadB:focus
   right: 2px;
   left: 2px;
   bottom: 2px;
-  border: 1px dotted #005483;
+  border: 1px dashed #005483;
   content: "";
 }
 html[data-sap-ui-browser^="ie"].sap-desktop .sapUiCalHead > .sapUiCalHeadB:focus:active:after,
@@ -2173,7 +2173,7 @@ html[data-sap-ui-browser^="ed"].sap-desktop .sapUiCalYearPicker .sapUiCalItem:fo
   right: 2px;
   left: 2px;
   bottom: 2px;
-  border: 1px dotted #005483;
+  border: 1px dashed #005483;
   content: "";
 }
 html[data-sap-ui-browser^="ie"].sap-desktop .sapUiCalItemSel:not(.sapUiCalItemNow):not(.sapUiCalItemSelBetween):focus > .sapUiCalItemText:after,
