@@ -916,7 +916,7 @@ span.sapMBtnInner.sapMBtnAccept {
   border-color: #005f28;
   color: #ffffff;
 }
-span.sapMBtnInner.sapMBtnAccept > .sapMBtnIcon {
+:not(.sapMBtnDisabled) > span.sapMBtnInner.sapMBtnAccept > .sapMBtnIcon {
   color: #ffffff;
 }
 .sapMBtn:hover > .sapMBtnHoverable.sapMBtnAccept:not(.sapMBtnActive) {
@@ -935,7 +935,7 @@ span.sapMBtnInner.sapMBtnReject {
   border-color: #b51616;
   color: #ffffff;
 }
-span.sapMBtnInner.sapMBtnReject > .sapMBtnIcon {
+:not(.sapMBtnDisabled) > span.sapMBtnInner.sapMBtnReject > .sapMBtnIcon {
   color: #ffffff;
 }
 .sapMBtn:hover > .sapMBtnHoverable.sapMBtnReject:not(.sapMBtnActive) {
@@ -955,7 +955,7 @@ span.sapMBtnInner.sapMBtnEmphasized {
   color: #ffffff;
   text-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.5);
 }
-span.sapMBtnInner.sapMBtnEmphasized > .sapMBtnIcon {
+:not(.sapMBtnDisabled) > span.sapMBtnInner.sapMBtnEmphasized > .sapMBtnIcon {
   color: #ffffff;
 }
 .sapMBtn:hover > .sapMBtnHoverable.sapMBtnEmphasized:not(.sapMBtnActive) {
@@ -1063,7 +1063,7 @@ html.sap-desktop .sapMFooter-CTX .sapMBtnInner :not(.sapMBtnDisabled) {
 /* Buttons in a Toolbar                             */
 /* ------------------------------------------------ */
 /* transparent Toolbar Context */
-.sapMTB-Transparent-CTX .sapMBtnInner:not(.sapMToggleBtnPressed):not(.sapMBtnEmphasized):not(.sapMBtnAccept):not(.sapMBtnReject):not(.sapMBtnActive) {
+.sapMTB-Transparent-CTX :not(.sapMBtnDisabled) .sapMBtnInner:not(.sapMToggleBtnPressed):not(.sapMBtnEmphasized):not(.sapMBtnAccept):not(.sapMBtnReject):not(.sapMBtnActive) {
   background-image: none;
   background: transparent;
   border-color: transparent;
@@ -2284,10 +2284,9 @@ html.sap-desktop .sapMDialog {
 .sapUiSizeCompact.sapMDialog > .sapMDialogTitle,
 .sapUiSizeCompact .sapMDialog > .sapMDialogTitle {
   height: 2.5rem;
-}
-.sapUiSizeCompact.sapMDialog > .sapMDialogTitle .sapMBarPH,
-.sapUiSizeCompact .sapMDialog > .sapMDialogTitle .sapMBarPH {
-  line-height: 2.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  box-sizing: border-box;
 }
 .sapUiSizeCompact.sapMDialog > .sapMDialogSection,
 .sapUiSizeCompact .sapMDialog > .sapMDialogSection {
@@ -4175,6 +4174,12 @@ html[data-sap-ui-browser*='ff'] .sapMGT:not(.sapMGTHeaderMode) .sapMGTHdrContent
 .sapMHdrCntrBtnCntr.Horizontal.sapMHdrCntrRight {
   right: 0.25rem;
 }
+.sapUiSizeCompact .sapMHdrCntrBtnCntr.Horizontal.sapMHdrCntrLeft {
+  left: 0rem;
+}
+.sapUiSizeCompact .sapMHdrCntrBtnCntr.Horizontal.sapMHdrCntrRight {
+  right: 0rem;
+}
 html.sap-phone .sapMHdrCntrBtnCntr.Horizontal,
 html.sap-tablet:not(.sap-desktop) .sapMHdrCntrBtnCntr.Horizontal {
   width: 1.5rem;
@@ -4218,6 +4223,7 @@ html.sap-tablet:not(.sap-desktop) .sapMHdrCntrBtnCntr.Vertical.sapMHdrCntrRight 
   min-width: 1.375rem;
 }
 .sapUiSizeCompact .sapMHdrCntrBtnCntr.Horizontal > .sapMHdrCntrBtn {
+  right: 0.25rem;
   margin-top: -1rem;
 }
 html.sap-phone .sapMHdrCntrBtnCntr.Horizontal > .sapMHdrCntrBtn,
@@ -11048,7 +11054,7 @@ html.sap-desktop .sapUiFioriObjectPage > section > .sapMPanel {
 }
 /* workaround for drawing issue in IE - ensures that the content will be redrawn */
 html[data-sap-ui-animation='on'][data-sap-ui-browser^="ie"] .sapMPanelContent {
-  transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
 }
 /* workaround for drawing issue in Edge - ensures that the content will be redrawn */
 html[data-sap-ui-animation='on'][data-sap-ui-browser^="ed"] .sapMPanelContent {
@@ -16500,7 +16506,18 @@ html.sap-phone .sapMTileContent {
   line-height: 1.1875rem;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.875rem;
+}
+.sapMTileCntFooterTextColorNeutral {
   color: #666666;
+}
+.sapMTileCntFooterTextColorGood {
+  color: #007833;
+}
+.sapMTileCntFooterTextColorError {
+  color: #cc1919;
+}
+.sapMTileCntFooterTextColorCritical {
+  color: #d14900;
 }
 html[dir=rtl] .sapMTileCntFtrTxt {
   text-align: left;
@@ -17987,11 +18004,6 @@ html[data-sap-ui-browser^="ed"].sap-desktop .sapMTokenizer:focus:before {
 .sapMUCObjectMarkerContainer {
   display: inline-block;
   position: absolute;
-}
-/*focus for the file name */
-.sapMUCItem .sapMUCTextContainer > .sapMUCFileName.sapMLnk:focus {
-  outline: 1px dotted;
-  outline-offset: 0.0625rem;
 }
 /*positioning of the Progress label */
 .sapMLabel.sapMUCProgress {
@@ -21163,6 +21175,9 @@ html.sap-desktop .sapMSwtCont:focus > .sapMSwt {
 /* ================================== */
 .sapMTileCnt.News {
   background-color: rgba(255, 255, 255, 0.8);
+}
+.sapMTileCnt.News .sapMTileCntFtrTxt {
+  color: #666666;
 }
 /* ==================================== */
 /* CSS for control sap.m/TileContainer  */
