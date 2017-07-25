@@ -1597,10 +1597,9 @@ html.sap-desktop .sapMDialog {
 .sapUiSizeCompact.sapMDialog > .sapMDialogTitle,
 .sapUiSizeCompact .sapMDialog > .sapMDialogTitle {
   height: 2.5rem;
-}
-.sapUiSizeCompact.sapMDialog > .sapMDialogTitle .sapMBarPH,
-.sapUiSizeCompact .sapMDialog > .sapMDialogTitle .sapMBarPH {
-  line-height: 2.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  box-sizing: border-box;
 }
 .sapUiSizeCompact.sapMDialog > .sapMDialogSection,
 .sapUiSizeCompact .sapMDialog > .sapMDialogSection {
@@ -13416,11 +13415,6 @@ html[data-sap-ui-browser="ie9"] .sapMUCItemImage {
   display: inline-block;
   position: absolute;
 }
-/*focus for the file name */
-.sapMUCItem .sapMUCTextContainer > .sapMUCFileName.sapMLnk:focus {
-  outline: 1px dotted;
-  outline-offset: 0.0625rem;
-}
 /*positioning of the Progress label */
 .sapMLabel.sapMUCProgress {
   display: block;
@@ -20231,13 +20225,25 @@ html.sap-phone .sapMSltBar.sapMTSSltBar::after {
 /* Footer CSS */
 .sapMTileCntFtrTxt {
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.875rem;
+}
+.sapMTileCntFooterTextColorNeutral {
   color: #666666;
 }
-.sapMTileCntFtrTxt {
-  font-size: 0.875rem;
+.sapMTileCntFooterTextColorGood {
+  color: #007833;
+}
+.sapMTileCntFooterTextColorError {
+  color: #cc1919;
+}
+.sapMTileCntFooterTextColorCritical {
+  color: #d14900;
 }
 .sapMTileCnt.News {
   background-color: rgba(255, 255, 255, 0.6);
+}
+.sapMTileCnt.News .sapMTileCntFtrTxt {
+  color: #666666;
 }
 /* BREAKPOINT FOR SMALL PHONES */
 @media screen and (max-width: 374px) {
