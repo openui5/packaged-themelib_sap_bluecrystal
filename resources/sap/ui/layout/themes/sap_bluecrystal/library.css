@@ -3662,43 +3662,9 @@ html[data-sap-ui-browser^=ie].sap-phone .sapUiLoSplitterV > .sapUiLoSplitterBar:
   flex-shrink: 0;
   width: 40%;
 }
-.sapUiBlockLayoutSizeL .sapUiBlockHorizontalCellsRow,
-.sapUiBlockLayoutSizeXL .sapUiBlockHorizontalCellsRow,
-.sapUiBlockLayoutSizeM .sapUiBlockHorizontalCellsRow {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-}
-.sapUiBlockLayoutSizeL .sapUiBlockSmallCell,
-.sapUiBlockLayoutSizeXL .sapUiBlockSmallCell,
-.sapUiBlockLayoutSizeM .sapUiBlockSmallCell {
-  -webkit-flex-shrink: 1;
-  -webkit-flex-grow: 1;
-  -webkit-flex-basis: 0;
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 0;
-}
-.sapUiBlockLayoutSizeL .sapUiBlockMediumCell,
-.sapUiBlockLayoutSizeXL .sapUiBlockMediumCell,
-.sapUiBlockLayoutSizeM .sapUiBlockMediumCell {
-  -webkit-flex-grow: 2;
-  -webkit-flex-shrink: 1;
-  -webkit-flex-basis: 0;
-  flex-grow: 2;
-  flex-shrink: 1;
-  flex-basis: 0;
-}
 .sapUiBlockLayoutSizeL .sapUiBlockScrollingNarrowCells .sapUiBlockScrollableCell,
 .sapUiBlockLayoutSizeXL .sapUiBlockScrollingNarrowCells .sapUiBlockScrollableCell {
   width: 25%;
-}
-.sapUiBlockLayoutSizeS .sapUiBlockRowSCase {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
 }
 .sapUiBlockLayoutSizeS .sapUiBlockSmallCell {
   width: 100%;
@@ -4180,69 +4146,69 @@ html[data-sap-ui-browser^=ie].sap-phone .sapUiLoSplitterV > .sapUiLoSplitterBar:
 /* BlueCrystal theme                          */
 /* ========================================== */
 /* ============ Background type: Light ============== */
-.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1 .sapUiBlockLayoutCell:nth-child(2n),
-.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet3 .sapUiBlockLayoutCell:nth-child(2n) {
+.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1 .sapUiBlockLayoutEvenCell,
+.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet3 .sapUiBlockLayoutEvenCell {
   background-color: #ffffff;
 }
-.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1 .sapUiBlockLayoutCell:nth-child(2n+1),
-.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet3 .sapUiBlockLayoutCell:nth-child(2n+1) {
+.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1 .sapUiBlockLayoutOddCell,
+.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet3 .sapUiBlockLayoutOddCell {
   background-color: #808080;
 }
-.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1Inverted .sapUiBlockLayoutCell:nth-child(2n),
-.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet3Inverted .sapUiBlockLayoutCell:nth-child(2n) {
+.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1Inverted .sapUiBlockLayoutEvenCell,
+.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet3Inverted .sapUiBlockLayoutEvenCell {
   background-color: #808080;
 }
-.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1Inverted .sapUiBlockLayoutCell:nth-child(2n+1),
-.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet3Inverted .sapUiBlockLayoutCell:nth-child(2n+1) {
+.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1Inverted .sapUiBlockLayoutOddCell,
+.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet3Inverted .sapUiBlockLayoutOddCell {
   background-color: #ffffff;
 }
-.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet2 .sapUiBlockLayoutCell:nth-child(2n),
-.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet4 .sapUiBlockLayoutCell:nth-child(2n) {
+.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet2 .sapUiBlockLayoutEvenCell,
+.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet4 .sapUiBlockLayoutEvenCell {
   background-color: #6e6e6e;
 }
-.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet2 .sapUiBlockLayoutCell:nth-child(2n+1),
-.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet4 .sapUiBlockLayoutCell:nth-child(2n+1) {
+.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet2 .sapUiBlockLayoutOddCell,
+.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet4 .sapUiBlockLayoutOddCell {
   background-color: #5c5c5c;
 }
-.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet2Inverted .sapUiBlockLayoutCell:nth-child(2n),
-.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet4Inverted .sapUiBlockLayoutCell:nth-child(2n) {
+.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet2Inverted .sapUiBlockLayoutEvenCell,
+.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet4Inverted .sapUiBlockLayoutEvenCell {
   background-color: #5c5c5c;
 }
-.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet2Inverted .sapUiBlockLayoutCell:nth-child(2n+1),
-.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet4Inverted .sapUiBlockLayoutCell:nth-child(2n+1) {
+.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet2Inverted .sapUiBlockLayoutOddCell,
+.sapUiBlockLayoutBackgroundLight .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet4Inverted .sapUiBlockLayoutOddCell {
   background-color: #6e6e6e;
 }
 /* ============ Background type: Mixed ============== */
-.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1 .sapUiBlockLayoutCell:nth-child(2n),
-.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet3 .sapUiBlockLayoutCell:nth-child(2n) {
+.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1 .sapUiBlockLayoutEvenCell,
+.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet3 .sapUiBlockLayoutEvenCell {
   background-color: #ffffff;
 }
-.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1 .sapUiBlockLayoutCell:nth-child(2n+1),
-.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet3 .sapUiBlockLayoutCell:nth-child(2n+1) {
+.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1 .sapUiBlockLayoutOddCell,
+.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet3 .sapUiBlockLayoutOddCell {
   background-color: #808080;
 }
-.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1Inverted .sapUiBlockLayoutCell:nth-child(2n),
-.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet3Inverted .sapUiBlockLayoutCell:nth-child(2n) {
+.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1Inverted .sapUiBlockLayoutEvenCell,
+.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet3Inverted .sapUiBlockLayoutEvenCell {
   background-color: #808080;
 }
-.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1Inverted .sapUiBlockLayoutCell:nth-child(2n+1),
-.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet3Inverted .sapUiBlockLayoutCell:nth-child(2n+1) {
+.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1Inverted .sapUiBlockLayoutOddCell,
+.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet3Inverted .sapUiBlockLayoutOddCell {
   background-color: #ffffff;
 }
-.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet2 .sapUiBlockLayoutCell:nth-child(2n),
-.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet4 .sapUiBlockLayoutCell:nth-child(2n) {
+.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet2 .sapUiBlockLayoutEvenCell,
+.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet4 .sapUiBlockLayoutEvenCell {
   background-color: #6e6e6e;
 }
-.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet2 .sapUiBlockLayoutCell:nth-child(2n+1),
-.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet4 .sapUiBlockLayoutCell:nth-child(2n+1) {
+.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet2 .sapUiBlockLayoutOddCell,
+.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet4 .sapUiBlockLayoutOddCell {
   background-color: #5c5c5c;
 }
-.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet2Inverted .sapUiBlockLayoutCell:nth-child(2n),
-.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet4Inverted .sapUiBlockLayoutCell:nth-child(2n) {
+.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet2Inverted .sapUiBlockLayoutEvenCell,
+.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet4Inverted .sapUiBlockLayoutEvenCell {
   background-color: #5c5c5c;
 }
-.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet2Inverted .sapUiBlockLayoutCell:nth-child(2n+1),
-.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet4Inverted .sapUiBlockLayoutCell:nth-child(2n+1) {
+.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet2Inverted .sapUiBlockLayoutOddCell,
+.sapUiBlockLayoutBackgroundMixed .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet4Inverted .sapUiBlockLayoutOddCell {
   background-color: #6e6e6e;
 }
 .sapUiBlockLayoutBackgroundMixed.sapUiBlockLayoutSizeL .sapUiBlockLayoutRow .sapContrast.sapUiBlockLayoutCell,
@@ -4263,52 +4229,52 @@ html[data-sap-ui-browser^=ie].sap-phone .sapUiLoSplitterV > .sapUiLoSplitterBar:
 .sapUiBlockLayoutBackgroundAccent .sapUiBlockCellContent .sapMText {
   color: #ffffff;
 }
-.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1 .sapUiBlockLayoutCell:nth-child(2n) {
+.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1 .sapUiBlockLayoutEvenCell {
   background-color: #003c77;
 }
-.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1 .sapUiBlockLayoutCell:nth-child(2n+1) {
+.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1 .sapUiBlockLayoutOddCell {
   background-color: #002a53;
 }
-.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1Inverted .sapUiBlockLayoutCell:nth-child(2n) {
+.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1Inverted .sapUiBlockLayoutEvenCell {
   background-color: #002a53;
 }
-.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1Inverted .sapUiBlockLayoutCell:nth-child(2n+1) {
+.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1Inverted .sapUiBlockLayoutOddCell {
   background-color: #003c77;
 }
-.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet2 .sapUiBlockLayoutCell:nth-child(2n) {
+.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet2 .sapUiBlockLayoutEvenCell {
   background-color: #006b2e;
 }
-.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet2 .sapUiBlockLayoutCell:nth-child(2n+1) {
+.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet2 .sapUiBlockLayoutOddCell {
   background-color: #004d21;
 }
-.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet2Inverted .sapUiBlockLayoutCell:nth-child(2n) {
+.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet2Inverted .sapUiBlockLayoutEvenCell {
   background-color: #004d21;
 }
-.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet2Inverted .sapUiBlockLayoutCell:nth-child(2n+1) {
+.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet2Inverted .sapUiBlockLayoutOddCell {
   background-color: #006b2e;
 }
-.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet3 .sapUiBlockLayoutCell:nth-child(2n) {
+.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet3 .sapUiBlockLayoutEvenCell {
   background-color: #006297;
 }
-.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet3 .sapUiBlockLayoutCell:nth-child(2n+1) {
+.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet3 .sapUiBlockLayoutOddCell {
   background-color: #00476e;
 }
-.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet3Inverted .sapUiBlockLayoutCell:nth-child(2n) {
+.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet3Inverted .sapUiBlockLayoutEvenCell {
   background-color: #00476e;
 }
-.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet3Inverted .sapUiBlockLayoutCell:nth-child(2n+1) {
+.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet3Inverted .sapUiBlockLayoutOddCell {
   background-color: #006297;
 }
-.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet4 .sapUiBlockLayoutCell:nth-child(2n) {
+.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet4 .sapUiBlockLayoutEvenCell {
   background-color: #fafafa;
 }
-.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet4 .sapUiBlockLayoutCell:nth-child(2n+1) {
+.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet4 .sapUiBlockLayoutOddCell {
   background-color: #ebebeb;
 }
-.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet4Inverted .sapUiBlockLayoutCell:nth-child(2n) {
+.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet4Inverted .sapUiBlockLayoutEvenCell {
   background-color: #ebebeb;
 }
-.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet4Inverted .sapUiBlockLayoutCell:nth-child(2n+1) {
+.sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet4Inverted .sapUiBlockLayoutOddCell {
   background-color: #fafafa;
 }
 .sapUiBlockLayoutBackgroundAccent .sapUiBlockLayoutRow.sapUiBlockLayoutBackgroundColorSet1 .sapUiBlockLayoutCell.sapUiBlockLayoutBackgroundColorSetGray1,
