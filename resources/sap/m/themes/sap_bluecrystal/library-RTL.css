@@ -9036,12 +9036,8 @@ html.sap-desktop .sapMObjectAttributeActive:focus {
 .sapUxAPObjectPageHeaderContentItem .sapMObjectAttributeText {
   line-height: normal;
 }
-html[data-sap-ui-browser^='ie'] .sapMObjectAttributeDiv,
-html[data-sap-ui-browser^='ie'] .sapMObjectAttributeDiv {
-  padding: 0.25rem 0.25rem 0.25rem 0.25rem;
-}
-html[data-sap-ui-browser^='ie'] .sapMObjectAttributeActive:focus .sapMObjectAttributeText,
-html[data-sap-ui-browser^='ie'] .sapMObjectAttributeActive:focus .sapMObjectAttributeText {
+html[data-sap-ui-browser^='ie'] .sapMObjectAttributeActive:focus .sapMObjectAttributeText::after,
+html[data-sap-ui-browser^='ie'] .sapMObjectAttributeActive:focus .sapMObjectAttributeText::after {
   outline-style: dashed;
 }
 /*=========================================== */
@@ -9121,10 +9117,6 @@ html[data-sap-ui-browser^='ie'] .sapMObjectAttributeActive:focus .sapMObjectAttr
 .sapMOH .sapMObjectAttributeActive .sapMObjectAttributeText:hover,
 .sapMOH .sapMObjectAttributeActive:focus .sapMObjectAttributeText {
   text-decoration: none;
-}
-html[data-sap-ui-browser^="ie"] .sapMObjectAttributeDiv,
-html[data-sap-ui-browser^="ed"] .sapMObjectAttributeDiv {
-  padding: 0.125rem 0.125rem 0.125rem 0.125rem;
 }
 /* =================================== */
 /* CSS for control sap.m/ObjectHeader  */
@@ -20344,20 +20336,12 @@ html[data-sap-ui-browser^="ed"] .sapMObjectAttributeActive:focus > .sapMText {
 .sapMOHR .sapMObjectAttributeActive:focus .sapMObjectAttributeText {
   text-decoration: underline;
 }
-.sapMOHR .sapMObjectAttributeActive:focus .sapMObjectAttributeText {
-  outline: 1px dotted #000000;
-  outline-offset: -1px;
-}
 /*=========================================== */
 /* Custom design for Static Object Header     */
 /*=========================================== */
 .sapMOH .sapMObjectAttributeActive .sapMObjectAttributeText:active,
 .sapMOH .sapMObjectAttributeActive .sapMObjectAttributeText:hover {
   text-decoration: underline;
-}
-.sapMOH .sapMObjectAttributeActive:focus .sapMObjectAttributeText {
-  outline: 1px dotted #000000;
-  outline-offset: -1px;
 }
 /* =================================== */
 /* CSS for control sap.m/ObjectHeader  */
