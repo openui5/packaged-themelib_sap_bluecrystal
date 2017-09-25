@@ -1608,6 +1608,9 @@ html[data-sap-ui-animation='off'] .sapMCrslInner {
 .sapMCb:not(.sapMCbBgDis).sapMCbHasLabel:focus:before {
   pointer-events: none;
 }
+html[dir="rtl"] .sapMCb {
+  text-align: right;
+}
 .sapMCb .sapMLabel {
   cursor: default;
 }
