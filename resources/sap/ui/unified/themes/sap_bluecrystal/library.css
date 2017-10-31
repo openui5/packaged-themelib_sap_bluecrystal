@@ -3003,28 +3003,10 @@ html[data-sap-ui-browser^="ff"].sap-desktop .sapUiCalHead > .sapUiCalHeadB:focus
   outline-offset: 0;
   /* to hide firefox bug with native outline always displayed */
 }
-html[data-sap-ui-browser^="ie"].sap-desktop,
-html[data-sap-ui-browser^="ed"].sap-desktop {
-  /* to prevent some strange issues on focus -> position texts absolute */
-}
 html[data-sap-ui-browser^="ie"].sap-desktop .sapUiCalHead > .sapUiCalHeadB,
 html[data-sap-ui-browser^="ed"].sap-desktop .sapUiCalHead > .sapUiCalHeadB {
   position: relative;
   outline: none;
-}
-html[data-sap-ui-browser^="ie"].sap-desktop .sapUiCalHeadBText,
-html[data-sap-ui-browser^="ed"].sap-desktop .sapUiCalHeadBText {
-  float: none;
-  position: absolute;
-  top: 6px;
-  width: 100%;
-}
-html[data-sap-ui-browser^="ie"].sap-desktop .sapUiCalHeadBAddText,
-html[data-sap-ui-browser^="ed"].sap-desktop .sapUiCalHeadBAddText {
-  float: none;
-  position: absolute;
-  left: 0;
-  bottom: 7px;
 }
 html[data-sap-ui-browser^="ie"].sap-desktop .sapUiCalHead > .sapUiCalHeadB:focus:after,
 html[data-sap-ui-browser^="ed"].sap-desktop .sapUiCalHead > .sapUiCalHeadB:focus:after {
