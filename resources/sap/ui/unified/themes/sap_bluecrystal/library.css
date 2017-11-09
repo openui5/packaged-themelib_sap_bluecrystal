@@ -3119,8 +3119,8 @@ html.sap-desktop .sapUiCalMonthPicker .sapUiCalItemSel:focus,
 html.sap-desktop .sapUiCalYearPicker .sapUiCalItemSel:focus {
   outline-color: #ffffff;
 }
-html[data-sap-ui-browser^="ie"].sap-desktop .sapMPlanCal .sapUiCalItem:focus,
-html[data-sap-ui-browser^="ed"].sap-desktop .sapMPlanCal .sapUiCalItem:focus {
+html[data-sap-ui-browser^="ie"].sap-desktop .sapMPlanCal :not(.sapUiCalFirstWDay).sapUiCalItem:focus,
+html[data-sap-ui-browser^="ed"].sap-desktop .sapMPlanCal :not(.sapUiCalFirstWDay).sapUiCalItem:focus {
   overflow: hidden;
 }
 html[data-sap-ui-browser^="ie"].sap-desktop .sapUiCalItem:focus > .sapUiCalItemText,
