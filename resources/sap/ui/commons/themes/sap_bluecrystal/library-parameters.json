@@ -1,0 +1,8 @@
+{
+    "_sap_ui_commons_Dialog_HeaderHeight": "40px",
+    "_sap_ui_commons_Dialog_FooterHeight": "44px",
+    "_sap_ui_commons_RatingIndicator_SymbolSelected": "url(\"img/rating/star_selected.png\")",
+    "_sap_ui_commons_RatingIndicator_SymbolUnselected": "url(\"img/rating/star_unselected.png\")",
+    "_sap_ui_commons_RatingIndicator_SymbolHovered": "url(\"img/rating/star_hover.png\")",
+    "_sap_ui_commons_TabStrip_BorderRadius": "0"
+}
