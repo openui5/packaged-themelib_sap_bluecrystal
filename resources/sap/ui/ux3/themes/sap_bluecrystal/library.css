@@ -5216,4 +5216,4 @@ html[dir="rtl"] .sapUiUx3Shell .sapUiUx3NavBarToplevel .sapUiUx3NavBarArrow {
 }
 
 /* Inline theming parameters */
-#sap-ui-theme-themelib_sap_bluecrystal { background-image: url('data:text/plain;utf-8,%7B%22_sap_ui_ux3_Feed_ToolsIconUrl%22:%22url%28%5C%22img/feed/Action_Menu_regular.png%5C%22%29%22,%22_sap_ui_ux3_Feed_ToolsIconHoverUrl%22:%22url%28%5C%22img/feed/Action_Menu_hover.png%5C%22%29%22%7D'); }
+#sap-ui-theme-themelib_sap_bluecrystal { background-image: url('data:text/plain;utf-8,%7B%22_sap_ui_ux3_FeedChunk_PersonPlaceholder%22:%22url%28%5C%22../base/img/feed/person_placeholder_48.png%5C%22%29%22,%22_sap_ui_ux3_Feeder_PersonPlaceholder%22:%22url%28%5C%22../base/img/feed/person_placeholder_48.png%5C%22%29%22,%22_sap_ui_ux3_Feed_ToolsIconUrl%22:%22url%28%5C%22img/feed/Action_Menu_regular.png%5C%22%29%22,%22_sap_ui_ux3_Feed_ToolsIconHoverUrl%22:%22url%28%5C%22img/feed/Action_Menu_hover.png%5C%22%29%22%7D'); }
