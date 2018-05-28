@@ -498,4 +498,4 @@
 *******************************************************************/
 
 /* Inline theming parameters */
-#sap-ui-theme-themelib_sap_bluecrystal { background-image: url('data:text/plain;utf-8,%7B%22_sap_ui_rta_Overlay_ActiveBG%22:%22rgba%280, 124, 192, 0.1%29%22,%22_sap_ui_rta_Overlay_BaseBG%22:%22#f8fafb%22,%22_sap_ui_rta_Overlay_Border%22:%22#007cc0%22,%22_sap_ui_rta_Overlay_HoverBG%22:%22rgba%280, 0, 0, 0.10800000000000001%29%22,%22_sap_ui_rta_Overlay_ActiveHoverBG%22:%22rgba%280, 124, 192, 0.2%29%22%7D'); }
+#sap-ui-theme-themelib_sap_bluecrystal { background-image: url('data:text/plain;utf-8,%7B%22_sap_ui_rta_Overlay_ActiveBG%22:%22rgba%280, 124, 192, 0.1%29%22,%22_sap_ui_rta_Overlay_BaseBG%22:%22%23f8fafb%22,%22_sap_ui_rta_Overlay_Border%22:%22%23007cc0%22,%22_sap_ui_rta_Overlay_HoverBG%22:%22rgba%280, 0, 0, 0.10800000000000001%29%22,%22_sap_ui_rta_Overlay_ActiveHoverBG%22:%22rgba%280, 124, 192, 0.2%29%22%7D'); }

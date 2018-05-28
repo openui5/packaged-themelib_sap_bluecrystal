@@ -269,4 +269,4 @@
 /* Tab Container */
 
 /* Inline theming parameters */
-#sap-ui-theme-themelib_sap_bluecrystal { background-image: url('data:text/plain;utf-8,%7B%22_sap_ui_dt_Overlay_FocusColor%22:%22#000000%22,%22_sap_ui_dt_Overlay_TargetZoneColor%22:%22#007cc0%22,%22_sap_ui_dt_Overlay_SelectionColor%22:%22#3355ff%22,%22_sap_ui_dt_Overlay_CuttedColor%22:%22#ffffff%22%7D'); }
+#sap-ui-theme-themelib_sap_bluecrystal { background-image: url('data:text/plain;utf-8,%7B%22_sap_ui_dt_Overlay_FocusColor%22:%22%23000000%22,%22_sap_ui_dt_Overlay_TargetZoneColor%22:%22%23007cc0%22,%22_sap_ui_dt_Overlay_SelectionColor%22:%22%233355ff%22,%22_sap_ui_dt_Overlay_CuttedColor%22:%22%23ffffff%22%7D'); }
