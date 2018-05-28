@@ -12087,15 +12087,21 @@ html[data-sap-ui-browser^="ie"].sap-desktop .sapMPlanCal .sapUiCalRow:not(.sapUi
   height: auto;
   margin: 0;
 }
-.sapMPlanCal .sapMPlanCalRowHead .sapMSLIDiv {
+.sapMPlanCal .sapMPlanCalRowHead .sapMSLIDiv .sapMSLITitleOnly,
+.sapMPlanCal .sapMPlanCalRowHead .sapMSLIDiv .sapMSLITitle {
+  white-space: normal;
+}
+.sapMPlanCal .sapMPlanCalRowHead .sapMSLIDescIcon .sapMSLIDiv,
+.sapMPlanCal .sapMPlanCalRowHead .sapMSLIImgIcon + .sapMSLIDiv {
   box-sizing: border-box;
   position: absolute;
   padding-left: calc(3.75rem);
   width: 100%;
 }
-.sapMPlanCal .sapMPlanCalRowHead .sapMSLIDiv .sapMSLITitleOnly,
-.sapMPlanCal .sapMPlanCalRowHead .sapMSLIDiv .sapMSLITitle {
-  white-space: normal;
+html[data-sap-ui-browser^="ie"] .sapMPlanCal .sapMPlanCalRowHead .sapMSLIDescIcon .sapMSLIDiv,
+html[data-sap-ui-browser^="ie"] .sapMPlanCal .sapMPlanCalRowHead .sapMSLIImgIcon + .sapMSLIDiv {
+  top: .5rem;
+  left: 0;
 }
 .sapMPlanCal .sapUiCalDateInt .sapUiCalHeadB1 {
   width: 12.5rem;
@@ -21801,6 +21807,9 @@ html.sap-desktop .sapMFooter-CTX .sapMSegBBtnFocusable.sapMSegBBtnSel + .sapMSeg
 /* Android size compact fix */
 html[data-sap-ui-os^="Android4.1"][data-sap-ui-browser^="an"] .sapUiSizeCompact .sapMSegBBtn img {
   margin-bottom: 0.128rem;
+}
+.sapMSegBBtn.sapMSegBtnLastVisibleButton {
+  border-right: 1px solid #dedede;
 }
 /* ============================= */
 /* CSS for control sap.m/Select  */
