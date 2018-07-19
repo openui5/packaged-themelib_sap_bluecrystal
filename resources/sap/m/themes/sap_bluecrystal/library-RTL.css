@@ -12174,7 +12174,7 @@ html.sap-desktop .sapUiFioriObjectPage > section > .sapMPanel {
 }
 /* workaround for drawing issue in IE - ensures that the content will be redrawn */
 html[data-sap-ui-animation='on'][data-sap-ui-browser^="ie"] .sapMPanelContent {
-  transform: translate2d(0, 0);
+  transform: translate(0, 0);
 }
 /* workaround for drawing issue in Edge - ensures that the content will be redrawn */
 html[data-sap-ui-animation='on'][data-sap-ui-browser^="ed"] .sapMPanelContent {
@@ -16651,6 +16651,7 @@ html[data-sap-ui-browser^='ed'] .sapMListTbl {
   /* hide content visually but have it available for screen readers */
   position: absolute;
   clip: rect(0, 0, 0, 0);
+  height: 0;
 }
 tr.sapMListTblHeaderNone > .sapMTableTH {
   border: 0;
@@ -19718,13 +19719,13 @@ html.sap-tablet .sapMWizard .sapMWizardNextButton {
   display: block;
 }
 html.sap-phone .sapMWizard .sapMWizardNextButton {
-  position: absolute;
+  position: fixed;
   right: 50%;
   -webkit-transform: translate(50%, 0);
   transform: translate(50%, 0);
 }
 html.sap-phone .sapMWizard .sapMWizardNextButtonVisible {
-  bottom: 0.5rem;
+  bottom: 3rem;
 }
 /* ============================================== */
 /* CSS for control sap.m/WizardProgressNavigator  */
