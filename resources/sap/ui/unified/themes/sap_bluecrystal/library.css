@@ -3213,7 +3213,7 @@ html.sap-desktop .sapUiCalHead > .sapUiCalHeadB:active {
   overflow: visible;
 }
 /* hover and focus makes only sense on desktops. On mobile devices it's not needed */
-html.sap-desktop .sapUiCalItem:hover {
+html.sap-desktop .sapUiCalItem:not(.sapUiCalItemSel) .sapUiCalItemText:hover {
   background-color: #d8d8d8;
 }
 html.sap-desktop .sapUiCalItem:focus > .sapUiCalItemText,
@@ -3273,8 +3273,8 @@ html[data-sap-ui-browser^="ed"].sap-desktop .sapUiCalItem.sapUiCalItemNow:focus 
   right: 0;
   bottom: 0;
 }
-html.sap-desktop .sapUiCalItemWeekEnd:hover,
-html.sap-desktop .sapUiCalItemWeekEnd:focus {
+html.sap-desktop .sapUiCalItemWeekEnd .sapUiCalItemText:hover,
+html.sap-desktop .sapUiCalItemWeekEnd .sapUiCalItemText:focus {
   background-color: #cccccc;
 }
 .sapUiCalItemNow > .sapUiCalItemText {
@@ -3283,10 +3283,6 @@ html.sap-desktop .sapUiCalItemWeekEnd:focus {
 .sapUiCalItemOtherMonth {
   background-color: transparent;
   color: #808080;
-}
-html.sap-desktop .sapUiCalItemOtherMonth:hover,
-html.sap-desktop .sapUiCalItemOtherMonth:focus {
-  background-color: #e6e6e6;
 }
 .sapUiCalItemSel {
   color: #ffffff;
