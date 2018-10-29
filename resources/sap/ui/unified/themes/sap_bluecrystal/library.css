@@ -3273,8 +3273,8 @@ html[data-sap-ui-browser^="ed"].sap-desktop .sapUiCalItem.sapUiCalItemNow:focus 
   right: 0;
   bottom: 0;
 }
-html.sap-desktop .sapUiCalItemWeekEnd .sapUiCalItemText:hover,
-html.sap-desktop .sapUiCalItemWeekEnd .sapUiCalItemText:focus {
+html.sap-desktop .sapUiCalItemWeekEnd:not(.sapUiCalItemSel) .sapUiCalItemText:hover,
+html.sap-desktop .sapUiCalItemWeekEnd:not(.sapUiCalItemSel) .sapUiCalItemText:focus {
   background-color: #cccccc;
 }
 .sapUiCalItemNow > .sapUiCalItemText {
