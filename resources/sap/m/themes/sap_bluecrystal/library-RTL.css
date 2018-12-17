@@ -9230,6 +9230,9 @@ html[dir=rtl] .sapMNCValueScr {
   font-size: .875rem;
   color: #666666;
 }
+.sapMObjectAttributeActive {
+  pointer-events: none;
+}
 .sapMObjectAttributeActive .sapMObjectAttributeColon {
   vertical-align: middle;
 }
