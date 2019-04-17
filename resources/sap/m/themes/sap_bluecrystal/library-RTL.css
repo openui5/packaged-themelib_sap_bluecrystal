@@ -3937,8 +3937,7 @@ html[data-sap-ui-browser='ie9'] .sapMInputValHelp {
   background-color: rgba(222, 222, 222, 0.5);
 }
 html.sap-desktop .sapMInputVH:not(.sapMInputBaseReadonly) .sapMInputValHelp > .sapMInputValHelpInner:focus {
-  outline: 1px dotted #000000;
-  outline-offset: -1px;
+  outline: none;
 }
 .sapMInputVH:not(.sapMInputBaseReadonly) .sapMInputValHelp > .sapMInputValHelpInner:active {
   /* works fine in desktop browsers, iOS6 and mobile Chrome; does not work well in older Android browser */
